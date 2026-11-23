@@ -1,0 +1,316 @@
+/* ============================================================
+   report.css — Styles riêng cho mocchat-seo-report.html
+   ============================================================ */
+
+body {
+  padding-block: 40px 72px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+h1 {
+  font-size: clamp(2rem, 4.4vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+section {
+  scroll-margin-top: 16px;
+}
+
+/* --- Jump nav --- */
+.jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.jump a {
+  display: inline-flex;
+  align-items: center;
+  height: 34px;
+  padding: 0 14px;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  background: var(--background);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: background-color 0.15s;
+}
+
+.jump a:hover {
+  background: var(--accent);
+}
+
+/* --- Snapshot / KPI cards --- */
+.snap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+}
+
+.snap > div {
+  padding: 20px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.snap .k {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+}
+
+.snap .v {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
+}
+
+.snap .v s {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+  letter-spacing: 0;
+  margin-left: 6px;
+}
+
+.snap .n {
+  font-size: 0.8125rem;
+  color: var(--muted-foreground);
+}
+
+.snap .st {
+  align-self: flex-start;
+}
+
+/* --- Priority badges --- */
+.pri {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 10px;
+  padding: 1px 10px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.5;
+  vertical-align: 2px;
+}
+
+.pri.now {
+  color: var(--danger);
+  background: var(--danger-bg);
+  border-color: var(--danger-bd);
+}
+
+.pri.month {
+  color: var(--warning);
+  background: var(--warning-bg);
+  border-color: var(--warning-bd);
+}
+
+.pri.later {
+  color: var(--info);
+  background: var(--info-bg);
+  border-color: var(--info-bd);
+}
+
+/* --- Task group & task card --- */
+.grp {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.grp-h {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  padding-top: 8px;
+}
+
+.grp-h h3 {
+  font-size: 1.125rem;
+}
+
+.grp-h span {
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+}
+
+.task {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) minmax(0, 270px);
+  gap: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+
+.task .no {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius);
+  background: var(--muted);
+  color: var(--foreground);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.task h4 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+}
+
+.task .why {
+  color: var(--muted-foreground);
+}
+
+.task dl {
+  margin: 12px 0 0;
+  display: grid;
+  grid-template-columns: 82px minmax(0, 1fr);
+  gap: 6px 12px;
+  font-size: 0.875rem;
+}
+
+.task dt {
+  color: var(--muted-foreground);
+  font-weight: 500;
+}
+
+.task dd {
+  margin: 0;
+  min-width: 0;
+}
+
+.task .side {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.8125rem;
+  min-width: 0;
+  border-left: 1px solid var(--border);
+  padding-left: 16px;
+}
+
+.task .side b {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+  font-weight: 500;
+  margin-bottom: 1px;
+}
+
+@media (max-width: 860px) {
+  .task {
+    grid-template-columns: 36px minmax(0, 1fr);
+  }
+
+  .task .side {
+    grid-column: 1 / -1;
+    border-left: 0;
+    padding-left: 0;
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+  }
+}
+
+@media (max-width: 520px) {
+  .task dl {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .task dt {
+    margin-top: 8px;
+  }
+}
+
+/* --- Progress bars (override shared) --- */
+.bar .fill.after {
+  background: var(--success);
+}
+
+@media (max-width: 560px) {
+  .bar {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .bar .val {
+    text-align: left;
+  }
+}
+
+/* --- Two-column layout --- */
+.two {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+.two > div {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* --- Alert note --- */
+.note {
+  border: 1px solid var(--border);
+  background: var(--card);
+  padding: 16px;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+}
+
+.note strong {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.note ul {
+  margin: 8px 0 0;
+  padding-left: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--muted-foreground);
+}
+
+/* --- Tables: min-width override for this page --- */
+table {
+  min-width: 520px;
+}

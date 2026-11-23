@@ -1,0 +1,524 @@
+/* ============================================================
+   compare.css — Styles riêng cho seo-tools-compare.html
+   ============================================================ */
+
+body {
+  padding-block: 40px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+h1 {
+  font-size: clamp(1.9rem, 4.2vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.lede {
+  max-width: 72ch;
+}
+
+/* --- Bảng khả năng (capability table) --- */
+table.cap {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+  min-width: 640px;
+  font-size: 0.875rem;
+}
+
+.cap col.c0 {
+  width: 27%;
+}
+
+.cap th,
+.cap td {
+  padding: 10px 6px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.cap tbody tr:last-child td,
+.cap tbody tr:last-child th {
+  border-bottom: 0;
+}
+
+.cap thead th {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+  line-height: 1.3;
+  text-align: center;
+  vertical-align: bottom;
+  padding-block: 12px;
+}
+
+.cap thead th small {
+  display: block;
+  font-weight: 400;
+  color: var(--muted-foreground);
+  font-size: 0.72rem;
+  margin-top: 2px;
+}
+
+.cap thead th:first-child,
+.cap tbody th {
+  text-align: left;
+  padding-left: 16px;
+  font-weight: 500;
+}
+
+.cap td {
+  text-align: center;
+}
+
+.cap tr.group th {
+  background: color-mix(in srgb, var(--muted) 60%, transparent);
+  color: var(--muted-foreground);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding-block: 8px;
+}
+
+.cap tbody tr:not(.group) {
+  transition: background-color 0.15s;
+}
+
+.cap tbody tr:not(.group):hover {
+  background: color-mix(in srgb, var(--muted) 50%, transparent);
+}
+
+.cap .os {
+  background: color-mix(in srgb, var(--muted) 45%, transparent);
+}
+
+.cap thead th.os {
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+.cap tr.score th,
+.cap tr.score td {
+  font-weight: 600;
+  border-top: 1px solid var(--border);
+  background: color-mix(in srgb, var(--muted) 40%, transparent);
+}
+
+/* --- Mark icons (✓ ◐ ✗ ?) --- */
+.mk {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.mk.y {
+  color: var(--success);
+  background: var(--success-bg);
+  border-color: var(--success-bd);
+}
+
+.mk.p {
+  color: var(--warning);
+  background: var(--warning-bg);
+  border-color: var(--warning-bd);
+}
+
+.mk.n {
+  color: var(--muted-foreground);
+  background: var(--muted);
+  border-color: var(--border);
+}
+
+.mk.u {
+  color: var(--info);
+  background: var(--info-bg);
+  border-color: var(--info-bd);
+}
+
+/* --- Visually hidden (screen-reader only) --- */
+.vh {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* --- Legend for cap table --- */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  align-items: center;
+}
+
+.legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* --- Bảng giá (price table) --- */
+table.price {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.875rem;
+}
+
+.price th,
+.price td {
+  padding: 14px 16px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+}
+
+.price thead th {
+  height: 44px;
+  padding-block: 0;
+  vertical-align: middle;
+  font-weight: 500;
+  color: var(--muted-foreground);
+}
+
+.price tbody tr:last-child td,
+.price tbody tr:last-child th {
+  border-bottom: 0;
+}
+
+.price th[scope="row"] {
+  font-weight: 600;
+  width: 21%;
+}
+
+.price th[scope="row"] small {
+  display: block;
+  font-weight: 400;
+  color: var(--muted-foreground);
+  font-size: 0.8125rem;
+  margin-top: 2px;
+}
+
+.price td {
+  width: 26.3%;
+  font-variant-numeric: tabular-nums;
+}
+
+.price td b {
+  font-weight: 600;
+}
+
+.price td span {
+  display: block;
+  color: var(--muted-foreground);
+  font-size: 0.8125rem;
+  margin-top: 2px;
+}
+
+.price tbody tr:not(.group) {
+  transition: background-color 0.15s;
+}
+
+.price tbody tr:not(.group):hover {
+  background: color-mix(in srgb, var(--muted) 50%, transparent);
+}
+
+.price tr.group th {
+  background: color-mix(in srgb, var(--muted) 60%, transparent);
+  color: var(--muted-foreground);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding-block: 8px;
+  width: auto;
+}
+
+.price tr.group.an th {
+  color: var(--info);
+}
+
+.price tr.os th,
+.price tr.os td {
+  background: color-mix(in srgb, var(--muted) 45%, transparent);
+}
+
+@media (max-width: 760px) {
+  .price,
+  .price tbody,
+  .price tr,
+  .price th,
+  .price td {
+    display: block;
+    width: auto !important;
+  }
+
+  .price thead {
+    display: none;
+  }
+
+  .price tr {
+    border-bottom: 1px solid var(--border);
+    padding: 10px 0;
+  }
+
+  .price tr.group {
+    padding: 0;
+  }
+
+  .price tbody tr:last-child {
+    border-bottom: 0;
+  }
+
+  .price th,
+  .price td {
+    border: 0;
+    padding: 4px 16px;
+  }
+
+  .price td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--muted-foreground);
+  }
+}
+
+/* --- Đối chiếu GA4 và Rybbit --- */
+table.vs {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.875rem;
+}
+
+.vs th,
+.vs td {
+  padding: 12px 16px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+}
+
+.vs thead th {
+  height: 52px;
+  padding-block: 10px;
+  vertical-align: middle;
+  font-weight: 600;
+}
+
+.vs thead th small {
+  display: block;
+  font-weight: 400;
+  color: var(--muted-foreground);
+  margin-top: 2px;
+}
+
+.vs tbody tr:last-child th,
+.vs tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.vs tbody tr {
+  transition: background-color 0.15s;
+}
+
+.vs tbody tr:hover {
+  background: color-mix(in srgb, var(--muted) 50%, transparent);
+}
+
+.vs tbody th {
+  font-weight: 500;
+  width: 22%;
+}
+
+.vs td {
+  width: 39%;
+}
+
+.vs td .mk {
+  margin-right: 8px;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  font-size: 0.72rem;
+}
+
+.vs td span.t {
+  vertical-align: middle;
+}
+
+.vs td small {
+  display: block;
+  color: var(--muted-foreground);
+  font-size: 0.8125rem;
+  margin-top: 2px;
+  padding-left: 28px;
+}
+
+.vs thead th:last-child,
+.vs tbody td:last-child {
+  background: color-mix(in srgb, var(--muted) 45%, transparent);
+}
+
+@media (max-width: 760px) {
+  .vs,
+  .vs tbody,
+  .vs tr,
+  .vs th,
+  .vs td {
+    display: block;
+    width: auto !important;
+  }
+
+  .vs thead {
+    display: none;
+  }
+
+  .vs tr {
+    border-bottom: 1px solid var(--border);
+    padding: 10px 0;
+  }
+
+  .vs tbody tr:last-child {
+    border-bottom: 0;
+  }
+
+  .vs th,
+  .vs td {
+    border: 0;
+    padding: 4px 16px;
+  }
+
+  .vs td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--muted-foreground);
+  }
+}
+
+/* --- Bars: override for compare page --- */
+.bar {
+  grid-template-columns: minmax(0, 220px) minmax(0, 1fr) 190px;
+}
+
+.bar .fill.an {
+  background: var(--info);
+}
+
+.bar .val {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  color: var(--muted-foreground);
+}
+
+.bar .val b {
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .bar {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .bar .val {
+    text-align: left;
+  }
+}
+
+/* --- Legend for bars --- */
+.legend-bars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  font-size: 0.8125rem;
+  color: var(--muted-foreground);
+}
+
+.legend-bars i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  margin-right: 6px;
+  vertical-align: -1px;
+  background: var(--primary);
+}
+
+.legend-bars i.an {
+  background: var(--info);
+}
+
+/* --- Pick / recommendation cards --- */
+.pick {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+.pick > div {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.pick > div.main {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 1px var(--primary);
+}
+
+.pick ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--muted-foreground);
+  font-size: 0.9375rem;
+}
+
+/* --- Caveats alert --- */
+.caveats {
+  border: 1px solid var(--border);
+  background: var(--card);
+  padding: 16px;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+}
+
+.caveats strong {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.caveats ul {
+  margin: 8px 0 0;
+  padding-left: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--muted-foreground);
+}
