@@ -1,0 +1,531 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Báo cáo SEO Mộc Chất</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+/* Bố cục: phong cách shadcn/ui. Đầu trang tóm tắt tình trạng sau đợt sửa, kế đến phần đã thực hiện (trước và sau), rồi kế hoạch việc còn lại theo ba mức ưu tiên, bằng chứng và giới hạn đặt sau. */
+:root {
+  --background: #ffffff;
+  --foreground: #09090b;
+  --card: #ffffff;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --border: #e4e4e7;
+  --primary: #18181b;
+  --primary-foreground: #fafafa;
+  --accent: #f4f4f5;
+  --ring: #a1a1aa;
+  --success: #15803d;
+  --success-bg: #f0fdf4;
+  --success-bd: #bbf7d0;
+  --warning: #b45309;
+  --warning-bg: #fffbeb;
+  --warning-bd: #fde68a;
+  --danger: #b91c1c;
+  --danger-bg: #fef2f2;
+  --danger-bd: #fecaca;
+  --info: #1d4ed8;
+  --info-bg: #eff6ff;
+  --info-bd: #bfdbfe;
+  --shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --radius: 0.5rem;
+  --font: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --background: #09090b;
+    --foreground: #fafafa;
+    --card: #09090b;
+    --muted: #27272a;
+    --muted-foreground: #a1a1aa;
+    --border: #27272a;
+    --primary: #fafafa;
+    --primary-foreground: #18181b;
+    --accent: #27272a;
+    --ring: #d4d4d8;
+    --success: #4ade80;
+    --success-bg: rgb(34 197 94 / 0.1);
+    --success-bd: rgb(34 197 94 / 0.3);
+    --warning: #fbbf24;
+    --warning-bg: rgb(245 158 11 / 0.1);
+    --warning-bd: rgb(245 158 11 / 0.3);
+    --danger: #f87171;
+    --danger-bg: rgb(239 68 68 / 0.1);
+    --danger-bd: rgb(239 68 68 / 0.3);
+    --info: #60a5fa;
+    --info-bg: rgb(59 130 246 / 0.1);
+    --info-bd: rgb(59 130 246 / 0.3);
+    --shadow: none;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --background: #09090b;
+  --foreground: #fafafa;
+  --card: #09090b;
+  --muted: #27272a;
+  --muted-foreground: #a1a1aa;
+  --border: #27272a;
+  --primary: #fafafa;
+  --primary-foreground: #18181b;
+  --accent: #27272a;
+  --ring: #d4d4d8;
+  --success: #4ade80;
+  --success-bg: rgb(34 197 94 / 0.1);
+  --success-bd: rgb(34 197 94 / 0.3);
+  --warning: #fbbf24;
+  --warning-bg: rgb(245 158 11 / 0.1);
+  --warning-bd: rgb(245 158 11 / 0.3);
+  --danger: #f87171;
+  --danger-bg: rgb(239 68 68 / 0.1);
+  --danger-bd: rgb(239 68 68 / 0.3);
+  --info: #60a5fa;
+  --info-bg: rgb(59 130 246 / 0.1);
+  --info-bd: rgb(59 130 246 / 0.3);
+  --shadow: none;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  padding-block: 40px 72px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 1180px; width: 100%; margin: 0 auto; display: flex; flex-direction: column; gap: 48px; }
+h1, h2, h3 { text-wrap: balance; line-height: 1.2; margin: 0; }
+h1 { font-size: clamp(2rem, 4.4vw, 2.75rem); font-weight: 800; letter-spacing: -0.025em; }
+h2 { font-size: 1.5rem; font-weight: 600; letter-spacing: -0.02em; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+h3 { font-size: 1.125rem; font-weight: 600; letter-spacing: -0.015em; }
+p { margin: 0; }
+a { color: var(--foreground); text-underline-offset: 4px; text-decoration-color: var(--muted-foreground); }
+a:hover { text-decoration-color: var(--foreground); }
+section { display: flex; flex-direction: column; gap: 16px; min-width: 0; scroll-margin-top: 16px; }
+.lede { color: var(--muted-foreground); font-size: 1.0625rem; line-height: 1.7; max-width: 78ch; margin-top: 14px; }
+.sub { color: var(--muted-foreground); max-width: 80ch; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-top: 16px; font-size: 0.875rem; color: var(--muted-foreground); }
+.meta b { color: var(--foreground); font-weight: 500; }
+
+.eyebrow { display: inline-flex; align-items: center; margin-bottom: 14px; padding: 2px 10px; border: 1px solid var(--border); border-radius: var(--radius); font-size: 0.75rem; font-weight: 600; color: var(--foreground); }
+
+.jump { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.jump a { display: inline-flex; align-items: center; height: 34px; padding: 0 14px; text-decoration: none; font-size: 0.875rem; font-weight: 500; color: var(--foreground); border: 1px solid var(--border); background: var(--background); border-radius: var(--radius); box-shadow: var(--shadow); transition: background-color 0.15s; }
+.jump a:hover { background: var(--accent); }
+
+/* Tình trạng: mỗi chỉ số là một thẻ */
+.snap { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; }
+.snap > div { padding: 20px; min-width: 0; display: flex; flex-direction: column; gap: 6px; border: 1px solid var(--border); border-radius: 12px; background: var(--card); box-shadow: var(--shadow); }
+.snap .k { font-size: 0.875rem; font-weight: 500; color: var(--muted-foreground); }
+.snap .v { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; font-variant-numeric: tabular-nums; }
+.snap .v s { font-size: 0.9rem; font-weight: 500; color: var(--muted-foreground); letter-spacing: 0; margin-left: 6px; }
+.snap .n { font-size: 0.8125rem; color: var(--muted-foreground); }
+.snap .st { align-self: flex-start; }
+.st { display: inline-flex; align-items: center; padding: 1px 10px; border: 1px solid transparent; border-radius: var(--radius); font-size: 0.75rem; font-weight: 600; line-height: 1.5; white-space: nowrap; }
+.st.crit { color: var(--danger); background: var(--danger-bg); border-color: var(--danger-bd); }
+.st.warn { color: var(--warning); background: var(--warning-bg); border-color: var(--warning-bd); }
+.st.ok { color: var(--success); background: var(--success-bg); border-color: var(--success-bd); }
+.st.info { color: var(--info); background: var(--info-bg); border-color: var(--info-bd); }
+
+/* Việc cần làm */
+.grp { display: flex; flex-direction: column; gap: 12px; }
+.grp-h { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; padding-top: 8px; }
+.grp-h h3 { font-size: 1.125rem; }
+.grp-h span { color: var(--muted-foreground); font-size: 0.875rem; }
+.pri { display: inline-flex; align-items: center; margin-right: 10px; padding: 1px 10px; border: 1px solid transparent; border-radius: var(--radius); font-size: 0.75rem; font-weight: 600; line-height: 1.5; vertical-align: 2px; }
+.pri.now { color: var(--danger); background: var(--danger-bg); border-color: var(--danger-bd); }
+.pri.month { color: var(--warning); background: var(--warning-bg); border-color: var(--warning-bd); }
+.pri.later { color: var(--info); background: var(--info-bg); border-color: var(--info-bd); }
+.task { display: grid; grid-template-columns: 36px minmax(0, 1fr) minmax(0, 270px); gap: 8px 16px; border: 1px solid var(--border); border-radius: 12px; background: var(--card); box-shadow: var(--shadow); padding: 20px; }
+.task .no { width: 28px; height: 28px; border-radius: var(--radius); background: var(--muted); color: var(--foreground); font-weight: 600; font-size: 0.8125rem; display: flex; align-items: center; justify-content: center; font-variant-numeric: tabular-nums; }
+.task h4 { margin: 0 0 6px; font-size: 1rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.4; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+.task .why { color: var(--muted-foreground); }
+.task dl { margin: 12px 0 0; display: grid; grid-template-columns: 82px minmax(0, 1fr); gap: 6px 12px; font-size: 0.875rem; }
+.task dt { color: var(--muted-foreground); font-weight: 500; }
+.task dd { margin: 0; min-width: 0; }
+.task .side { display: flex; flex-direction: column; gap: 10px; font-size: 0.8125rem; min-width: 0; border-left: 1px solid var(--border); padding-left: 16px; }
+.task .side b { display: block; font-size: 0.75rem; color: var(--muted-foreground); font-weight: 500; margin-bottom: 1px; }
+code { font-family: var(--mono); font-size: 0.8125em; font-weight: 600; background: var(--muted); padding: 2px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+@media (max-width: 860px) {
+  .task { grid-template-columns: 36px minmax(0, 1fr); }
+  .task .side { grid-column: 1 / -1; border-left: 0; padding-left: 0; border-top: 1px solid var(--border); padding-top: 12px; flex-direction: row; flex-wrap: wrap; gap: 8px 24px; }
+}
+@media (max-width: 520px) {
+  .task dl { grid-template-columns: 1fr; gap: 0; }
+  .task dt { margin-top: 8px; }
+}
+
+/* Bảng và thanh tiến độ */
+.tablebox { border: 1px solid var(--border); border-radius: 12px; background: var(--card); box-shadow: var(--shadow); overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 0.875rem; font-variant-numeric: tabular-nums; min-width: 520px; }
+th, td { padding: 12px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border); }
+thead th { height: 44px; padding-block: 0; vertical-align: middle; font-weight: 500; color: var(--muted-foreground); white-space: nowrap; }
+tbody tr { transition: background-color 0.15s; }
+tbody tr:hover { background: color-mix(in srgb, var(--muted) 50%, transparent); }
+tbody tr:last-child td, tbody tr:last-child th { border-bottom: 0; }
+td.n, th.n { text-align: right; white-space: nowrap; }
+tbody th { font-weight: 500; }
+td small { display: block; color: var(--muted-foreground); font-size: 0.8125rem; margin-top: 2px; }
+.bars { display: flex; flex-direction: column; gap: 14px; padding: 20px; border: 1px solid var(--border); border-radius: 12px; background: var(--card); box-shadow: var(--shadow); }
+.bar { display: grid; grid-template-columns: minmax(0, 230px) minmax(0, 1fr) 110px; gap: 12px; align-items: center; font-size: 0.875rem; }
+.bar .track { background: color-mix(in srgb, var(--primary) 20%, transparent); border-radius: 999px; height: 8px; overflow: hidden; }
+.bar .fill { height: 100%; background: var(--primary); border-radius: 999px; min-width: 4px; }
+.bar .fill.after { background: var(--success); }
+.bar .val { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+@media (max-width: 560px) { .bar { grid-template-columns: 1fr; gap: 6px; } .bar .val { text-align: left; } }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px; }
+.two > div { min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+
+/* Alert */
+.note { border: 1px solid var(--border); background: var(--card); padding: 16px; border-radius: var(--radius); font-size: 0.875rem; }
+.note strong { font-weight: 600; letter-spacing: -0.01em; }
+.note ul { margin: 8px 0 0; padding-left: 1.1rem; display: flex; flex-direction: column; gap: 4px; color: var(--muted-foreground); }
+.src { font-size: 0.8125rem; color: var(--muted-foreground); }
+.src ul { margin: 6px 0 0; padding-left: 1.1rem; display: flex; flex-direction: column; gap: 3px; }
+.src b { color: var(--foreground); font-weight: 500; }
+:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; border-radius: 4px; }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Cập nhật 21/11/2026 · Sau đợt sửa đầu tiên</div>
+    <h1>Báo cáo SEO Mộc Chất</h1>
+    <p class="lede">Sau đợt sửa ngày 21/11: không còn link nội bộ hỏng (từ 17 xuống 0), không còn ảnh thiếu alt (từ 551 xuống 0), title, mô tả và từ khóa chính của trang chủ đã sửa, danh mục sản phẩm đã vào sitemap và Google đã đọc, dung lượng tải của trang chủ giảm khoảng 62%. Còn lại: trang chủ trên điện thoại vẫn chậm (LCP khoảng 15,7 giây khi mô phỏng), chỉ số CLS tăng lên 0,14 sau khi bật tải lười cho carousel, chưa có công cụ đo truy cập, và 54 trang còn thiếu mô tả.</p>
+    <div class="meta">
+      <span><b>Website:</b> mocchat.vn</span>
+      <span><b>Thị trường:</b> Việt Nam, tiếng Việt</span>
+      <span><b>Dữ liệu:</b> 20–21/11/2026</span>
+      <span><b>Audit so sánh:</b> lần 4 (trước, 696 trang) và lần 7 (sau, 700 trang)</span>
+    </div>
+    <nav class="jump" aria-label="Đi tới">
+      <a href="#tinh-trang">Tình trạng</a>
+      <a href="#da-lam">Đã thực hiện</a>
+      <a href="#viec-can-lam">Việc còn lại</a>
+      <a href="#do-luong">Đo lường truy cập</a>
+      <a href="#bang-chung">Bằng chứng</a>
+      <a href="#gioi-han">Nguồn và giới hạn</a>
+    </nav>
+  </header>
+
+  <section id="tinh-trang">
+    <h2>Tình trạng hiện tại</h2>
+    <div class="snap">
+      <div><span class="k">Link nội bộ hỏng</span><span class="v">0<s>trước: 17</s></span><span class="st ok">Đã xử lý</span><span class="n">17 link chuyển hướng 301, audit lần 7 không còn lỗi</span></div>
+      <div><span class="k">Ảnh thiếu alt</span><span class="v">0<s>trước: 551</s></span><span class="st ok">Đã xử lý</span><span class="n">Logo và 3 biểu tượng trong header, footer</span></div>
+      <div><span class="k">Dung lượng trang chủ khi mở</span><span class="v">5,77 MB<s>trước: ~15,0</s></span><span class="st ok">Giảm 62%</span><span class="n">9 ảnh PNG, JPG chuyển sang WebP 85%</span></div>
+      <div><span class="k">LCP trang chủ trên mobile (mô phỏng)</span><span class="v">15,7 giây<s>trước: 19,1</s></span><span class="st crit">Vẫn rất chậm</span><span class="n">Ngưỡng tốt của Google là 2,5 giây</span></div>
+      <div><span class="k">CLS trang chủ</span><span class="v">0,14<s>trước: 0,00</s></span><span class="st warn">Mới xấu đi</span><span class="n">Sau khi bật tải lười cho carousel. Ngưỡng tốt là 0,1</span></div>
+      <div><span class="k">Danh mục trong sitemap</span><span class="v">18<s>trước: 0</s></span><span class="st ok">Google đã đọc</span><span class="n">Search Console: 8 sitemap con đều Success</span></div>
+      <div><span class="k">Công cụ đo truy cập</span><span class="v">Chưa có</span><span class="st warn">Thiếu</span><span class="n">Chưa dùng Google Analytics hay Rybbit</span></div>
+      <div><span class="k">Trang thiếu meta description</span><span class="v">54<s>trước: 45</s></span><span class="st warn">Còn việc</span><span class="n">Tăng do 9 trang Video Library mới vào sitemap</span></div>
+    </div>
+  </section>
+
+  <section id="da-lam">
+    <h2>Đã thực hiện</h2>
+    <p class="sub">Các việc đã làm và kết quả đo được. Các số "trước" lấy từ báo cáo ban đầu (audit lần 4, Lighthouse lần 1, kiểm tra bằng curl). Các số "sau" lấy từ audit lần 7 (21/11), kiểm tra bằng curl, Search Console và Chrome DevTools.</p>
+    <div class="tablebox">
+      <table style="min-width:760px">
+        <thead><tr><th>Việc</th><th>Đã làm</th><th>Kết quả</th><th>Trạng thái</th></tr></thead>
+        <tbody>
+          <tr>
+            <th scope="row">Sửa title, mô tả, từ khóa chính trang chủ</th>
+            <td>Title cũ "…Gỗ Tự Thiên…" (sai chính tả, thiếu "óc chó") đổi thành "Thiết Kế Và Thi Công Nội Thất Gỗ Óc Chó Cao Cấp | Mộc Chất" (58 ký tự). Mô tả mới 136 ký tự có "gỗ óc chó". Đặt từ khóa chính "nội thất gỗ óc chó".<small>Không ghi "Hà Nội" trong title vì website bán toàn quốc.</small></td>
+            <td>Điểm SEO của trang trong Rank Math: 22 lên 84 trên 100. Title, og:title và mô tả trên trang công khai đã đổi, không còn "Tự Thiên".</td>
+            <td><span class="st ok">Xong</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Giảm mật độ từ khóa trang chủ</th>
+            <td>Đổi chữ ở 2 tiêu đề phụ (bỏ "nội thất" ở chỗ lặp), giảm 2 lưới dự án từ 9 xuống 6 mục.</td>
+            <td>Mật độ cụm "nội thất gỗ óc chó": 2,86% (27 lần) xuống 2,43% (21 lần). Rank Math không còn báo mật độ cao.</td>
+            <td><span class="st ok">Xong</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Chuyển hướng 301 cho 17 link hỏng</th>
+            <td>2 quy tắc Regex trong Rank Math: 11 URL bàn ăn cũ (<code>…/ban-an-go-oc-cho/…-ma-baoc-NN/</code>) sang <code>…/ban-ghe-an-go-oc-cho/baoc-NN/</code>, và 6 đường dẫn cũ <code>/tu-van-noi-that/vat-lieu/go-oc-cho/SLUG/</code> sang <code>/SLUG/</code>.</td>
+            <td>Link nội bộ hỏng 17 xuống 0 (audit lần 7). Đã thử bằng curl: 9 URL cũ trả 301 về đúng trang đích.</td>
+            <td><span class="st ok">Xong</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Đưa danh mục sản phẩm vào sitemap</th>
+            <td>Bật sitemap cho danh mục sản phẩm trong Rank Math (18 URL). Rank Math cũng tự thêm Video Library (10 URL), giữ lại. Tạo quy tắc cache cho sitemap ở Cloudflare.</td>
+            <td>Search Console: cả 8 sitemap con Success, danh mục 18 URL và Video Library 10 URL. Thời gian phản hồi sitemap từ 3,0 đến 5,8 giây xuống 0,1 giây.</td>
+            <td><span class="st ok">Xong</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Thêm alt cho 4 ảnh trong template</th>
+            <td>Alt cho logo "Logo Mộc Chất" và 3 biểu tượng (nhà máy, địa chỉ showroom, điện thoại hotline) trong Media.</td>
+            <td>Ảnh thiếu alt: 551 xuống 0 (audit lần 7). Đã thấy alt trong HTML công khai của cả 4 ảnh.</td>
+            <td><span class="st ok">Xong</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Nén ảnh trang chủ</th>
+            <td>Chuyển 9 ảnh (3 PNG và 6 JPG 2560 px) sang WebP chất lượng 85% và thay trong carousel, ảnh bìa video. Bật Lazyload cho carousel. Thêm slide đầu vào danh sách ảnh ưu tiên của FlyingPress (preload).</td>
+            <td>Dung lượng khi mở trang: khoảng 15,0 MB xuống 5,77 MB. Ảnh PNG nặng: 3 xuống 0. LCP mô phỏng 19,1 xuống 15,7 giây. Nhưng CLS tăng từ 0,00 lên 0,14.</td>
+            <td><span class="st warn">Một phần</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="two">
+      <div>
+        <h3>Dung lượng 3 ảnh nặng nhất trang chủ: trước và sau</h3>
+        <div class="bars" role="img" aria-label="anh-2: 3,50 MB xuống 0,34 MB. A-HAI: 3,31 MB xuống 0,32 MB. Thiet-ke-chua-co-ten: 3,28 MB xuống 0,37 MB">
+          <div class="bar"><span>anh-2.png</span><span class="track"><span class="fill" style="display:block;width:100%"></span></span><span class="val">3,50 MB</span></div>
+          <div class="bar"><span>anh-2.webp</span><span class="track"><span class="fill after" style="display:block;width:9.7%"></span></span><span class="val">0,34 MB</span></div>
+          <div class="bar"><span>A-HAI.png</span><span class="track"><span class="fill" style="display:block;width:94.6%"></span></span><span class="val">3,31 MB</span></div>
+          <div class="bar"><span>A-HAI.webp</span><span class="track"><span class="fill after" style="display:block;width:9.1%"></span></span><span class="val">0,32 MB</span></div>
+          <div class="bar"><span>Thiet-ke-chua-co-ten.png</span><span class="track"><span class="fill" style="display:block;width:93.7%"></span></span><span class="val">3,28 MB</span></div>
+          <div class="bar"><span>Thiet-ke-chua-co-ten.webp</span><span class="track"><span class="fill after" style="display:block;width:10.6%"></span></span><span class="val">0,37 MB</span></div>
+        </div>
+        <p class="src">Số "trước" lấy từ báo cáo ban đầu, số "sau" lấy từ dung lượng tệp WebP trong thư viện Media. Cả 9 ảnh đã nén gồm 6 ảnh JPG trong carousel (giảm 27% đến 46%).</p>
+      </div>
+      <div>
+        <h3>Tốc độ trang chủ trên điện thoại (Chrome DevTools)</h3>
+        <div class="tablebox">
+          <table style="min-width:360px">
+            <thead><tr><th>Chỉ số</th><th class="n">Trước</th><th class="n">Sau</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">LCP</th><td class="n">19,1 s</td><td class="n">15,7 s</td></tr>
+              <tr><th scope="row">CLS</th><td class="n">0,00</td><td class="n">0,14</td></tr>
+              <tr><th scope="row">Thời gian máy chủ (TTFB)</th><td class="n">0,57 s</td><td class="n">0,58–0,66 s</td></tr>
+              <tr><th scope="row">Tải khi mở trang</th><td class="n">~15,0 MB</td><td class="n">5,77 MB</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="src">Đo trong cửa sổ không đăng nhập, mô phỏng điện thoại 412 px, CPU chậm 4 lần, mạng Slow 4G. "Trước" là lúc chưa bật Lazyload (sau khi nén ảnh), "sau" là hai lần đo liên tiếp sau khi bật Lazyload (15,8 và 15,7 giây). Không so trực tiếp với mốc LCP 24,0 giây của Lighthouse ban đầu vì hai phương pháp khác nhau. Phần tử LCP hiện là ảnh bìa video, không còn là slide carousel.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="viec-can-lam">
+    <h2>Việc còn lại</h2>
+    <p class="sub">Các việc chưa làm hoặc mới phát sinh, chia theo mức ưu tiên. Thứ tự trong từng nhóm là thứ tự nên làm. Mức tác động lên thứ hạng chưa thể định lượng, nên các việc được xếp theo mức độ chắc chắn của lỗi và độ rộng ảnh hưởng.</p>
+    <div id="tasks"></div>
+  </section>
+
+  <section id="do-luong">
+    <h2>Đo lường truy cập: chọn một công cụ</h2>
+    <p class="sub">Website chưa dùng Google Analytics hay Rybbit, nên hiện chưa có dữ liệu lượng truy cập, nguồn truy cập và chuyển đổi. Cần cài một trong hai (việc số 3). Google Search Console đã được xác minh và đã đọc sitemap (xác nhận ngày 21/11), cung cấp dữ liệu lượt hiển thị và lượt nhấp trên Google.</p>
+    <div class="tablebox">
+      <table style="min-width:560px">
+        <thead><tr><th>Tiêu chí</th><th>Google Analytics (GA4)</th><th>Rybbit</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Chi phí</th><td>Miễn phí (bản tiêu chuẩn)</td><td>Tự lưu trữ miễn phí; Cloud từ $19/tháng</td></tr>
+          <tr><th scope="row">Dữ liệu lưu ở đâu</th><td>Máy chủ của Google</td><td>Máy chủ riêng nếu tự lưu trữ, hoặc cloud của hãng</td></tr>
+          <tr><th scope="row">Cookie</th><td>Dùng cookie, thường cần banner đồng ý</td><td>Không dùng cookie theo mô tả của hãng</td></tr>
+          <tr><th scope="row">Đọc được trong OpenSEO</th><td>Có tool đọc dữ liệu GA4</td><td>Chưa ghi nhận tích hợp</td></tr>
+          <tr><th scope="row">Phù hợp khi</th><td>Cần dữ liệu liên kết với Search Console và đọc trực tiếp trong OpenSEO</td><td>Ưu tiên quyền riêng tư và dữ liệu do mình kiểm soát, chấp nhận tự vận hành máy chủ</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="src">Thông tin về GA4 dựa trên tài liệu công khai của Google, chưa được đối chiếu lại trong lần lập báo cáo này. Mức miễn phí của Rybbit Cloud được các nguồn ghi khác nhau (3.000 hoặc 10.000 sự kiện mỗi tháng).</p>
+  </section>
+
+  <section id="bang-chung">
+    <h2>Bằng chứng</h2>
+
+    <h3>Kết quả site audit: trước (lần 4, 696 trang) và sau (lần 7, 700 trang)</h3>
+    <div class="tablebox">
+      <table style="min-width:640px">
+        <thead><tr><th>Loại lỗi</th><th class="n">Trước</th><th class="n">Sau</th><th>Ghi chú</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Link nội bộ hỏng</th><td class="n">17</td><td class="n">0</td><td>Đã chuyển hướng 301</td></tr>
+          <tr><th scope="row">Ảnh thiếu alt</th><td class="n">551</td><td class="n">0</td><td>Đã thêm alt cho logo và 3 biểu tượng</td></tr>
+          <tr><th scope="row">Thiếu meta description</th><td class="n">45</td><td class="n">54</td><td>8 trang thật, 9 trang Video Library mới vào sitemap, 37 phân trang và URL biến thể</td></tr>
+          <tr><th scope="row">Thiếu thẻ H1</th><td class="n">24</td><td class="n">25</td><td>Thêm <code>/video-library/</code>. Gồm cả <code>/gioi-thieu/</code>, <code>/du-an/</code>, các trang hub và trang tác giả</td></tr>
+          <tr><th scope="row">Nhiều thẻ H1</th><td class="n">13</td><td class="n">13</td><td>Chưa sửa</td></tr>
+          <tr><th scope="row">Meta description trùng</th><td class="n">6</td><td class="n">6</td><td>Chưa sửa (3 cặp trang)</td></tr>
+          <tr><th scope="row">Nội dung trùng</th><td class="n">2</td><td class="n">2</td><td><code>/tu-van-noi-that/</code> và <code>/tu-van-noi-that/vat-lieu/</code>, chưa sửa</td></tr>
+          <tr><th scope="row">Phản hồi máy chủ chậm</th><td class="n">174</td><td class="n">221</td><td>Mức thông tin. Giữa các lần quét số này dao động từ 130 đến 221</td></tr>
+          <tr><th scope="row">Trang noindex</th><td class="n">135</td><td class="n">129</td><td>Chủ ý: phân trang, tham số, trang tác giả</td></tr>
+          <tr><th scope="row">Trang quá sâu trong cấu trúc</th><td class="n">1</td><td class="n">29</td><td>Mức thông tin, chưa tìm hiểu nguyên nhân</td></tr>
+          <tr><th scope="row">Quét dừng ở giới hạn trang</th><td class="n">không</td><td class="n">có</td><td>Đã quét 700 trang, 6 URL chưa quét. Lần so sánh chưa hoàn toàn tương đương</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="src">Lần quét 7 không có kết quả Lighthouse: công cụ báo số dư dịch vụ dữ liệu bên ngoài đã hết. Vì vậy LCP và CLS ở trên lấy từ Chrome DevTools, không phải từ OpenSEO.</p>
+
+    <div class="two">
+      <div>
+        <h3>Lượt tìm mỗi tháng của các từ khóa lớn nhất</h3>
+        <div class="bars" role="img" aria-label="nội thất gỗ óc chó 2.400, sofa gỗ óc chó 1.900, giường gỗ óc chó 1.000, bàn ăn gỗ óc chó 590, nội thất biệt thự gỗ óc chó 320, bàn làm việc gỗ óc chó 210">
+          <div class="bar"><span>nội thất gỗ óc chó</span><span class="track"><span class="fill" style="display:block;width:100%"></span></span><span class="val">2.400</span></div>
+          <div class="bar"><span>sofa gỗ óc chó</span><span class="track"><span class="fill" style="display:block;width:79%"></span></span><span class="val">1.900</span></div>
+          <div class="bar"><span>giường gỗ óc chó</span><span class="track"><span class="fill" style="display:block;width:42%"></span></span><span class="val">1.000</span></div>
+          <div class="bar"><span>bàn ăn gỗ óc chó</span><span class="track"><span class="fill" style="display:block;width:25%"></span></span><span class="val">590</span></div>
+          <div class="bar"><span>nội thất biệt thự gỗ óc chó</span><span class="track"><span class="fill" style="display:block;width:13%"></span></span><span class="val">320</span></div>
+          <div class="bar"><span>bàn làm việc gỗ óc chó</span><span class="track"><span class="fill" style="display:block;width:9%"></span></span><span class="val">210</span></div>
+        </div>
+        <p class="src">Độ khó bằng 0 ở vài từ khóa thường là dữ liệu thiếu chứ không có nghĩa là dễ. Cần xem trực tiếp kết quả tìm kiếm trước khi đầu tư. Từ khóa chính của trang chủ đã đặt là "nội thất gỗ óc chó".</p>
+      </div>
+      <div>
+        <h3>Hạ tầng máy chủ (từ Site Health của WordPress)</h3>
+        <div class="tablebox">
+          <table style="min-width:360px">
+            <thead><tr><th>Mục</th><th>Giá trị</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">PHP</th><td>8.0.27 (đã hết hỗ trợ bảo mật)</td></tr>
+              <tr><th scope="row">Cơ sở dữ liệu</th><td>MariaDB 10.3.34 (đã hết hỗ trợ)</td></tr>
+              <tr><th scope="row">Máy chủ</th><td>Apache 2, php-fpm</td></tr>
+              <tr><th scope="row">Object cache bền vững</th><td>Không thấy</td></tr>
+              <tr><th scope="row">Trang có cache</th><td>0,13 giây</td></tr>
+              <tr><th scope="row">Trang chưa cache</th><td>3 đến 6 giây</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="src">Thời gian đo bằng curl. Đây là nguyên nhân gốc khiến sitemap và các trang chưa cache chậm, chưa tìm ra plugin cụ thể nào là nặng nhất.</p>
+      </div>
+    </div>
+
+    <h3>Đối thủ: noithatvietadong.vn</h3>
+    <div class="tablebox">
+      <table>
+        <thead><tr><th>Từ khóa</th><th class="n">Lượt tìm</th><th class="n">Vị trí của đối thủ</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">gỗ óc chó</th><td class="n">3.600</td><td class="n">2</td></tr>
+          <tr><th scope="row">màu gỗ óc chó</th><td class="n">1.900</td><td class="n">2–3</td></tr>
+          <tr><th scope="row">bàn ăn gỗ óc chó</th><td class="n">590</td><td class="n">3</td></tr>
+          <tr><th scope="row">tủ bếp gỗ óc chó, sofa óc chó</th><td class="n">480 mỗi từ</td><td class="n">3</td></tr>
+          <tr><th scope="row">tủ rượu</th><td class="n">4.400</td><td class="n">21</td></tr>
+          <tr><th scope="row">tủ rượu phòng khách</th><td class="n">1.600</td><td class="n">19</td></tr>
+          <tr><th scope="row">nội thất gỗ óc chó</th><td class="n">2.400</td><td class="n">24</td></tr>
+          <tr><th scope="row">sofa gỗ óc chó</th><td class="n">1.900</td><td class="n">18</td></tr>
+          <tr><th scope="row">giường gỗ óc chó</th><td class="n">1.000</td><td class="n">27</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="src">Đối thủ có 98 từ khóa xếp hạng (bảng là phần có lượt tìm cao nhất trong 50 từ khóa tool trả về). Backlink: 1.858 liên kết từ 287 tên miền, phần lớn từ báo điện tử, nhiều khả năng là bài PR đặt trả phí (nhận định từ số lượng và thời điểm, chưa kiểm tra nội dung).</p>
+  </section>
+
+  <section id="gioi-han">
+    <h2>Nguồn và giới hạn</h2>
+    <div class="note">
+      <strong>Chưa có trong báo cáo này</strong>
+      <ul>
+        <li>Thứ hạng thật và backlink của chính mocchat.vn, nên chưa so được khoảng cách với đối thủ.</li>
+        <li>Dữ liệu lượng truy cập (chưa cài công cụ đo). Dữ liệu hiệu suất tìm kiếm từ Search Console chưa được đưa vào báo cáo.</li>
+        <li>Điểm Lighthouse mới của các trang: lần quét 7 không chạy được vì dịch vụ dữ liệu hết số dư.</li>
+        <li>Chưa kiểm tra tác động của các thay đổi lên thứ hạng và lượt hiển thị. Cần vài tuần sau khi Google lập chỉ mục lại.</li>
+        <li>CLS 0,14 chưa có nguyên nhân được kiểm chứng. Giả thuyết đã ghi ở việc số 1.</li>
+      </ul>
+    </div>
+    <div class="src">
+      Nguồn dữ liệu:
+      <ul>
+        <li><b>OpenSEO:</b> site audit lần 4 (trước, 696 trang) và lần 7 (sau, 700 trang), Lighthouse lần 1, nghiên cứu từ khóa, kết quả tìm kiếm của 3 từ khóa, từ khóa xếp hạng và backlink của đối thủ.</li>
+        <li><b>Chrome DevTools:</b> dung lượng trang, LCP, CLS (mô phỏng điện thoại, hai lần đo sau khi bật Lazyload).</li>
+        <li><b>Google Search Console:</b> trạng thái đọc sitemap ngày 21/11 (do chủ website cung cấp).</li>
+        <li><b>Kiểm tra trực tiếp bằng curl và quản trị WordPress:</b> title, mô tả, chuyển hướng 301, alt, sitemap, tiêu đề phản hồi, Site Health, điểm SEO Rank Math.</li>
+        <li><b>SEOquake:</b> báo cáo kiểm tra trang chủ ngày 21/11/2026 (chỉ một trang, dùng cho số liệu ban đầu).</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<script>
+(function () {
+  var GROUPS = [
+    { k: 'now', label: 'Làm ngay', hint: 'Lỗi chắc chắn có và ảnh hưởng rộng' },
+    { k: 'month', label: 'Trong tháng này', hint: 'Cải thiện nền tảng kỹ thuật và nội dung' },
+    { k: 'later', label: 'Sau đó', hint: 'Giá trị thấp hơn hoặc cần điều kiện đi kèm' }
+  ];
+  var TASKS = [
+    { g: 'now', t: 'Sửa CLS 0,14 của trang chủ', tag: ['crit', 'Mới phát sinh'],
+      why: 'CLS tăng từ 0,00 lên 0,14 (ngưỡng tốt là 0,1) trong cả hai lần đo sau khi bật Lazyload cho carousel đầu trang. Bố cục dịch chuyển khoảng giây 12 đến 13, ở khối tiêu đề động bên dưới carousel. Giả thuyết: ảnh slide đầu cao 974 px, các slide sau cao 1024 px, nên chiều cao carousel đổi khi chuyển slide. Chưa kiểm chứng.',
+      how: 'Đặt tỉ lệ cố định 2560:1024 cho các slide bằng CSS <code>aspect-ratio</code> và cắt ảnh <code>upscalemedia…</code> từ 2560×974 về 2560×1024. Nếu CLS không giảm thì tắt Lazyload của carousel.',
+      verify: 'Đo lại bằng Chrome DevTools (mô phỏng điện thoại, cửa sổ không đăng nhập): CLS từ 0,1 trở xuống.',
+      who: 'Lập trình web', src: 'Chrome DevTools (2 lần đo ngày 21/11)' },
+    { g: 'now', t: 'Hạ LCP trang chủ: ảnh bìa video và các ảnh còn nặng', tag: ['warn', 'Làm tiếp việc nén ảnh'],
+      why: 'LCP mô phỏng giảm từ 19,1 xuống 15,7 giây, vẫn rất chậm. Phần tử LCP hiện là ảnh bìa video <code>anh-2.webp</code> (350 KB). Nó là ảnh nền CSS nên trình duyệt phát hiện muộn, tải ưu tiên thấp và tranh băng thông với khoảng 5 MB ảnh khác. Còn khoảng 13 ảnh JPG 550–812 KB trong lưới dự án, và Chrome đánh giá còn 2,2 đến 3,3 MB ảnh có thể tối ưu thêm.',
+      how: 'Tạo bản nhỏ cho ảnh bìa video (khoảng 800 px) và preload ảnh này. Chuyển các ảnh JPG nặng trong lưới dự án sang WebP. Resize ảnh carousel từ 2560 px về 1920 px.',
+      verify: 'Đo lại LCP bằng cùng phương pháp. Mốc tốt của Google là 2,5 giây.',
+      who: 'Lập trình web, plugin ảnh hoặc cache', src: 'Chrome DevTools, FlyingPress' },
+    { g: 'now', t: 'Chọn và cài công cụ đo truy cập',
+      why: 'Website chưa dùng Google Analytics hay Rybbit. Search Console đã xác minh và đã đọc sitemap, nhưng chưa có dữ liệu lượng truy cập, nguồn và chuyển đổi để đo tác động của các việc đã làm.',
+      how: 'Chọn một công cụ ở mục "Đo lường truy cập" và cài mã (qua WPCode Header &amp; Footer hoặc Elementor Pro Custom Code).',
+      verify: 'Công cụ đo ghi nhận lượt truy cập sau vài ngày.',
+      who: 'Quản trị, lập trình web', src: 'Xác nhận từ chủ website; curl' },
+
+    { g: 'month', t: 'Viết meta description cho các trang còn thiếu (54 trang)',
+      why: 'Gồm 8 trang thật: <code>/phong-bep/</code>, <code>/phong-ngu/</code>, <code>/phong-khach-sofa/</code>, <code>/phong-cach-ke-tv/</code>, <code>/hoat-dong-cua-moc-chat/</code>, <code>/tu-van-noi-that/</code>, <code>/tu-van-noi-that/vat-lieu/</code>, <code>/tu-van-noi-that/vat-lieu/go-oc-cho/</code>. Thêm 9 trang Video Library mới vào sitemap, và 37 phân trang hoặc URL biến thể (trang tác giả, <code>/page/N/</code>, <code>?per_page=</code>).',
+      how: 'Viết mô tả khoảng 70–160 ký tự cho 8 trang thật và 9 trang video. Với các biến thể <code>?per_page=</code>, phân trang và trang tác giả, đặt canonical về trang gốc hoặc noindex.',
+      verify: 'Site audit không còn báo thiếu meta ở các trang thật.',
+      who: 'Nội dung', src: 'OpenSEO (audit lần 7)' },
+    { g: 'month', t: 'Cho phép phóng to trên điện thoại',
+      why: 'Thẻ viewport đang đặt <code>maximum-scale=1.0, user-scalable=no</code>, chặn người dùng phóng to chữ và ảnh. Ảnh nội thất cần phóng to để xem chi tiết.',
+      how: 'Đổi thành <code>width=device-width, initial-scale=1</code>. Theme Woodmart in thẻ này, chưa xác nhận có tùy chọn trong Theme Settings, nếu không có thì cần sửa bằng theme con.',
+      verify: 'Lighthouse không còn báo lỗi viewport trong mục truy cập.',
+      who: 'Lập trình web', src: 'SEOquake, Lighthouse, curl' },
+    { g: 'month', t: 'Gộp nội dung trùng và sửa thẻ H1',
+      why: 'Bài Vinhomes Riverside tồn tại ở hai URL. Hai trang <code>/tu-van-noi-that/</code> và <code>/tu-van-noi-that/vat-lieu/</code> trùng nội dung, đều thiếu meta và H1. Audit lần 7: 25 trang thiếu H1 (gồm <code>/gioi-thieu/</code>, <code>/du-an/</code>, <code>/video-library/</code>), 13 trang nhiều thẻ H1, 6 meta description trùng.',
+      how: 'Chọn một URL chính cho bài Vinhomes và 301 URL còn lại. Viết nội dung riêng cho hai trang hub. Viết meta riêng cho từng cặp trùng. Giữ một H1 mỗi trang.',
+      verify: 'Site audit không còn báo trùng nội dung, trùng meta và nhiều H1.',
+      who: 'Nội dung, lập trình web', src: 'OpenSEO (audit lần 7)' },
+    { g: 'month', t: 'Lập rank tracker và mở rộng từ khóa cụm tủ rượu',
+      why: 'Danh sách đã lưu chỉ có "tủ rượu gỗ óc chó" (90 lượt tìm). Các từ rộng hơn như "tủ rượu" (4.400), "tủ rượu phòng khách" (1.600), "tủ rượu đẹp" (1.000) chưa được theo dõi, trong khi đối thủ mới ở vị trí 18–21.',
+      how: 'Bổ sung các từ này, tạo rank tracker cho 7 từ khóa chính, đối chiếu title và H1 của trang <code>/noi-that-go-oc-cho/tu-ruou-go-oc-cho/</code>. Rank tracker dùng dữ liệu bên ngoài nên tốn phí, cần xem ước tính chi phí trước.',
+      verify: 'Có số đo thứ hạng đầu tiên của mocchat.vn cho các từ khóa mục tiêu.',
+      who: 'SEO', src: 'OpenSEO' },
+
+    { g: 'later', t: 'Giảm thời gian phản hồi của máy chủ khi chưa có cache',
+      why: 'Mọi yêu cầu chưa có cache mất 3 đến 6 giây, trong khi trang có cache chỉ 0,13 giây. Máy chủ chạy PHP 8.0 và MariaDB 10.3 (cả hai đã hết hỗ trợ), không thấy object cache. Audit báo 221 trang phản hồi chậm.',
+      how: 'Nâng PHP lên 8.2 hoặc 8.3 (sao lưu trước, thử các plugin Elementor, JetEngine, Woodmart, FlyingPress). Hỏi hosting về Redis. Cài tạm Query Monitor để tìm plugin nặng khi khởi động.',
+      verify: 'Thời gian phản hồi của trang chưa cache và số trang bị báo chậm giảm trong lần audit sau.',
+      who: 'Lập trình web, hosting', src: 'curl, Site Health, OpenSEO' },
+    { g: 'later', t: 'Sửa link gốc trong template (không bắt buộc)',
+      why: '17 link hỏng đã được chuyển hướng 301 nên không còn lỗi, nhưng các trang nguồn vẫn chứa link tới URL cũ, mỗi lần bấm mất thêm một bước chuyển hướng.',
+      how: 'Sửa link trực tiếp trong template của các trang bàn ăn (baoc-NN) và 6 trang gỗ óc chó.',
+      verify: 'Không còn link nội bộ nào đi qua chuyển hướng.',
+      who: 'Lập trình web', src: 'OpenSEO, curl' },
+    { g: 'later', t: 'Bổ sung schema doanh nghiệp',
+      why: 'Schema Organization chỉ có tên, chưa có logo, địa chỉ, điện thoại. Trang chủ đang được gắn kiểu Article.',
+      how: 'Thêm LocalBusiness (cửa hàng nội thất) với địa chỉ showroom hoặc nhà máy thật, số điện thoại, giờ mở cửa và logo (Rank Math → Tiêu đề &amp; mô tả → SEO Local). Website bán toàn quốc nên không cần gắn tên thành phố vào nội dung SEO. Gợi ý, cần kiểm tra bằng công cụ thử dữ liệu có cấu trúc.',
+      verify: 'Công cụ kiểm tra schema không báo lỗi; thông tin doanh nghiệp được nhận diện.',
+      who: 'Lập trình web', src: 'SEOquake (gợi ý chưa kiểm chứng)' },
+    { g: 'later', t: 'Kiểm tra trang bàn trà btoc-16',
+      why: 'Trang <code>/noi-that-go-oc-cho/ban-tra-go-oc-cho/btoc-16/</code> từng hết thời gian chờ 16 giây (audit lần 2) và có trong sitemap. Chưa kiểm tra lại.',
+      how: 'Mở trang và kiểm tra lỗi hoặc truy vấn chậm.',
+      verify: 'Trang tải bình thường trong audit sau.',
+      who: 'Lập trình web', src: 'OpenSEO (audit lần 2)' },
+    { g: 'later', t: 'Bật HSTS',
+      why: 'Phản hồi của trang chủ thiếu header Strict-Transport-Security. Đây là bảo mật nâng cao, chỉ nên bật sau khi chắc chắn HTTPS chạy ổn trên toàn site.',
+      how: 'Bật HSTS ở Cloudflare hoặc máy chủ.',
+      verify: 'Header Strict-Transport-Security xuất hiện trong phản hồi.',
+      who: 'Lập trình web, hosting', src: 'SEOquake, curl' },
+    { g: 'later', t: 'Xem lại robots.txt nếu định dùng công cụ SEO khác',
+      why: 'File robots.txt chặn AhrefsBot, SemrushBot, MJ12bot, Dotbot, "Screaming" (Screaming Frog), Rogerbot, SEOkicks, serpstatbot bằng hàng trăm dòng riêng. Screaming Frog mặc định tuân thủ robots.txt nên sẽ không quét được. OpenSEO và Googlebot không bị ảnh hưởng.',
+      how: 'Chỉ cần xử lý nếu muốn dùng các công cụ trên. Có thể tắt tuân thủ robots.txt trong công cụ, hoặc cho phép bot cần dùng.',
+      verify: 'Công cụ quét được website.',
+      who: 'Quản trị website', src: 'curl' }
+  ];
+
+  var host = document.getElementById('tasks');
+  var n = 0;
+  var html = '';
+  GROUPS.forEach(function (g) {
+    var items = TASKS.filter(function (t) { return t.g === g.k; });
+    html += '<div class="grp"><div class="grp-h"><h3><span class="pri ' + g.k + '">' + g.label + '</span>' + items.length + ' việc</h3><span>' + g.hint + '</span></div>';
+    items.forEach(function (t) {
+      n += 1;
+      var tag = t.tag ? '<span class="st ' + t.tag[0] + '">' + t.tag[1] + '</span>' : '';
+      html += '<article class="task"><div class="no">' + n + '</div><div>' +
+        '<h4>' + t.t + tag + '</h4><p class="why">' + t.why + '</p>' +
+        '<dl><dt>Cách làm</dt><dd>' + t.how + '</dd><dt>Kiểm tra</dt><dd>' + t.verify + '</dd></dl></div>' +
+        '<div class="side"><div><b>Người làm</b>' + t.who + '</div><div><b>Nguồn</b>' + t.src + '</div></div></article>';
+    });
+    html += '</div>';
+  });
+  host.innerHTML = html;
+  host.style.display = 'flex';
+  host.style.flexDirection = 'column';
+  host.style.gap = '24px';
+})();
+</script>
+
+</body></html>
