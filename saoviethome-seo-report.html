@@ -474,8 +474,12 @@
               <li>
                 Lần 1 dừng ở giới hạn 1.000 trang nên chưa quét hết. Lần 2 quét
                 hết 595 trang. Lần 2 loại trừ <code>?shop_view=list</code> và
-                <code>?per_row=</code>, nên các URL <code>?shop_view=grid</code>
-                (nếu có) không được loại, chưa kiểm tra.
+                <code>?per_row=</code>. Trong lần 1, các URL
+                <code>?shop_view=grid</code> đều có kèm <code>?per_row=</code>
+                đứng trước, nên cũng được loại. Lần 2 không còn URL nào chứa
+                <code>shop_view</code>. Chưa biết có URL chỉ có
+                <code>?shop_view=grid</code> (không kèm <code>per_row</code>)
+                hay không.
               </li>
               <li>
                 Số lỗi 4xx tăng từ 21 lên 29 vì lần 2 tìm thêm được các URL đã
