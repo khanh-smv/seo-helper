@@ -48,7 +48,7 @@
           H1 (từ 25 xuống 0), nhiều H1 (từ 13 xuống 0), thiếu meta description
           ở các trang chính (từ 54 xuống 0), link nội bộ hỏng (từ 17 xuống 0)
           và ảnh thiếu alt (từ 551 xuống 0). Các trang chuyển hướng 301 đã chạy
-          ở Cloudflare nên nhanh hơn nhiều. Còn lại: trang chủ trên điện thoại
+          ở Cloudflare nên nhanh hơn nhiều. Lỗi heading nhảy cấp giảm từ 365 xuống 27 trang và trang phản hồi chậm từ 45 xuống 1. Còn lại: trang chủ trên điện thoại
           vẫn chậm (LCP khoảng 15,7 giây khi mô phỏng), CLS tăng lên 0,14 sau
           khi bật tải lười cho carousel, chưa có công cụ đo truy cập, 6 meta
           description trùng và các trang nội dung trùng chờ người làm nội dung
@@ -60,8 +60,8 @@
           <span><b>Dữ liệu:</b> 20–25/11/2026</span>
           <span
             ><b>Audit so sánh:</b> lần 4 (trước, 696 trang), lần 7
-            (21/11, 700 trang) và lần mới nhất (25/11, 474 trang, đã loại
-            trừ phân trang và URL tham số)</span
+            (21/11, 700 trang) và lần mới nhất (25/11 lúc 08:35, 474 trang,
+            đã loại trừ phân trang và URL tham số)</span
           >
         </div>
         <nav class="jump" aria-label="Đi tới">
@@ -157,6 +157,20 @@
                 <td class="n">0</td>
                 <td><span class="st ok">Đã xử lý</span></td>
                 <td>Các H1 thừa trong nội dung đổi thành H2</td>
+              </tr>
+              <tr>
+                <th scope="row">Heading nhảy cấp (H1 → H3, H5…)</th>
+                <td class="n">365</td>
+                <td class="n">27</td>
+                <td><span class="st ok">Đã giảm</span></td>
+                <td>Số 365 là audit sáng 25/11. Sau audit mới nhất đã sửa thêm 9 bài, còn khoảng 18 trang danh mục sản phẩm (chưa audit lại)</td>
+              </tr>
+              <tr>
+                <th scope="row">Trang phản hồi máy chủ chậm</th>
+                <td class="n">45</td>
+                <td class="n">1</td>
+                <td><span class="st ok">Đã giảm</span></td>
+                <td>Còn 1 trang (1,96 giây). Audit sáng 25/11 chạy ngay sau khi cache bị xóa nên báo nhiều hơn thực tế</td>
               </tr>
               <tr>
                 <th scope="row">Meta description trùng</th>
@@ -333,6 +347,41 @@
                   Audit mới nhất: thiếu meta description 54 xuống 0. Đã thấy mô
                   tả trong HTML công khai của 7/8 trang. Trang Gỗ óc chó cần
                   xóa cache để hiện.
+                </td>
+                <td><span class="st ok">Xong</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Sửa title và meta của 3 trang</th>
+                <td>
+                  Trang Quy trình: meta "Trang chủ" thay bằng mô tả 145 ký tự
+                  theo đúng nội dung trang. Trang Liên Hệ: title 7 ký tự đổi
+                  thành "Liên Hệ Nội Thất Gỗ Óc Chó | Mộc Chất". Trang lưu
+                  trữ Dự Án: meta "Dự Án Archive - Mộc Chất" thay bằng mô tả
+                  138 ký tự.
+                </td>
+                <td>
+                  Kiểm tra bằng curl: cả 3 trang hiện đúng nội dung mới.
+                  Trong audit mới nhất, title quá ngắn còn 1 và meta quá ngắn
+                  còn 1 (cùng là trang <code>/san-pham/</code>, đã noindex,
+                  không sửa).
+                </td>
+                <td><span class="st ok">Xong</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Sửa heading nhảy cấp trên toàn site</th>
+                <td>
+                  Tiêu đề 3 widget chân trang đổi từ H5 sang H2 (snippet
+                  WPCode). Tiêu đề "Sản Phẩm Khác" và "Thông Tin Quý Khách"
+                  đổi từ H4 sang H2, tiêu đề "12+ Năm kinh nghiệm…" ở trang
+                  chủ đổi từ H3 sang H2 (Elementor). 9 bài (4 sản phẩm, 4 dự
+                  án, 1 bài thi công) đổi H3 đầu bài thành H2. Chỉ đổi thẻ,
+                  không đổi chữ.
+                </td>
+                <td>
+                  Audit mới nhất: 365 xuống 27 trang. 9 bài sửa sau audit, đã
+                  đọc lại từng trang và không còn nhảy cấp. Kiểu chữ đo lại:
+                  tiêu đề trang chủ giữ nguyên 18px; tiêu đề trong bài lớn hơn
+                  2px (22px lên 24px).
                 </td>
                 <td><span class="st ok">Xong</span></td>
               </tr>
@@ -531,7 +580,7 @@
 
         <h3>
           Kết quả site audit: lần 4 (trước), lần 7 (21/11) và lần mới nhất
-          (25/11)
+          (25/11, 08:35)
         </h3>
         <div class="tablebox">
           <table style="min-width: 760px">
@@ -584,6 +633,28 @@
                 <td>H1 thừa đổi thành H2</td>
               </tr>
               <tr>
+                <th scope="row">Heading nhảy cấp</th>
+                <td class="n">—</td>
+                <td class="n">—</td>
+                <td class="n">27</td>
+                <td>
+                  Audit 04:00 cùng ngày: 365. Nguyên nhân chính là tiêu đề
+                  widget chân trang (H5) và "Sản Phẩm Khác" (H4). Còn lại: 18
+                  trang danh mục sản phẩm (tên sản phẩm là H3 do theme tạo) và
+                  9 bài đã sửa sau audit
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Title và meta quá dài, quá ngắn</th>
+                <td class="n">—</td>
+                <td class="n">—</td>
+                <td class="n">75 / 29 / 1 / 1</td>
+                <td>
+                  Title dài / meta dài / title ngắn / meta ngắn. Mức thông tin,
+                  chưa sửa (xem việc còn lại)
+                </td>
+              </tr>
+              <tr>
                 <th scope="row">Meta description trùng</th>
                 <td class="n">6</td>
                 <td class="n">6</td>
@@ -608,12 +679,14 @@
                 <th scope="row">Phản hồi máy chủ chậm</th>
                 <td class="n">174</td>
                 <td class="n">221</td>
-                <td class="n">45</td>
+                <td class="n">1</td>
                 <td>
-                  Mức thông tin. Giảm nhờ loại phân trang và tham số khỏi quét.
-                  Trang bị báo chậm lần này đo lại bằng curl đều có cache và trả
-                  về trong 0,13–0,28 giây. Nhiều khả năng crawler vào lúc cache
-                  vừa bị xóa sau khi lưu bài
+                  Mức thông tin. Audit sáng 25/11 (04:00) báo 45 trang; các
+                  URL đó đo lại bằng curl đều có cache và trả về trong
+                  0,13–0,28 giây. Audit 08:35 chạy sau khi cache dựng lại chỉ
+                  còn 1 trang (<code>/go-oc-cho-co-bi-moi-mot-khong/</code>,
+                  1,96 giây), phù hợp với giả thuyết crawler gặp trang vừa bị
+                  xóa cache
                 </td>
               </tr>
               <tr>
@@ -864,9 +937,10 @@
               việc số 1.
             </li>
             <li>
-              Phần "phản hồi chậm" của audit mới nhất chưa kiểm chứng hết: chỉ
-              đo lại bằng curl một số URL, kết luận cache vừa bị xóa là suy
-              luận.
+              Nguyên nhân phản hồi chậm (45 xuống 1) là suy luận từ việc số
+              trang giảm khi cache đã dựng lại, chưa đo trực tiếp trên máy chủ.
+              Số heading nhảy cấp sau khi sửa 9 bài (còn khoảng 18) chưa được
+              audit lại.
             </li>
           </ul>
         </div>
@@ -875,7 +949,7 @@
           <ul>
             <li>
               <b>OpenSEO:</b> site audit lần 4 (trước, 696 trang), lần 7
-              (21/11, 700 trang) và lần mới nhất (25/11, 474 trang), Lighthouse lần 1, nghiên cứu từ khóa, kết quả tìm kiếm
+              (21/11, 700 trang) và lần mới nhất (25/11 lúc 08:35, 474 trang), Lighthouse lần 1, nghiên cứu từ khóa, kết quả tìm kiếm
               của 3 từ khóa, từ khóa xếp hạng và backlink của đối thủ.
             </li>
             <li>

@@ -114,12 +114,30 @@
     {
       g: "later",
       t: "Giảm thời gian phản hồi của máy chủ khi chưa có cache",
-      why: "Mọi yêu cầu chưa có cache mất 3 đến 6 giây, trong khi trang có cache chỉ 0,13 giây. Máy chủ chạy PHP 8.0 và MariaDB 10.3 (cả hai đã hết hỗ trợ), không thấy object cache. Redirect của Rank Math cũng chạy bằng PHP nên mất khoảng 2 giây mỗi lần (đã chuyển phần lớn sang Cloudflare). Audit 25/11 báo 45 trang phản hồi chậm.",
+      why: "Mọi yêu cầu chưa có cache mất 3 đến 6 giây, trong khi trang có cache chỉ 0,13 giây. Máy chủ chạy PHP 8.0 và MariaDB 10.3 (cả hai đã hết hỗ trợ), không thấy object cache. Redirect của Rank Math cũng chạy bằng PHP nên mất khoảng 2 giây mỗi lần (đã chuyển phần lớn sang Cloudflare). Audit sáng 25/11 báo 45 trang phản hồi chậm, audit sau khi cache dựng lại (08:35) chỉ còn 1 trang, nên phần lớn do cache bị xóa sau mỗi lần lưu.",
       how: "Nâng PHP lên 8.2 hoặc 8.3 (sao lưu trước, thử các plugin Elementor, JetEngine, Woodmart, FlyingPress). Hỏi hosting về Redis. Cài tạm Query Monitor để tìm plugin nặng khi khởi động.",
       verify:
         "Thời gian phản hồi của trang chưa cache và số trang bị báo chậm giảm trong lần audit sau.",
       who: "Lập trình web, hosting",
       src: "curl, Site Health, OpenSEO",
+    },
+    {
+      g: "later",
+      t: "Rút gọn title và meta description quá dài",
+      why: "Audit 25/11 báo 75 title dài hơn 60 ký tự (phần lớn là trang sản phẩm có hậu tố \" | Mộc Chất\", vượt 1 đến 10 ký tự) và 29 meta description dài hơn 160 ký tự. Google có thể cắt bớt khi hiển thị. Mức thông tin.",
+      how: "Rank Math → Tiêu đề &amp; mô tả: sửa mẫu title của sản phẩm để bỏ hậu tố tên site, rồi rút gọn riêng từng bài dài nhất. Cần lập danh sách đề xuất để duyệt trước khi sửa.",
+      verify: "Số title và meta quá dài trong audit sau giảm.",
+      who: "SEO, người làm nội dung",
+      src: "OpenSEO (audit 25/11)",
+    },
+    {
+      g: "later",
+      t: "Heading nhảy cấp ở 18 trang danh mục sản phẩm (không bắt buộc)",
+      why: "Tên sản phẩm trong danh sách là H3 ngay sau H1 do mã của theme Woodmart tạo ra. Template Product archive và cài đặt theme không có tùy chọn đổi thẻ. Mức thông tin, không ảnh hưởng thứ hạng.",
+      how: "Chỉ làm nếu cần: snippet PHP thay hàm hiển thị tên sản phẩm của theme (có rủi ro làm lệch giao diện danh sách và khối sản phẩm liên quan), hoặc thêm một tiêu đề H2 vào template (cần duyệt chữ).",
+      verify: "Audit không còn báo heading nhảy cấp ở các trang danh mục.",
+      who: "Lập trình web",
+      src: "OpenSEO, kiểm tra mã HTML",
     },
     {
       g: "later",
