@@ -82,17 +82,6 @@
     },
     {
       g: "month",
-      t: "Sửa lỗi redirect Rank Math khi URL có tham số",
-      tag: ["warn", "Mới phát hiện"],
-      why: "Regex <code>^tu-van-noi-that/vat-lieu/go-oc-cho/([^/]+)/?$</code> trong Rank Math cũng khớp với đường dẫn có chuỗi truy vấn. Vì vậy <code>…/go-oc-cho/?z=abc</code> bị chuyển hướng 301 sang <code>/1/?z=abc</code>, là trang 404. Các tham số quảng cáo thường gặp (<code>utm_source</code>, <code>fbclid</code>, <code>gclid</code>) không bị lỗi (đã thử bằng curl).",
-      how: "Trong Rank Math → Chuyển hướng, đổi biểu thức thành <code>^tu-van-noi-that/vat-lieu/go-oc-cho/([^/?]+)/?$</code> để slug không chứa dấu hỏi chấm.",
-      verify:
-        "Các URL <code>…/go-oc-cho/?z=abc</code> và <code>?ver=2026</code> trả 200 thay vì 301.",
-      who: "Quản trị website",
-      src: "curl (25/11)",
-    },
-    {
-      g: "month",
       t: "Kiểm tra lỗi 526 của www.mocchat.vn",
       tag: ["warn", "Mới phát hiện"],
       why: "Địa chỉ <code>https://www.mocchat.vn/</code> trả lỗi 526 (Cloudflare không xác minh được chứng chỉ SSL của máy chủ gốc). Nếu có link hoặc backlink dùng bản www, khách sẽ thấy lỗi. Chưa kiểm tra cấu hình DNS và chứng chỉ.",

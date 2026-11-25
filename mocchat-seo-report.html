@@ -336,6 +336,21 @@
                 <td><span class="st ok">Xong</span></td>
               </tr>
               <tr>
+                <th scope="row">Sửa lỗi chuyển hướng Rank Math khi URL có tham số</th>
+                <td>
+                  Đổi biểu thức của quy tắc gỗ óc chó trong Rank Math để slug
+                  không chứa dấu hỏi chấm (<code>[^/?]+</code>).
+                </td>
+                <td>
+                  Kiểm tra bằng curl (25/11): <code>…/go-oc-cho/?z=abc</code>
+                  và <code>?ver=2026</code> trả 200 thay vì chuyển hướng 301
+                  sang trang 404. Các URL cũ có tham số vẫn chuyển hướng đúng
+                  về URL mới và giữ tham số, nhưng vẫn chậm khoảng 2,7 đến 3,2
+                  giây vì do Rank Math (PHP) xử lý, chưa nằm ở Cloudflare.
+                </td>
+                <td><span class="st ok">Xong</span></td>
+              </tr>
+              <tr>
                 <th scope="row">Sửa title và meta của 3 trang</th>
                 <td>
                   Trang Quy trình: meta "Trang chủ" thay bằng mô tả 145 ký tự
