@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <title>Báo cáo SEO Sao Việt Home</title>
+    <meta name="claude:viewport-fit-sides" content="cover" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    />
+    <link rel="stylesheet" href="css/shared.css" />
+    <link rel="stylesheet" href="css/report.css" />
+    <link rel="stylesheet" href="css/sidenav.css" />
+  </head>
+  <body class="has-sidenav">
+    <nav class="sidenav" aria-label="Điều hướng">
+      <div class="sidenav-back"><a href="index.html">← Quay lại</a></div>
+      <div class="sidenav-label">Nội dung</div>
+      <ul>
+        <li><a href="#tinh-trang">Tình trạng</a></li>
+        <li><a href="#viec-can-lam">Việc cần làm</a></li>
+        <li><a href="#do-luong">Đo lường truy cập</a></li>
+        <li><a href="#bang-chung">Bằng chứng</a></li>
+        <li><a href="#gioi-han">Nguồn và giới hạn</a></li>
+      </ul>
+    </nav>
+    <main class="page-main">
+      <div class="wrap">
+        <header>
+          <div style="margin-bottom: 24px">
+            <div class="eyebrow">Audit đầu tiên · 25/11/2026</div>
+          </div>
+          <h1>Báo cáo SEO Sao Việt Home</h1>
+          <p class="lede">
+            Đây là lần audit đầu tiên của saoviethome.vn, chưa có lần sửa nào.
+            Audit quét 1.000 trang và dừng ở giới hạn, trong đó 42% là URL
+            tham số <code>?shop_view=</code> và <code>?per_row=</code> nên số
+            lỗi trông lớn hơn thực tế. Lỗi nặng nhất là 330 liên kết trỏ tới 18
+            URL đã chết, trang chủ không có H1, và chưa có công cụ đo truy cập
+            nào hoạt động (container Tag Manager không có thẻ GA4, chỉ có thẻ
+            Universal Analytics đã ngừng từ năm 2023). Báo cáo này chỉ dựa trên audit và
+            kiểm tra trực tiếp, chưa có số liệu Search Console hay GA4.
+          </p>
+          <div class="meta">
+            <span><b>Website:</b> saoviethome.vn</span>
+            <span><b>Thị trường:</b> Việt Nam, tiếng Việt</span>
+            <span><b>Dữ liệu:</b> 25/11/2026</span>
+            <span
+              ><b>Audit:</b> 25/11 lúc 09:10, 1.000 trang (dừng ở giới hạn),
+              đã loại <code>/cart/</code>, <code>/my-account/</code>,
+              <code>/*/page/</code>, <code>?add-to-cart=</code>,
+              <code>?per_page=</code>, <code>?ucterms=</code></span
+            >
+          </div>
+        </header>
+
+        <section id="tinh-trang">
+          <h2>Tình trạng hiện tại</h2>
+          <p class="sub">
+            Cột "trang thật" là số trang không có tham số trong URL, tức là số
+            lỗi sau khi bỏ các URL <code>?shop_view=</code> và
+            <code>?per_row=</code>.
+          </p>
+          <div class="tablebox">
+            <table style="min-width: 760px">
+              <thead>
+                <tr>
+                  <th>Chỉ số</th>
+                  <th class="n">Tất cả</th>
+                  <th class="n">Trang thật</th>
+                  <th>Trạng thái</th>
+                  <th>Ghi chú</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Liên kết nội bộ hỏng</th>
+                  <td class="n">330</td>
+                  <td class="n">218</td>
+                  <td><span class="st crit">Nặng</span></td>
+                  <td>
+                    Chỉ trỏ tới 18 URL 404 (bài cũ năm 2023, danh mục đã xóa)
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Trang trả lỗi 4xx</th>
+                  <td class="n">21</td>
+                  <td class="n">18</td>
+                  <td><span class="st crit">Cần xử lý</span></td>
+                  <td>18 URL đã chết và 3 URL <code>?p=…</code> dạng sản phẩm</td>
+                </tr>
+                <tr>
+                  <th scope="row">Trang thiếu thẻ H1</th>
+                  <td class="n">491</td>
+                  <td class="n">189</td>
+                  <td><span class="st crit">Nặng</span></td>
+                  <td>
+                    Trang chủ, 68 tag sản phẩm, 58 trang tin tức, 44 trang dự án
+                    và 18 trang khác
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Trang có nhiều thẻ H1</th>
+                  <td class="n">124</td>
+                  <td class="n">58</td>
+                  <td><span class="st warn">Cần xử lý</span></td>
+                  <td>Chủ yếu trang sản phẩm có 2 đến 4 H1</td>
+                </tr>
+                <tr>
+                  <th scope="row">Trang thiếu meta description</th>
+                  <td class="n">429</td>
+                  <td class="n">82</td>
+                  <td><span class="st warn">Cần xử lý</span></td>
+                  <td>68 trong 82 là trang tag sản phẩm</td>
+                </tr>
+                <tr>
+                  <th scope="row">Trang có ảnh thiếu alt</th>
+                  <td class="n">906</td>
+                  <td class="n">482</td>
+                  <td><span class="st warn">Cần xử lý</span></td>
+                  <td>
+                    Mỗi trang thiếu đúng 3 ảnh (2.718 ảnh), là ảnh trong
+                    template
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Title trùng / meta description trùng</th>
+                  <td class="n">8 / 18</td>
+                  <td class="n">8 / 18</td>
+                  <td><span class="st warn">Cần xử lý</span></td>
+                  <td>
+                    Cặp danh mục dự án, sản phẩm sfb-15, nhóm kệ tivi, sofa,
+                    giường
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Title dài hơn 60 ký tự</th>
+                  <td class="n">607</td>
+                  <td class="n">—</td>
+                  <td><span class="st warn">Mức thông tin</span></td>
+                  <td>Do hậu tố title dài khoảng 50 ký tự</td>
+                </tr>
+                <tr>
+                  <th scope="row">Trang phản hồi chậm</th>
+                  <td class="n">426</td>
+                  <td class="n">2</td>
+                  <td><span class="st warn">Chủ yếu URL tham số</span></td>
+                  <td>
+                    424 trong 426 là <code>?shop_view=</code>, không được cache,
+                    mất 4,6 giây (trang cache mất 0,33 giây)
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Số trang quét</th>
+                  <td class="n">1.000</td>
+                  <td class="n">569</td>
+                  <td><span class="st warn">Chạm giới hạn</span></td>
+                  <td>
+                    431 URL có tham số (424 là <code>?shop_view=</code>), audit
+                    dừng sớm, còn trang chưa quét
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Công cụ đo truy cập</th>
+                  <td class="n">Không có</td>
+                  <td class="n">—</td>
+                  <td><span class="st crit">Thiếu</span></td>
+                  <td>
+                    Không có GA4, Search Console, Site Kit. Tag Manager chỉ còn
+                    thẻ Universal Analytics đã ngừng
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="viec-can-lam">
+          <h2>Việc cần làm</h2>
+          <p class="sub">
+            Các việc chia theo mức ưu tiên. Thứ tự trong từng nhóm là thứ tự
+            nên làm. Mức tác động lên thứ hạng chưa thể định lượng (chưa có
+            Search Console), nên các việc được xếp theo mức độ chắc chắn của lỗi
+            và độ rộng ảnh hưởng.
+          </p>
+          <div id="tasks"></div>
+        </section>
+
+        <section id="do-luong">
+          <h2>Đo lường truy cập</h2>
+          <p class="sub">
+            Website chưa đo được lượng truy cập và hiệu suất tìm kiếm. Mộc Chất
+            đã nối GA4 và Search Console qua Site Kit, có thể làm theo cách đó.
+          </p>
+          <div class="tablebox">
+            <table style="min-width: 560px">
+              <thead>
+                <tr>
+                  <th>Hạng mục</th>
+                  <th>Tình trạng</th>
+                  <th>Ghi chú</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Google Analytics 4</th>
+                  <td><span class="st crit">Chưa có</span></td>
+                  <td>
+                    Không thấy mã GA4 (<code>gtag</code>, <code>G-…</code>)
+                    trong HTML trang chủ, cũng không có trong container Tag
+                    Manager
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Tag Manager</th>
+                  <td><span class="st warn">Có, đã cũ</span></td>
+                  <td>
+                    Container <code>GTM-T5ZGHG9</code> chỉ chứa thẻ Universal
+                    Analytics (<code>UA-167860943-1</code>), loại Google đã ngừng
+                    ghi dữ liệu từ 1/7/2023. Còn có thẻ chuyển đổi Google Ads
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Search Console</th>
+                  <td><span class="st warn">Chưa nối với OpenSEO</span></td>
+                  <td>
+                    HTML trang chủ có thẻ xác minh Google, nên có thể đã được
+                    xác minh. Chưa có dữ liệu hiệu suất trong báo cáo
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Site Kit</th>
+                  <td><span class="st warn">Chưa cài</span></td>
+                  <td>Không thấy dấu hiệu của plugin trong HTML</td>
+                </tr>
+                <tr>
+                  <th scope="row">Facebook Pixel</th>
+                  <td><span class="st ok">Có</span></td>
+                  <td>
+                    Có mã Pixel trên trang, nên có thể website đang chạy quảng
+                    cáo Facebook
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="src">
+            Nguồn: HTML trang chủ và nội dung container Tag Manager, đọc ngày
+            25/11/2026. "Chưa nối" và "chưa cài" là kết luận từ việc không thấy
+            dấu hiệu, chưa kiểm tra trong trang quản trị của website.
+          </p>
+        </section>
+
+        <section id="bang-chung">
+          <h2>Bằng chứng</h2>
+
+          <h3>Mẫu trang đã kiểm tra trực tiếp bằng curl</h3>
+          <div class="tablebox">
+            <table style="min-width: 760px">
+              <thead>
+                <tr>
+                  <th>Trang</th>
+                  <th>Kết quả</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Trang chủ</th>
+                  <td>
+                    Không có H1. Meta description tự lấy từ nội dung, hai câu
+                    dính liền. Có 3 biểu tượng SVG không có alt. Viewport chặn
+                    phóng to. Không có HSTS. <code>www</code> chuyển hướng 301
+                    đúng
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>/sofa-go-oc-cho-ma-sfb-24/</code></th>
+                  <td>4 thẻ H1 (tên sản phẩm và 3 tiêu đề phần nội dung)</td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>/product-tag/ban-an-go-oc-cho/</code></th>
+                  <td>
+                    Cho phép lập chỉ mục, không có meta description, không có H1
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>/tin-tuc/</code></th>
+                  <td>Không có meta description, không có H1</td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>/shop/</code> và <code>/shop/?shop_view=list</code></th>
+                  <td>
+                    Trang gốc được cache, 0,33 giây. Trang tham số không được
+                    cache, 4,6 giây
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Sơ đồ trang và robots.txt</th>
+                  <td>
+                    Có <code>sitemap_index.xml</code> với 7 sơ đồ con (bài viết,
+                    trang, sản phẩm, danh mục, thẻ bài, danh mục sản phẩm, thẻ
+                    sản phẩm). robots.txt chỉ chặn <code>/wp-admin/</code> và
+                    các thư mục log, không chặn tham số
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Số liệu audit theo loại lỗi</h3>
+          <div class="tablebox">
+            <table style="min-width: 560px">
+              <thead>
+                <tr>
+                  <th>Loại lỗi</th>
+                  <th class="n">Số trang</th>
+                  <th>Mức</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Liên kết nội bộ hỏng</th><td class="n">330</td><td>Nghiêm trọng</td></tr>
+                <tr><th scope="row">Ảnh thiếu alt</th><td class="n">906</td><td>Cảnh báo</td></tr>
+                <tr><th scope="row">Thiếu H1</th><td class="n">491</td><td>Cảnh báo</td></tr>
+                <tr><th scope="row">Thiếu meta description</th><td class="n">429</td><td>Cảnh báo</td></tr>
+                <tr><th scope="row">Nhiều H1</th><td class="n">124</td><td>Cảnh báo</td></tr>
+                <tr><th scope="row">Trang lỗi 4xx</th><td class="n">21</td><td>Cảnh báo</td></tr>
+                <tr><th scope="row">Meta description trùng</th><td class="n">18</td><td>Cảnh báo</td></tr>
+                <tr><th scope="row">Title trùng</th><td class="n">8</td><td>Cảnh báo</td></tr>
+                <tr><th scope="row">Title quá dài</th><td class="n">607</td><td>Thông tin</td></tr>
+                <tr><th scope="row">Phản hồi chậm</th><td class="n">426</td><td>Thông tin</td></tr>
+                <tr><th scope="row">Đã canonical về URL khác</th><td class="n">424</td><td>Thông tin (cùng nhóm <code>?shop_view=</code>)</td></tr>
+                <tr><th scope="row">Trang sâu trong cấu trúc</th><td class="n">290</td><td>Thông tin</td></tr>
+                <tr><th scope="row">Heading nhảy cấp</th><td class="n">213</td><td>Thông tin</td></tr>
+                <tr><th scope="row">Meta description quá dài / quá ngắn</th><td class="n">167 / 11</td><td>Thông tin</td></tr>
+                <tr><th scope="row">Trang noindex</th><td class="n">1</td><td>Thông tin</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="gioi-han">
+          <h2>Nguồn và giới hạn</h2>
+          <div class="note">
+            <strong>Chưa có trong báo cáo này</strong>
+            <ul>
+              <li>
+                Dữ liệu lượng truy cập và hiệu suất tìm kiếm (chưa có GA4 và
+                Search Console), nên chưa biết trang nào có lượt hiển thị hay
+                khách liên hệ.
+              </li>
+              <li>
+                Điểm Lighthouse, LCP, CLS: lần audit này không chạy Lighthouse.
+              </li>
+              <li>
+                Thứ hạng và backlink của saoviethome.vn, và đối thủ. Dự án
+                trong OpenSEO chưa có thông tin về mục tiêu hay đối thủ.
+              </li>
+              <li>
+                Audit dừng ở giới hạn 1.000 trang, nên phần số lỗi chưa gồm
+                các trang chưa quét. Số lỗi sẽ khác sau khi loại các URL tham
+                số.
+              </li>
+              <li>
+                "Trang thật" là các trang không có dấu hỏi chấm trong URL, tính
+                từ danh sách lỗi của audit. Số trang quét thật (569) là 1.000
+                trừ 431 URL có tham số.
+              </li>
+              <li>
+                Các nguyên nhân dự đoán (khối dùng chung chứa link hỏng, H1 thừa
+                nằm ở khối dùng chung, heading nhảy cấp giống Mộc Chất) chưa
+                được kiểm chứng trong trang quản trị, chưa mở template nào.
+              </li>
+            </ul>
+          </div>
+          <div class="src">
+            Nguồn dữ liệu:
+            <ul>
+              <li>
+                <b>OpenSEO:</b> site audit ngày 25/11/2026 (1.000 trang, không
+                chạy Lighthouse), danh sách lỗi theo từng loại.
+              </li>
+              <li>
+                <b>Kiểm tra trực tiếp bằng curl:</b> HTML trang chủ và 5 trang
+                mẫu (H1, meta, canonical, robots, ảnh không có alt), thời gian
+                phản hồi và cache, robots.txt, sơ đồ trang, nội dung container
+                Tag Manager.
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="js/report-saoviethome.js"></script>
+    <script src="js/nav.js"></script>
+  </body>
+</html>
