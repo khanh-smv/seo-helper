@@ -51,12 +51,13 @@
 
     {
       g: "month",
-      t: "Viết meta description cho các trang còn thiếu (54 trang)",
-      why: "Gồm 8 trang thật: <code>/phong-bep/</code>, <code>/phong-ngu/</code>, <code>/phong-khach-sofa/</code>, <code>/phong-cach-ke-tv/</code>, <code>/hoat-dong-cua-moc-chat/</code>, <code>/tu-van-noi-that/</code>, <code>/tu-van-noi-that/vat-lieu/</code>, <code>/tu-van-noi-that/vat-lieu/go-oc-cho/</code>. Thêm 9 trang Video Library mới vào sitemap, và 37 phân trang hoặc URL biến thể (trang tác giả, <code>/page/N/</code>, <code>?per_page=</code>).",
-      how: "Viết mô tả khoảng 70–160 ký tự cho 8 trang thật và 9 trang video. Với các biến thể <code>?per_page=</code>, phân trang và trang tác giả, đặt canonical về trang gốc hoặc noindex.",
-      verify: "Site audit không còn báo thiếu meta ở các trang thật.",
-      who: "Nội dung",
-      src: "OpenSEO (audit lần 7)",
+      t: "Cho FlyingPress cache các URL <code>?per_page=</code> và bật preload",
+      why: "Các URL có <code>?per_page=N</code> không bao giờ được cache (MISS, 2,7 đến 3,1 giây mỗi lần), trong khi URL thường được cache và trả về trong 0,13 đến 0,28 giây. Ngoài ra, mỗi lần lưu bài FlyingPress xóa cache nên crawler và khách vào lúc đó phải chờ máy chủ dựng lại trang: audit mới nhất vẫn báo 45 trang chậm 3,8 đến 6,8 giây dù đo lại bằng curl chúng đều có cache.",
+      how: "Trong FlyingPress → Cache: thêm <code>per_page</code> vào danh sách query string được cache (chưa xác nhận tên mục trong bản 4.14.4) và bật <b>Preload cache</b> sau khi xóa cache. Có thể thêm <code>Disallow: /*?per_page=</code> vào robots.txt sau khi bật cache.",
+      verify:
+        "Đo lại bằng curl: URL <code>?per_page=</code> trả HIT; số trang chậm trong audit sau giảm.",
+      who: "Quản trị website",
+      src: "curl, OpenSEO (audit 25/11)",
     },
     {
       g: "month",
@@ -69,13 +70,35 @@
     },
     {
       g: "month",
-      t: "Gộp nội dung trùng và sửa thẻ H1",
-      why: "Bài Vinhomes Riverside tồn tại ở hai URL. Hai trang <code>/tu-van-noi-that/</code> và <code>/tu-van-noi-that/vat-lieu/</code> trùng nội dung, đều thiếu meta và H1. Audit lần 7: 25 trang thiếu H1 (gồm <code>/gioi-thieu/</code>, <code>/du-an/</code>, <code>/video-library/</code>), 13 trang nhiều thẻ H1, 6 meta description trùng.",
-      how: "Chọn một URL chính cho bài Vinhomes và 301 URL còn lại. Viết nội dung riêng cho hai trang hub. Viết meta riêng cho từng cặp trùng. Giữ một H1 mỗi trang.",
+      t: "Xử lý các trang nội dung trùng (chờ người làm nội dung quyết định)",
+      tag: ["warn", "Chờ quyết định"],
+      why: "Đã so sánh nội dung từng cặp: <b>Hoa Sữa</b> (hai URL, 41/50 câu giống hệt, cả hai không có lượt hiển thị trong Search Console 28 ngày), <b>T Villa Hoài Đức</b> (hai bài, khoảng 62% câu giống), <b>Tuấn Dung Ninh Hiệp</b> (hai bài cùng dự án nhưng nội dung khác hẳn nhau, một bài thi công và một bài thiết kế), <b>BAOC-22 và BAOC-23</b> (hai sản phẩm khác nhau nhưng meta description giống nhau, 6/18 câu chung). Bài Anh Mạnh Ninh Hiệp là dự án khác, không cần xử lý. Chủ website quyết định giữ nguyên tất cả các trang vì không phải người làm nội dung.",
+      how: "Hoa Sữa: 301 bản ở root về bản <code>/du-an/</code> (đầy đủ hơn, 50 ảnh so với 13) và sửa link nội bộ. T Villa và Tuấn Dung: gộp về bài có nhiều nội dung và lượt hiển thị hơn, hoặc viết lại để mỗi bài nhắm một chủ đề khác nhau. BAOC-22 và BAOC-23: viết mô tả riêng cho từng sản phẩm.",
       verify:
-        "Site audit không còn báo trùng nội dung, trùng meta và nhiều H1.",
-      who: "Nội dung, lập trình web",
-      src: "OpenSEO (audit lần 7)",
+        "Site audit không còn báo meta description trùng và nội dung trùng; Search Console không còn hai URL cạnh tranh cùng một chủ đề.",
+      who: "Nội dung",
+      src: "So sánh nội dung bằng curl, Search Console qua OpenSEO",
+    },
+    {
+      g: "month",
+      t: "Sửa lỗi redirect Rank Math khi URL có tham số",
+      tag: ["warn", "Mới phát hiện"],
+      why: "Regex <code>^tu-van-noi-that/vat-lieu/go-oc-cho/([^/]+)/?$</code> trong Rank Math cũng khớp với đường dẫn có chuỗi truy vấn. Vì vậy <code>…/go-oc-cho/?z=abc</code> bị chuyển hướng 301 sang <code>/1/?z=abc</code>, là trang 404. Các tham số quảng cáo thường gặp (<code>utm_source</code>, <code>fbclid</code>, <code>gclid</code>) không bị lỗi (đã thử bằng curl).",
+      how: "Trong Rank Math → Chuyển hướng, đổi biểu thức thành <code>^tu-van-noi-that/vat-lieu/go-oc-cho/([^/?]+)/?$</code> để slug không chứa dấu hỏi chấm.",
+      verify:
+        "Các URL <code>…/go-oc-cho/?z=abc</code> và <code>?ver=2026</code> trả 200 thay vì 301.",
+      who: "Quản trị website",
+      src: "curl (25/11)",
+    },
+    {
+      g: "month",
+      t: "Kiểm tra lỗi 526 của www.mocchat.vn",
+      tag: ["warn", "Mới phát hiện"],
+      why: "Địa chỉ <code>https://www.mocchat.vn/</code> trả lỗi 526 (Cloudflare không xác minh được chứng chỉ SSL của máy chủ gốc). Nếu có link hoặc backlink dùng bản www, khách sẽ thấy lỗi. Chưa kiểm tra cấu hình DNS và chứng chỉ.",
+      how: "Xem lại bản ghi DNS của www trên Cloudflare, và chứng chỉ SSL ở máy chủ gốc. Sau đó chuyển hướng www về bản không có www.",
+      verify: "<code>https://www.mocchat.vn/</code> trả 301 về <code>https://mocchat.vn/</code>.",
+      who: "Quản trị website, hosting",
+      src: "curl (23/11)",
     },
     {
       g: "month",
@@ -91,12 +114,21 @@
     {
       g: "later",
       t: "Giảm thời gian phản hồi của máy chủ khi chưa có cache",
-      why: "Mọi yêu cầu chưa có cache mất 3 đến 6 giây, trong khi trang có cache chỉ 0,13 giây. Máy chủ chạy PHP 8.0 và MariaDB 10.3 (cả hai đã hết hỗ trợ), không thấy object cache. Audit báo 221 trang phản hồi chậm.",
+      why: "Mọi yêu cầu chưa có cache mất 3 đến 6 giây, trong khi trang có cache chỉ 0,13 giây. Máy chủ chạy PHP 8.0 và MariaDB 10.3 (cả hai đã hết hỗ trợ), không thấy object cache. Redirect của Rank Math cũng chạy bằng PHP nên mất khoảng 2 giây mỗi lần (đã chuyển phần lớn sang Cloudflare). Audit 25/11 báo 45 trang phản hồi chậm.",
       how: "Nâng PHP lên 8.2 hoặc 8.3 (sao lưu trước, thử các plugin Elementor, JetEngine, Woodmart, FlyingPress). Hỏi hosting về Redis. Cài tạm Query Monitor để tìm plugin nặng khi khởi động.",
       verify:
         "Thời gian phản hồi của trang chưa cache và số trang bị báo chậm giảm trong lần audit sau.",
       who: "Lập trình web, hosting",
       src: "curl, Site Health, OpenSEO",
+    },
+    {
+      g: "later",
+      t: "Gỡ chức năng giỏ hàng khi website không bán hàng",
+      why: "Website không bán hàng nên giỏ hàng là thừa: nút thêm vào giỏ trên trang dự án tạo ra các URL <code>?add-to-cart=</code> mà Google đã ghi nhận (3 URL trong Search Console), mini-cart và script giỏ hàng vẫn tải trên mọi trang. Đã loại trang giỏ hàng khỏi sitemap và đã chuyển hướng bỏ tham số <code>?add-to-cart=</code> ở Cloudflare.",
+      how: "Tắt nút thêm vào giỏ và mini-cart trong Woodmart → Theme settings (mục Shop, Header). Nếu còn cần hiển thị giá hoặc nút báo giá, giữ lại phần đó.",
+      verify: "Không còn nút thêm vào giỏ và không còn tải script giỏ hàng trên trang thường.",
+      who: "Lập trình web",
+      src: "Search Console, curl",
     },
     {
       g: "later",

@@ -46,56 +46,6 @@ section {
   background: var(--accent);
 }
 
-/* --- Snapshot / KPI cards --- */
-.snap {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 16px;
-}
-
-.snap > div {
-  padding: 20px;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: var(--card);
-  box-shadow: var(--shadow);
-}
-
-.snap .k {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--muted-foreground);
-}
-
-.snap .v {
-  font-size: 1.75rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  font-variant-numeric: tabular-nums;
-}
-
-.snap .v s {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--muted-foreground);
-  letter-spacing: 0;
-  margin-left: 6px;
-}
-
-.snap .n {
-  font-size: 0.8125rem;
-  color: var(--muted-foreground);
-}
-
-.snap .st {
-  align-self: flex-start;
-}
-
 /* --- Priority badges --- */
 .pri {
   display: inline-flex;

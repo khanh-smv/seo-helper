@@ -40,25 +40,28 @@
             "
             >← Quay lại</a
           >
-          <div class="eyebrow">Cập nhật 21/11/2026 · Sau đợt sửa đầu tiên</div>
+          <div class="eyebrow">Cập nhật 25/11/2026 · Sau hai đợt sửa</div>
         </div>
         <h1>Báo cáo SEO Mộc Chất</h1>
         <p class="lede">
-          Sau đợt sửa ngày 21/11: không còn link nội bộ hỏng (từ 17 xuống 0),
-          không còn ảnh thiếu alt (từ 551 xuống 0), title, mô tả và từ khóa
-          chính của trang chủ đã sửa, danh mục sản phẩm đã vào sitemap và Google
-          đã đọc, dung lượng tải của trang chủ giảm khoảng 62%. Còn lại: trang
-          chủ trên điện thoại vẫn chậm (LCP khoảng 15,7 giây khi mô phỏng), chỉ
-          số CLS tăng lên 0,14 sau khi bật tải lười cho carousel, chưa có công
-          cụ đo truy cập, và 54 trang còn thiếu mô tả.
+          Sau hai đợt sửa (21/11 và 25/11), audit mới nhất không còn lỗi thiếu
+          H1 (từ 25 xuống 0), nhiều H1 (từ 13 xuống 0), thiếu meta description
+          ở các trang chính (từ 54 xuống 0), link nội bộ hỏng (từ 17 xuống 0)
+          và ảnh thiếu alt (từ 551 xuống 0). Các trang chuyển hướng 301 đã chạy
+          ở Cloudflare nên nhanh hơn nhiều. Còn lại: trang chủ trên điện thoại
+          vẫn chậm (LCP khoảng 15,7 giây khi mô phỏng), CLS tăng lên 0,14 sau
+          khi bật tải lười cho carousel, chưa có công cụ đo truy cập, 6 meta
+          description trùng và các trang nội dung trùng chờ người làm nội dung
+          quyết định.
         </p>
         <div class="meta">
           <span><b>Website:</b> mocchat.vn</span>
           <span><b>Thị trường:</b> Việt Nam, tiếng Việt</span>
-          <span><b>Dữ liệu:</b> 20–21/11/2026</span>
+          <span><b>Dữ liệu:</b> 20–25/11/2026</span>
           <span
-            ><b>Audit so sánh:</b> lần 4 (trước, 696 trang) và lần 7 (sau, 700
-            trang)</span
+            ><b>Audit so sánh:</b> lần 4 (trước, 696 trang), lần 7
+            (21/11, 700 trang) và lần mới nhất (25/11, 474 trang, đã loại
+            trừ phân trang và URL tham số)</span
           >
         </div>
         <nav class="jump" aria-label="Đi tới">
@@ -73,60 +76,97 @@
 
       <section id="tinh-trang">
         <h2>Tình trạng hiện tại</h2>
-        <div class="snap">
-          <div>
-            <span class="k">Link nội bộ hỏng</span
-            ><span class="v">0<s>trước: 17</s></span
-            ><span class="st ok">Đã xử lý</span
-            ><span class="n"
-              >17 link chuyển hướng 301, audit lần 7 không còn lỗi</span
-            >
-          </div>
-          <div>
-            <span class="k">Ảnh thiếu alt</span
-            ><span class="v">0<s>trước: 551</s></span
-            ><span class="st ok">Đã xử lý</span
-            ><span class="n">Logo và 3 biểu tượng trong header, footer</span>
-          </div>
-          <div>
-            <span class="k">Dung lượng trang chủ khi mở</span
-            ><span class="v">5,77 MB<s>trước: ~15,0</s></span
-            ><span class="st ok">Giảm 62%</span
-            ><span class="n">9 ảnh PNG, JPG chuyển sang WebP 85%</span>
-          </div>
-          <div>
-            <span class="k">LCP trang chủ trên mobile (mô phỏng)</span
-            ><span class="v">15,7 giây<s>trước: 19,1</s></span
-            ><span class="st crit">Vẫn rất chậm</span
-            ><span class="n">Ngưỡng tốt của Google là 2,5 giây</span>
-          </div>
-          <div>
-            <span class="k">CLS trang chủ</span
-            ><span class="v">0,14<s>trước: 0,00</s></span
-            ><span class="st warn">Mới xấu đi</span
-            ><span class="n"
-              >Sau khi bật tải lười cho carousel. Ngưỡng tốt là 0,1</span
-            >
-          </div>
-          <div>
-            <span class="k">Danh mục trong sitemap</span
-            ><span class="v">18<s>trước: 0</s></span
-            ><span class="st ok">Google đã đọc</span
-            ><span class="n">Search Console: 8 sitemap con đều Success</span>
-          </div>
-          <div>
-            <span class="k">Công cụ đo truy cập</span
-            ><span class="v">Chưa có</span><span class="st warn">Thiếu</span
-            ><span class="n">Chưa dùng Google Analytics hay Rybbit</span>
-          </div>
-          <div>
-            <span class="k">Trang thiếu meta description</span
-            ><span class="v">54<s>trước: 45</s></span
-            ><span class="st warn">Còn việc</span
-            ><span class="n"
-              >Tăng do 9 trang Video Library mới vào sitemap</span
-            >
-          </div>
+        <div class="tablebox">
+          <table style="min-width: 760px">
+            <thead>
+              <tr>
+                <th>Chỉ số</th>
+                <th class="n">Trước</th>
+                <th class="n">Hiện tại</th>
+                <th>Trạng thái</th>
+                <th>Ghi chú</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Link nội bộ hỏng</th>
+                <td class="n">17</td>
+                <td class="n">0</td>
+                <td><span class="st ok">Đã xử lý</span></td>
+                <td>17 link chuyển hướng 301, audit lần 7 và lần mới nhất không còn lỗi</td>
+              </tr>
+              <tr>
+                <th scope="row">Ảnh thiếu alt</th>
+                <td class="n">551</td>
+                <td class="n">0</td>
+                <td><span class="st ok">Đã xử lý</span></td>
+                <td>Logo và 3 biểu tượng trong header, footer</td>
+              </tr>
+              <tr>
+                <th scope="row">Dung lượng trang chủ khi mở</th>
+                <td class="n">~15,0 MB</td>
+                <td class="n">5,77 MB</td>
+                <td><span class="st ok">Giảm 62%</span></td>
+                <td>9 ảnh PNG, JPG chuyển sang WebP 85%</td>
+              </tr>
+              <tr>
+                <th scope="row">LCP trang chủ trên mobile (mô phỏng)</th>
+                <td class="n">19,1 giây</td>
+                <td class="n">15,7 giây</td>
+                <td><span class="st crit">Vẫn rất chậm</span></td>
+                <td>Ngưỡng tốt của Google là 2,5 giây</td>
+              </tr>
+              <tr>
+                <th scope="row">CLS trang chủ</th>
+                <td class="n">0,00</td>
+                <td class="n">0,14</td>
+                <td><span class="st warn">Mới xấu đi</span></td>
+                <td>Sau khi bật tải lười cho carousel. Ngưỡng tốt là 0,1</td>
+              </tr>
+              <tr>
+                <th scope="row">Danh mục trong sitemap</th>
+                <td class="n">0</td>
+                <td class="n">18</td>
+                <td><span class="st ok">Google đã đọc</span></td>
+                <td>Search Console: 8 sitemap con đều Success</td>
+              </tr>
+              <tr>
+                <th scope="row">Công cụ đo truy cập</th>
+                <td class="n">Chưa có</td>
+                <td class="n">Chưa có</td>
+                <td><span class="st warn">Thiếu</span></td>
+                <td>Chưa dùng Google Analytics hay Rybbit</td>
+              </tr>
+              <tr>
+                <th scope="row">Trang thiếu meta description</th>
+                <td class="n">45</td>
+                <td class="n">0</td>
+                <td><span class="st ok">Đã xử lý</span></td>
+                <td>Đã viết mô tả cho 8 trang danh mục, Video Library đã noindex</td>
+              </tr>
+              <tr>
+                <th scope="row">Trang thiếu thẻ H1</th>
+                <td class="n">25</td>
+                <td class="n">0</td>
+                <td><span class="st ok">Đã xử lý</span></td>
+                <td>Thêm H1 cho trang giới thiệu, dự án và các danh mục</td>
+              </tr>
+              <tr>
+                <th scope="row">Trang có nhiều thẻ H1</th>
+                <td class="n">13</td>
+                <td class="n">0</td>
+                <td><span class="st ok">Đã xử lý</span></td>
+                <td>Các H1 thừa trong nội dung đổi thành H2</td>
+              </tr>
+              <tr>
+                <th scope="row">Meta description trùng</th>
+                <td class="n">6</td>
+                <td class="n">6</td>
+                <td><span class="st warn">Chờ quyết định</span></td>
+                <td>Các cặp trang nội dung trùng, cần người làm nội dung</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
@@ -135,8 +175,9 @@
         <p class="sub">
           Các việc đã làm và kết quả đo được. Các số "trước" lấy từ báo cáo ban
           đầu (audit lần 4, Lighthouse lần 1, kiểm tra bằng curl). Các số "sau"
-          lấy từ audit lần 7 (21/11), kiểm tra bằng curl, Search Console và
-          Chrome DevTools.
+          lấy từ audit lần 7 (21/11) cho đợt đầu, và audit mới nhất (25/11) cho
+          đợt thứ hai, cùng kiểm tra bằng curl, Search Console và Chrome
+          DevTools.
         </p>
         <div class="tablebox">
           <table style="min-width: 760px">
@@ -234,6 +275,66 @@
                   tăng từ 0,00 lên 0,14.
                 </td>
                 <td><span class="st warn">Một phần</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Chuyển các redirect 301 lên Cloudflare</th>
+                <td>
+                  187 chuyển hướng bài viết cũ (bulk redirect), cộng 3 quy tắc:
+                  đường dẫn <code>/tu-van-noi-that/vat-lieu/go-oc-cho/*</code>,
+                  <code>…/ban-an-go-oc-cho/…-ma-baoc-*</code> và
+                  <code>/…/page/1/</code> về trang gốc. Thêm quy tắc bỏ tham số
+                  <code>?add-to-cart=</code>.
+                </td>
+                <td>
+                  Thời gian phản hồi của URL 301: khoảng 1,7–2,9 giây (Rank
+                  Math, PHP) xuống 0,09–0,15 giây (Cloudflare). Đo bằng curl.
+                </td>
+                <td><span class="st ok">Xong</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Bỏ trang giỏ hàng và Video Library khỏi sitemap</th>
+                <td>
+                  Loại <code>/cart/</code>, <code>/checkout/</code>,
+                  <code>/my-account/</code> khỏi sitemap (website không bán
+                  hàng). Đặt Video Library ở chế độ noindex và tắt khỏi sitemap
+                  (trang rất mỏng, khoảng 48 từ, Search Console không ghi nhận
+                  lượt hiển thị).
+                </td>
+                <td>
+                  Sitemap còn 7 sitemap con, không còn video-library. Trang bài
+                  và trang lưu trữ Video Library trả thẻ robots
+                  <code>noindex</code>.
+                </td>
+                <td><span class="st ok">Xong</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Sửa thẻ H1 (nhiều H1 và thiếu H1)</th>
+                <td>
+                  13 trang: các H1 thừa trong nội dung đổi thành H2 (6 bài dự
+                  án, 4 sản phẩm, 3 bài viết). 5 trang thiếu H1: thêm H1 cho
+                  trang giới thiệu và trang dự án (Elementor), áp dụng template
+                  lưu trữ có H1 cho 3 danh mục tư vấn và hoạt động.
+                </td>
+                <td>
+                  Audit mới nhất: thiếu H1 25 xuống 0, nhiều H1 13 xuống 0. Kiểm
+                  tra bằng curl: mỗi trang có đúng 1 H1.
+                </td>
+                <td><span class="st ok">Xong</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Viết meta description cho 8 trang danh mục</th>
+                <td>
+                  4 danh mục sản phẩm theo phòng (phòng bếp, phòng ngủ, phòng
+                  khách sofa, phòng khách kệ TV, đã sửa tên viết hoa và lỗi
+                  chính tả) và 4 danh mục bài viết (Tư vấn nội thất, Vật liệu
+                  nội thất, Gỗ óc chó, Hoạt động của Mộc Chất).
+                </td>
+                <td>
+                  Audit mới nhất: thiếu meta description 54 xuống 0. Đã thấy mô
+                  tả trong HTML công khai của 7/8 trang. Trang Gỗ óc chó cần
+                  xóa cache để hiện.
+                </td>
+                <td><span class="st ok">Xong</span></td>
               </tr>
             </tbody>
           </table>
@@ -429,15 +530,17 @@
         <h2>Bằng chứng</h2>
 
         <h3>
-          Kết quả site audit: trước (lần 4, 696 trang) và sau (lần 7, 700 trang)
+          Kết quả site audit: lần 4 (trước), lần 7 (21/11) và lần mới nhất
+          (25/11)
         </h3>
         <div class="tablebox">
-          <table style="min-width: 640px">
+          <table style="min-width: 760px">
             <thead>
               <tr>
                 <th>Loại lỗi</th>
-                <th class="n">Trước</th>
-                <th class="n">Sau</th>
+                <th class="n">Lần 4 (trước)</th>
+                <th class="n">Lần 7 (21/11)</th>
+                <th class="n">Mới nhất (25/11)</th>
                 <th>Ghi chú</th>
               </tr>
             </thead>
@@ -446,11 +549,13 @@
                 <th scope="row">Link nội bộ hỏng</th>
                 <td class="n">17</td>
                 <td class="n">0</td>
+                <td class="n">0</td>
                 <td>Đã chuyển hướng 301</td>
               </tr>
               <tr>
                 <th scope="row">Ảnh thiếu alt</th>
                 <td class="n">551</td>
+                <td class="n">0</td>
                 <td class="n">0</td>
                 <td>Đã thêm alt cho logo và 3 biểu tượng</td>
               </tr>
@@ -458,79 +563,97 @@
                 <th scope="row">Thiếu meta description</th>
                 <td class="n">45</td>
                 <td class="n">54</td>
+                <td class="n">0</td>
                 <td>
-                  8 trang thật, 9 trang Video Library mới vào sitemap, 37 phân
-                  trang và URL biến thể
+                  Đã viết mô tả cho 8 trang danh mục, Video Library noindex. Các
+                  phân trang noindex bị loại khỏi quét
                 </td>
               </tr>
               <tr>
                 <th scope="row">Thiếu thẻ H1</th>
                 <td class="n">24</td>
                 <td class="n">25</td>
-                <td>
-                  Thêm <code>/video-library/</code>. Gồm cả
-                  <code>/gioi-thieu/</code>, <code>/du-an/</code>, các trang hub
-                  và trang tác giả
-                </td>
+                <td class="n">0</td>
+                <td>Đã thêm H1 ở 5 trang thật; phần còn lại là phân trang đã loại</td>
               </tr>
               <tr>
                 <th scope="row">Nhiều thẻ H1</th>
                 <td class="n">13</td>
                 <td class="n">13</td>
-                <td>Chưa sửa</td>
+                <td class="n">0</td>
+                <td>H1 thừa đổi thành H2</td>
               </tr>
               <tr>
                 <th scope="row">Meta description trùng</th>
                 <td class="n">6</td>
                 <td class="n">6</td>
-                <td>Chưa sửa (3 cặp trang)</td>
+                <td class="n">6</td>
+                <td>
+                  Chưa sửa, chờ người làm nội dung quyết định (xem việc còn lại)
+                </td>
               </tr>
               <tr>
                 <th scope="row">Nội dung trùng</th>
                 <td class="n">2</td>
                 <td class="n">2</td>
+                <td class="n">0</td>
                 <td>
-                  <code>/tu-van-noi-that/</code> và
-                  <code>/tu-van-noi-that/vat-lieu/</code>, chưa sửa
+                  Cặp <code>/tu-van-noi-that/</code> và
+                  <code>/tu-van-noi-that/vat-lieu/</code> không còn báo sau khi
+                  thêm mô tả và áp dụng template mới. Các cặp trùng thật (Hoa
+                  Sữa, T Villa) vẫn tồn tại
                 </td>
               </tr>
               <tr>
                 <th scope="row">Phản hồi máy chủ chậm</th>
                 <td class="n">174</td>
                 <td class="n">221</td>
+                <td class="n">45</td>
                 <td>
-                  Mức thông tin. Giữa các lần quét số này dao động từ 130 đến
-                  221
+                  Mức thông tin. Giảm nhờ loại phân trang và tham số khỏi quét.
+                  Trang bị báo chậm lần này đo lại bằng curl đều có cache và trả
+                  về trong 0,13–0,28 giây. Nhiều khả năng crawler vào lúc cache
+                  vừa bị xóa sau khi lưu bài
                 </td>
               </tr>
               <tr>
                 <th scope="row">Trang noindex</th>
                 <td class="n">135</td>
                 <td class="n">129</td>
-                <td>Chủ ý: phân trang, tham số, trang tác giả</td>
+                <td class="n">1</td>
+                <td>
+                  Giảm vì các phân trang noindex đã bị loại khỏi quét, không
+                  phải vì đã gỡ noindex
+                </td>
               </tr>
               <tr>
                 <th scope="row">Trang quá sâu trong cấu trúc</th>
                 <td class="n">1</td>
                 <td class="n">29</td>
-                <td>Mức thông tin, chưa tìm hiểu nguyên nhân</td>
+                <td class="n">0</td>
+                <td>Không còn báo, phần lớn là phân trang đã loại</td>
               </tr>
               <tr>
-                <th scope="row">Quét dừng ở giới hạn trang</th>
-                <td class="n">không</td>
-                <td class="n">có</td>
+                <th scope="row">Số trang quét</th>
+                <td class="n">696</td>
+                <td class="n">700</td>
+                <td class="n">474</td>
                 <td>
-                  Đã quét 700 trang, 6 URL chưa quét. Lần so sánh chưa hoàn toàn
-                  tương đương
+                  Lần 7 dừng ở giới hạn 700 trang. Lần mới nhất đã loại trừ
+                  <code>/*/page/</code>, <code>/cart/</code>,
+                  <code>/my-account/</code>, <code>/*?per_page=</code>,
+                  <code>/*?add-to-cart=</code>, <code>/*?ucterms=</code>, nên
+                  không so sánh trực tiếp với hai lần trước
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
         <p class="src">
-          Lần quét 7 không có kết quả Lighthouse: công cụ báo số dư dịch vụ dữ
-          liệu bên ngoài đã hết. Vì vậy LCP và CLS ở trên lấy từ Chrome
-          DevTools, không phải từ OpenSEO.
+          Các lần quét 7 và mới nhất không có kết quả Lighthouse: công cụ báo số
+          dư dịch vụ dữ liệu bên ngoài đã hết. Vì vậy LCP và CLS ở trên lấy từ
+          Chrome DevTools, không phải từ OpenSEO. Việc loại trừ đường dẫn chỉ làm
+          báo cáo gọn hơn, các trang phân trang vẫn tồn tại và vẫn noindex.
         </p>
 
         <div class="two">
@@ -740,14 +863,19 @@
               CLS 0,14 chưa có nguyên nhân được kiểm chứng. Giả thuyết đã ghi ở
               việc số 1.
             </li>
+            <li>
+              Phần "phản hồi chậm" của audit mới nhất chưa kiểm chứng hết: chỉ
+              đo lại bằng curl một số URL, kết luận cache vừa bị xóa là suy
+              luận.
+            </li>
           </ul>
         </div>
         <div class="src">
           Nguồn dữ liệu:
           <ul>
             <li>
-              <b>OpenSEO:</b> site audit lần 4 (trước, 696 trang) và lần 7 (sau,
-              700 trang), Lighthouse lần 1, nghiên cứu từ khóa, kết quả tìm kiếm
+              <b>OpenSEO:</b> site audit lần 4 (trước, 696 trang), lần 7
+              (21/11, 700 trang) và lần mới nhất (25/11, 474 trang), Lighthouse lần 1, nghiên cứu từ khóa, kết quả tìm kiếm
               của 3 từ khóa, từ khóa xếp hạng và backlink của đối thủ.
             </li>
             <li>
@@ -756,7 +884,8 @@
             </li>
             <li>
               <b>Google Search Console:</b> trạng thái đọc sitemap ngày 21/11
-              (do chủ website cung cấp).
+              (do chủ website cung cấp) và dữ liệu hiệu suất 28 ngày (26/10 đến
+              22/11) qua OpenSEO, dùng để kiểm tra các trang trùng.
             </li>
             <li>
               <b>Kiểm tra trực tiếp bằng curl và quản trị WordPress:</b> title,
