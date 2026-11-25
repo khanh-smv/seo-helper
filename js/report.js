@@ -41,11 +41,11 @@
     },
     {
       g: "now",
-      t: "Đặt sự kiện chuyển đổi trong GA4 và xem lại nguồn \"chưa phân loại\"",
-      why: "GA4 đã chạy từ 23/11 nhưng sự kiện chuyển đổi duy nhất là <code>purchase</code> trong khi website không bán hàng, nên chưa đo được khách liên hệ, là mục tiêu thật của website. Ngoài ra 38% phiên (46/121) bị xếp vào nguồn \"chưa phân loại\" và chỉ 28% có tương tác, làm số liệu nguồn truy cập khó tin cậy.",
-      how: "Trong GA4, đánh dấu làm sự kiện chuyển đổi: gửi form liên hệ, bấm gọi điện, bấm Zalo (Site Kit đã bật \"theo dõi lượt chuyển đổi từ plugin\" cho các plugin form được hỗ trợ; chưa kiểm tra form Elementor của website có được nhận ra không, còn bấm gọi và Zalo thường cần thêm sự kiện riêng). Bỏ <code>purchase</code> khỏi sự kiện chuyển đổi. Kiểm tra các liên kết quảng cáo mạng xã hội có gắn tham số UTM chưa.",
+      t: 'Đặt sự kiện chuyển đổi trong GA4 và xem lại nguồn "chưa phân loại"',
+      why: 'GA4 đã chạy từ 23/11 nhưng sự kiện chuyển đổi duy nhất là <code>purchase</code> trong khi website không bán hàng, nên chưa đo được khách liên hệ, là mục tiêu thật của website. Ngoài ra 38% phiên (46/121) bị xếp vào nguồn "chưa phân loại" và chỉ 28% có tương tác, làm số liệu nguồn truy cập khó tin cậy.',
+      how: 'Trong GA4, đánh dấu làm sự kiện chuyển đổi: gửi form liên hệ, bấm gọi điện, bấm Zalo (Site Kit đã bật "theo dõi lượt chuyển đổi từ plugin" cho các plugin form được hỗ trợ; chưa kiểm tra form Elementor của website có được nhận ra không, còn bấm gọi và Zalo thường cần thêm sự kiện riêng). Bỏ <code>purchase</code> khỏi sự kiện chuyển đổi. Kiểm tra các liên kết quảng cáo mạng xã hội có gắn tham số UTM chưa.',
       verify:
-        "Thoát đăng nhập (Site Kit loại người dùng đã đăng nhập), gửi thử một form liên hệ và bấm nút gọi, thấy sự kiện xuất hiện trong GA4 (Realtime). Tỷ lệ \"chưa phân loại\" giảm trong các ngày sau.",
+        'Thoát đăng nhập (Site Kit loại người dùng đã đăng nhập), gửi thử một form liên hệ và bấm nút gọi, thấy sự kiện xuất hiện trong GA4 (Realtime). Tỷ lệ "chưa phân loại" giảm trong các ngày sau.',
       who: "Quản trị, lập trình web",
       src: "GA4 qua OpenSEO (23–24/11)",
     },
@@ -86,7 +86,8 @@
       tag: ["warn", "Mới phát hiện"],
       why: "Địa chỉ <code>https://www.mocchat.vn/</code> trả lỗi 526 (Cloudflare không xác minh được chứng chỉ SSL của máy chủ gốc). Nếu có link hoặc backlink dùng bản www, khách sẽ thấy lỗi. Chưa kiểm tra cấu hình DNS và chứng chỉ.",
       how: "Xem lại bản ghi DNS của www trên Cloudflare, và chứng chỉ SSL ở máy chủ gốc. Sau đó chuyển hướng www về bản không có www.",
-      verify: "<code>https://www.mocchat.vn/</code> trả 301 về <code>https://mocchat.vn/</code>.",
+      verify:
+        "<code>https://www.mocchat.vn/</code> trả 301 về <code>https://mocchat.vn/</code>.",
       who: "Quản trị website, hosting",
       src: "curl (23/11)",
     },
@@ -114,7 +115,7 @@
     {
       g: "later",
       t: "Rút gọn title và meta description quá dài",
-      why: "Audit 25/11 báo 75 title dài hơn 60 ký tự (phần lớn là trang sản phẩm có hậu tố \" | Mộc Chất\", vượt 1 đến 10 ký tự) và 29 meta description dài hơn 160 ký tự. Google có thể cắt bớt khi hiển thị. Mức thông tin.",
+      why: 'Audit 25/11 báo 75 title dài hơn 60 ký tự (phần lớn là trang sản phẩm có hậu tố " | Mộc Chất", vượt 1 đến 10 ký tự) và 29 meta description dài hơn 160 ký tự. Google có thể cắt bớt khi hiển thị. Mức thông tin.',
       how: "Rank Math → Tiêu đề &amp; mô tả: sửa mẫu title của sản phẩm để bỏ hậu tố tên site, rồi rút gọn riêng từng bài dài nhất. Cần lập danh sách đề xuất để duyệt trước khi sửa.",
       verify: "Số title và meta quá dài trong audit sau giảm.",
       who: "SEO, người làm nội dung",
@@ -134,7 +135,8 @@
       t: "Gỡ chức năng giỏ hàng khi website không bán hàng",
       why: "Website không bán hàng nên giỏ hàng là thừa: nút thêm vào giỏ trên trang dự án tạo ra các URL <code>?add-to-cart=</code> mà Google đã ghi nhận (3 URL trong Search Console), mini-cart và script giỏ hàng vẫn tải trên mọi trang. Đã loại trang giỏ hàng khỏi sitemap và đã chuyển hướng bỏ tham số <code>?add-to-cart=</code> ở Cloudflare.",
       how: "Tắt nút thêm vào giỏ và mini-cart trong Woodmart → Theme settings (mục Shop, Header). Nếu còn cần hiển thị giá hoặc nút báo giá, giữ lại phần đó.",
-      verify: "Không còn nút thêm vào giỏ và không còn tải script giỏ hàng trên trang thường.",
+      verify:
+        "Không còn nút thêm vào giỏ và không còn tải script giỏ hàng trên trang thường.",
       who: "Lập trình web",
       src: "Search Console, curl",
     },
@@ -171,8 +173,7 @@
       t: "Bật HSTS",
       why: "Phản hồi của trang chủ thiếu header Strict-Transport-Security. Đây là bảo mật nâng cao, chỉ nên bật sau khi chắc chắn HTTPS chạy ổn trên toàn site.",
       how: "Bật HSTS ở Cloudflare hoặc máy chủ.",
-      verify:
-        "Header Strict-Transport-Security xuất hiện trong phản hồi.",
+      verify: "Header Strict-Transport-Security xuất hiện trong phản hồi.",
       who: "Lập trình web, hosting",
       src: "SEOquake, curl",
     },

@@ -30,966 +30,1001 @@
       </ul>
     </nav>
     <main class="page-main">
-    <div class="wrap">
-      <header>
-        <div style="margin-bottom: 24px">
-          <div class="eyebrow">Cập nhật 25/11/2026 · Sau hai đợt sửa</div>
-        </div>
-        <h1>Báo cáo SEO Mộc Chất</h1>
-        <p class="lede">
-          Sau hai đợt sửa (21/11 và 25/11), audit mới nhất không còn lỗi thiếu
-          H1 (từ 25 xuống 0), nhiều H1 (từ 13 xuống 0), thiếu meta description
-          ở các trang chính (từ 54 xuống 0), link nội bộ hỏng (từ 17 xuống 0)
-          và ảnh thiếu alt (từ 551 xuống 0). Các trang chuyển hướng 301 đã chạy
-          ở Cloudflare nên nhanh hơn nhiều. Lỗi heading nhảy cấp giảm từ 365 xuống 27 trang và trang phản hồi chậm từ 45 xuống 1. Còn lại: trang chủ trên điện thoại
-          vẫn chậm (LCP khoảng 15,7 giây khi mô phỏng), CLS tăng lên 0,14 sau
-          khi bật tải lười cho carousel, GA4 mới chạy từ 23/11 nên chưa đủ dữ liệu để so sánh, 6 meta
-          description trùng và các trang nội dung trùng chờ người làm nội dung
-          quyết định.
-        </p>
-        <div class="meta">
-          <span><b>Website:</b> mocchat.vn</span>
-          <span><b>Thị trường:</b> Việt Nam, tiếng Việt</span>
-          <span><b>Dữ liệu:</b> 20–25/11/2026</span>
-          <span
-            ><b>Audit so sánh:</b> lần 4 (trước, 696 trang), lần 7
-            (21/11, 700 trang) và lần mới nhất (25/11 lúc 08:35, 474 trang,
-            đã loại trừ phân trang và URL tham số)</span
-          >
-        </div>
-      </header>
-
-      <section id="tinh-trang">
-        <h2>Tình trạng hiện tại</h2>
-        <div class="tablebox">
-          <table style="min-width: 760px">
-            <thead>
-              <tr>
-                <th>Chỉ số</th>
-                <th class="n">Trước</th>
-                <th class="n">Hiện tại</th>
-                <th>Trạng thái</th>
-                <th>Ghi chú</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Link nội bộ hỏng</th>
-                <td class="n">17</td>
-                <td class="n">0</td>
-                <td><span class="st ok">Đã xử lý</span></td>
-                <td>17 link chuyển hướng 301, audit lần 7 và lần mới nhất không còn lỗi</td>
-              </tr>
-              <tr>
-                <th scope="row">Ảnh thiếu alt</th>
-                <td class="n">551</td>
-                <td class="n">0</td>
-                <td><span class="st ok">Đã xử lý</span></td>
-                <td>Logo và 3 biểu tượng trong header, footer</td>
-              </tr>
-              <tr>
-                <th scope="row">Dung lượng trang chủ khi mở</th>
-                <td class="n">~15,0 MB</td>
-                <td class="n">5,77 MB</td>
-                <td><span class="st ok">Giảm 62%</span></td>
-                <td>9 ảnh PNG, JPG chuyển sang WebP 85%</td>
-              </tr>
-              <tr>
-                <th scope="row">LCP trang chủ trên mobile (mô phỏng)</th>
-                <td class="n">19,1 giây</td>
-                <td class="n">15,7 giây</td>
-                <td><span class="st crit">Vẫn rất chậm</span></td>
-                <td>Ngưỡng tốt của Google là 2,5 giây</td>
-              </tr>
-              <tr>
-                <th scope="row">CLS trang chủ</th>
-                <td class="n">0,00</td>
-                <td class="n">0,14</td>
-                <td><span class="st warn">Mới xấu đi</span></td>
-                <td>Sau khi bật tải lười cho carousel. Ngưỡng tốt là 0,1</td>
-              </tr>
-              <tr>
-                <th scope="row">Danh mục trong sitemap</th>
-                <td class="n">0</td>
-                <td class="n">18</td>
-                <td><span class="st ok">Google đã đọc</span></td>
-                <td>Search Console: 8 sitemap con đều Success</td>
-              </tr>
-              <tr>
-                <th scope="row">Công cụ đo truy cập</th>
-                <td class="n">Chưa có</td>
-                <td class="n">GA4 từ 23/11</td>
-                <td><span class="st warn">Mới có 2 ngày</span></td>
-                <td>GA4 và Search Console đã nối với OpenSEO. Chưa đặt sự kiện chuyển đổi cho khách liên hệ</td>
-              </tr>
-              <tr>
-                <th scope="row">Trang thiếu meta description</th>
-                <td class="n">45</td>
-                <td class="n">0</td>
-                <td><span class="st ok">Đã xử lý</span></td>
-                <td>Đã viết mô tả cho 8 trang danh mục, Video Library đã noindex</td>
-              </tr>
-              <tr>
-                <th scope="row">Trang thiếu thẻ H1</th>
-                <td class="n">25</td>
-                <td class="n">0</td>
-                <td><span class="st ok">Đã xử lý</span></td>
-                <td>Thêm H1 cho trang giới thiệu, dự án và các danh mục</td>
-              </tr>
-              <tr>
-                <th scope="row">Trang có nhiều thẻ H1</th>
-                <td class="n">13</td>
-                <td class="n">0</td>
-                <td><span class="st ok">Đã xử lý</span></td>
-                <td>Các H1 thừa trong nội dung đổi thành H2</td>
-              </tr>
-              <tr>
-                <th scope="row">Heading nhảy cấp (H1 → H3, H5…)</th>
-                <td class="n">365</td>
-                <td class="n">27</td>
-                <td><span class="st ok">Đã giảm</span></td>
-                <td>Số 365 là audit sáng 25/11. Sau audit mới nhất đã sửa thêm 9 bài, còn khoảng 18 trang danh mục sản phẩm (chưa audit lại)</td>
-              </tr>
-              <tr>
-                <th scope="row">Trang phản hồi máy chủ chậm</th>
-                <td class="n">45</td>
-                <td class="n">1</td>
-                <td><span class="st ok">Đã giảm</span></td>
-                <td>Còn 1 trang (1,96 giây). Audit sáng 25/11 chạy ngay sau khi cache bị xóa nên báo nhiều hơn thực tế</td>
-              </tr>
-              <tr>
-                <th scope="row">Meta description trùng</th>
-                <td class="n">6</td>
-                <td class="n">6</td>
-                <td><span class="st warn">Chờ quyết định</span></td>
-                <td>Các cặp trang nội dung trùng, cần người làm nội dung</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <section id="da-lam">
-        <h2>Đã thực hiện</h2>
-        <p class="sub">
-          Các việc đã làm và kết quả đo được. Các số "trước" lấy từ báo cáo ban
-          đầu (audit lần 4, Lighthouse lần 1, kiểm tra bằng curl). Các số "sau"
-          lấy từ audit lần 7 (21/11) cho đợt đầu, và audit mới nhất (25/11) cho
-          đợt thứ hai, cùng kiểm tra bằng curl, Search Console và Chrome
-          DevTools.
-        </p>
-        <div class="tablebox">
-          <table style="min-width: 760px">
-            <thead>
-              <tr>
-                <th>Việc</th>
-                <th>Đã làm</th>
-                <th>Kết quả</th>
-                <th>Trạng thái</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Sửa title, mô tả, từ khóa chính trang chủ</th>
-                <td>
-                  Title cũ "…Gỗ Tự Thiên…" (sai chính tả, thiếu "óc chó") đổi
-                  thành "Thiết Kế Và Thi Công Nội Thất Gỗ Óc Chó Cao Cấp | Mộc
-                  Chất" (58 ký tự). Mô tả mới 136 ký tự có "gỗ óc chó". Đặt từ
-                  khóa chính "nội thất gỗ óc chó".<small
-                    >Không ghi "Hà Nội" trong title vì website bán toàn
-                    quốc.</small
-                  >
-                </td>
-                <td>
-                  Điểm SEO của trang trong Rank Math: 22 lên 84 trên 100. Title,
-                  og:title và mô tả trên trang công khai đã đổi, không còn "Tự
-                  Thiên".
-                </td>
-                <td><span class="st ok">Xong</span></td>
-              </tr>
-              <tr>
-                <th scope="row">Giảm mật độ từ khóa trang chủ</th>
-                <td>
-                  Đổi chữ ở 2 tiêu đề phụ (bỏ "nội thất" ở chỗ lặp), giảm 2 lưới
-                  dự án từ 9 xuống 6 mục.
-                </td>
-                <td>
-                  Mật độ cụm "nội thất gỗ óc chó": 2,86% (27 lần) xuống 2,43%
-                  (21 lần). Rank Math không còn báo mật độ cao.
-                </td>
-                <td><span class="st ok">Xong</span></td>
-              </tr>
-              <tr>
-                <th scope="row">Chuyển hướng 301 cho 17 link hỏng</th>
-                <td>
-                  2 quy tắc Regex trong Rank Math: 11 URL bàn ăn cũ
-                  (<code>…/ban-an-go-oc-cho/…-ma-baoc-NN/</code>) sang
-                  <code>…/ban-ghe-an-go-oc-cho/baoc-NN/</code>, và 6 đường dẫn
-                  cũ <code>/tu-van-noi-that/vat-lieu/go-oc-cho/SLUG/</code> sang
-                  <code>/SLUG/</code>.
-                </td>
-                <td>
-                  Link nội bộ hỏng 17 xuống 0 (audit lần 7). Đã thử bằng curl: 9
-                  URL cũ trả 301 về đúng trang đích.
-                </td>
-                <td><span class="st ok">Xong</span></td>
-              </tr>
-              <tr>
-                <th scope="row">Đưa danh mục sản phẩm vào sitemap</th>
-                <td>
-                  Bật sitemap cho danh mục sản phẩm trong Rank Math (18 URL).
-                  Rank Math cũng tự thêm Video Library (10 URL), giữ lại. Tạo
-                  quy tắc cache cho sitemap ở Cloudflare.
-                </td>
-                <td>
-                  Search Console: cả 8 sitemap con Success, danh mục 18 URL và
-                  Video Library 10 URL. Thời gian phản hồi sitemap từ 3,0 đến
-                  5,8 giây xuống 0,1 giây.
-                </td>
-                <td><span class="st ok">Xong</span></td>
-              </tr>
-              <tr>
-                <th scope="row">Thêm alt cho 4 ảnh trong template</th>
-                <td>
-                  Alt cho logo "Logo Mộc Chất" và 3 biểu tượng (nhà máy, địa chỉ
-                  showroom, điện thoại hotline) trong Media.
-                </td>
-                <td>
-                  Ảnh thiếu alt: 551 xuống 0 (audit lần 7). Đã thấy alt trong
-                  HTML công khai của cả 4 ảnh.
-                </td>
-                <td><span class="st ok">Xong</span></td>
-              </tr>
-              <tr>
-                <th scope="row">Nén ảnh trang chủ</th>
-                <td>
-                  Chuyển 9 ảnh (3 PNG và 6 JPG 2560 px) sang WebP chất lượng 85%
-                  và thay trong carousel, ảnh bìa video. Bật Lazyload cho
-                  carousel. Thêm slide đầu vào danh sách ảnh ưu tiên của
-                  FlyingPress (preload).
-                </td>
-                <td>
-                  Dung lượng khi mở trang: khoảng 15,0 MB xuống 5,77 MB. Ảnh PNG
-                  nặng: 3 xuống 0. LCP mô phỏng 19,1 xuống 15,7 giây. Nhưng CLS
-                  tăng từ 0,00 lên 0,14.
-                </td>
-                <td><span class="st warn">Một phần</span></td>
-              </tr>
-              <tr>
-                <th scope="row">Chuyển các redirect 301 lên Cloudflare</th>
-                <td>
-                  187 chuyển hướng bài viết cũ (bulk redirect), cộng 3 quy tắc:
-                  đường dẫn <code>/tu-van-noi-that/vat-lieu/go-oc-cho/*</code>,
-                  <code>…/ban-an-go-oc-cho/…-ma-baoc-*</code> và
-                  <code>/…/page/1/</code> về trang gốc. Thêm quy tắc bỏ tham số
-                  <code>?add-to-cart=</code>.
-                </td>
-                <td>
-                  Thời gian phản hồi của URL 301: khoảng 1,7–2,9 giây (Rank
-                  Math, PHP) xuống 0,09–0,15 giây (Cloudflare). Đo bằng curl.
-                </td>
-                <td><span class="st ok">Xong</span></td>
-              </tr>
-              <tr>
-                <th scope="row">Bỏ trang giỏ hàng và Video Library khỏi sitemap</th>
-                <td>
-                  Loại <code>/cart/</code>, <code>/checkout/</code>,
-                  <code>/my-account/</code> khỏi sitemap (website không bán
-                  hàng). Đặt Video Library ở chế độ noindex và tắt khỏi sitemap
-                  (trang rất mỏng, khoảng 48 từ, Search Console không ghi nhận
-                  lượt hiển thị).
-                </td>
-                <td>
-                  Sitemap còn 7 sitemap con, không còn video-library. Trang bài
-                  và trang lưu trữ Video Library trả thẻ robots
-                  <code>noindex</code>.
-                </td>
-                <td><span class="st ok">Xong</span></td>
-              </tr>
-              <tr>
-                <th scope="row">Sửa thẻ H1 (nhiều H1 và thiếu H1)</th>
-                <td>
-                  13 trang: các H1 thừa trong nội dung đổi thành H2 (6 bài dự
-                  án, 4 sản phẩm, 3 bài viết). 5 trang thiếu H1: thêm H1 cho
-                  trang giới thiệu và trang dự án (Elementor), áp dụng template
-                  lưu trữ có H1 cho 3 danh mục tư vấn và hoạt động.
-                </td>
-                <td>
-                  Audit mới nhất: thiếu H1 25 xuống 0, nhiều H1 13 xuống 0. Kiểm
-                  tra bằng curl: mỗi trang có đúng 1 H1.
-                </td>
-                <td><span class="st ok">Xong</span></td>
-              </tr>
-              <tr>
-                <th scope="row">Viết meta description cho 8 trang danh mục</th>
-                <td>
-                  4 danh mục sản phẩm theo phòng (phòng bếp, phòng ngủ, phòng
-                  khách sofa, phòng khách kệ TV, đã sửa tên viết hoa và lỗi
-                  chính tả) và 4 danh mục bài viết (Tư vấn nội thất, Vật liệu
-                  nội thất, Gỗ óc chó, Hoạt động của Mộc Chất).
-                </td>
-                <td>
-                  Audit mới nhất: thiếu meta description 54 xuống 0. Đã thấy mô
-                  tả trong HTML công khai của 7/8 trang. Trang Gỗ óc chó cần
-                  xóa cache để hiện.
-                </td>
-                <td><span class="st ok">Xong</span></td>
-              </tr>
-              <tr>
-                <th scope="row">Sửa lỗi chuyển hướng Rank Math khi URL có tham số</th>
-                <td>
-                  Đổi biểu thức của quy tắc gỗ óc chó trong Rank Math để slug
-                  không chứa dấu hỏi chấm (<code>[^/?]+</code>).
-                </td>
-                <td>
-                  Kiểm tra bằng curl (25/11): <code>…/go-oc-cho/?z=abc</code>
-                  và <code>?ver=2026</code> trả 200 thay vì chuyển hướng 301
-                  sang trang 404. Các URL cũ có tham số vẫn chuyển hướng đúng
-                  về URL mới và giữ tham số, nhưng vẫn chậm khoảng 2,7 đến 3,2
-                  giây vì do Rank Math (PHP) xử lý, chưa nằm ở Cloudflare.
-                </td>
-                <td><span class="st ok">Xong</span></td>
-              </tr>
-              <tr>
-                <th scope="row">Sửa title và meta của 3 trang</th>
-                <td>
-                  Trang Quy trình: meta "Trang chủ" thay bằng mô tả 145 ký tự
-                  theo đúng nội dung trang. Trang Liên Hệ: title 7 ký tự đổi
-                  thành "Liên Hệ Nội Thất Gỗ Óc Chó | Mộc Chất". Trang lưu
-                  trữ Dự Án: meta "Dự Án Archive - Mộc Chất" thay bằng mô tả
-                  138 ký tự.
-                </td>
-                <td>
-                  Kiểm tra bằng curl: cả 3 trang hiện đúng nội dung mới.
-                  Trong audit mới nhất, title quá ngắn còn 1 và meta quá ngắn
-                  còn 1 (cùng là trang <code>/san-pham/</code>, đã noindex,
-                  không sửa).
-                </td>
-                <td><span class="st ok">Xong</span></td>
-              </tr>
-              <tr>
-                <th scope="row">Sửa heading nhảy cấp trên toàn site</th>
-                <td>
-                  Tiêu đề 3 widget chân trang đổi từ H5 sang H2 (snippet
-                  WPCode). Tiêu đề "Sản Phẩm Khác" và "Thông Tin Quý Khách"
-                  đổi từ H4 sang H2, tiêu đề "12+ Năm kinh nghiệm…" ở trang
-                  chủ đổi từ H3 sang H2 (Elementor). 9 bài (4 sản phẩm, 4 dự
-                  án, 1 bài thi công) đổi H3 đầu bài thành H2. Chỉ đổi thẻ,
-                  không đổi chữ.
-                </td>
-                <td>
-                  Audit mới nhất: 365 xuống 27 trang. 9 bài sửa sau audit, đã
-                  đọc lại từng trang và không còn nhảy cấp. Kiểu chữ đo lại:
-                  tiêu đề trang chủ giữ nguyên 18px; tiêu đề trong bài lớn hơn
-                  2px (22px lên 24px).
-                </td>
-                <td><span class="st ok">Xong</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="two">
-          <div>
-            <h3>Dung lượng 3 ảnh nặng nhất trang chủ: trước và sau</h3>
-            <div
-              class="bars"
-              role="img"
-              aria-label="anh-2: 3,50 MB xuống 0,34 MB. A-HAI: 3,31 MB xuống 0,32 MB. Thiet-ke-chua-co-ten: 3,28 MB xuống 0,37 MB"
+      <div class="wrap">
+        <header>
+          <div style="margin-bottom: 24px">
+            <div class="eyebrow">Cập nhật 25/11/2026 · Sau hai đợt sửa</div>
+          </div>
+          <h1>Báo cáo SEO Mộc Chất</h1>
+          <p class="lede">
+            Sau hai đợt sửa (21/11 và 25/11), audit mới nhất không còn lỗi thiếu
+            H1 (từ 25 xuống 0), nhiều H1 (từ 13 xuống 0), thiếu meta description
+            ở các trang chính (từ 54 xuống 0), link nội bộ hỏng (từ 17 xuống 0)
+            và ảnh thiếu alt (từ 551 xuống 0). Các trang chuyển hướng 301 đã
+            chạy ở Cloudflare nên nhanh hơn nhiều. Lỗi heading nhảy cấp giảm từ
+            365 xuống 27 trang và trang phản hồi chậm từ 45 xuống 1. Còn lại:
+            trang chủ trên điện thoại vẫn chậm (LCP khoảng 15,7 giây khi mô
+            phỏng), CLS tăng lên 0,14 sau khi bật tải lười cho carousel, GA4 mới
+            chạy từ 23/11 nên chưa đủ dữ liệu để so sánh, 6 meta description
+            trùng và các trang nội dung trùng chờ người làm nội dung quyết định.
+          </p>
+          <div class="meta">
+            <span><b>Website:</b> mocchat.vn</span>
+            <span><b>Thị trường:</b> Việt Nam, tiếng Việt</span>
+            <span><b>Dữ liệu:</b> 20–25/11/2026</span>
+            <span
+              ><b>Audit so sánh:</b> lần 4 (trước, 696 trang), lần 7 (21/11, 700
+              trang) và lần mới nhất (25/11 lúc 08:35, 474 trang, đã loại trừ
+              phân trang và URL tham số)</span
             >
-              <div class="bar">
-                <span>anh-2.png</span
-                ><span class="track"
-                  ><span
-                    class="fill"
-                    style="display: block; width: 100%"
-                  ></span></span
-                ><span class="val">3,50 MB</span>
-              </div>
-              <div class="bar">
-                <span>anh-2.webp</span
-                ><span class="track"
-                  ><span
-                    class="fill after"
-                    style="display: block; width: 9.7%"
-                  ></span></span
-                ><span class="val">0,34 MB</span>
-              </div>
-              <div class="bar">
-                <span>A-HAI.png</span
-                ><span class="track"
-                  ><span
-                    class="fill"
-                    style="display: block; width: 94.6%"
-                  ></span></span
-                ><span class="val">3,31 MB</span>
-              </div>
-              <div class="bar">
-                <span>A-HAI.webp</span
-                ><span class="track"
-                  ><span
-                    class="fill after"
-                    style="display: block; width: 9.1%"
-                  ></span></span
-                ><span class="val">0,32 MB</span>
-              </div>
-              <div class="bar">
-                <span>Thiet-ke-chua-co-ten.png</span
-                ><span class="track"
-                  ><span
-                    class="fill"
-                    style="display: block; width: 93.7%"
-                  ></span></span
-                ><span class="val">3,28 MB</span>
-              </div>
-              <div class="bar">
-                <span>Thiet-ke-chua-co-ten.webp</span
-                ><span class="track"
-                  ><span
-                    class="fill after"
-                    style="display: block; width: 10.6%"
-                  ></span></span
-                ><span class="val">0,37 MB</span>
-              </div>
-            </div>
-            <p class="src">
-              Số "trước" lấy từ báo cáo ban đầu, số "sau" lấy từ dung lượng tệp
-              WebP trong thư viện Media. Cả 9 ảnh đã nén gồm 6 ảnh JPG trong
-              carousel (giảm 27% đến 46%).
-            </p>
           </div>
-          <div>
-            <h3>Tốc độ trang chủ trên điện thoại (Chrome DevTools)</h3>
-            <div class="tablebox">
-              <table style="min-width: 360px">
-                <thead>
-                  <tr>
-                    <th>Chỉ số</th>
-                    <th class="n">Trước</th>
-                    <th class="n">Sau</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">LCP</th>
-                    <td class="n">19,1 s</td>
-                    <td class="n">15,7 s</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">CLS</th>
-                    <td class="n">0,00</td>
-                    <td class="n">0,14</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Thời gian máy chủ (TTFB)</th>
-                    <td class="n">0,57 s</td>
-                    <td class="n">0,58–0,66 s</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Tải khi mở trang</th>
-                    <td class="n">~15,0 MB</td>
-                    <td class="n">5,77 MB</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <p class="src">
-              Đo trong cửa sổ không đăng nhập, mô phỏng điện thoại 412 px, CPU
-              chậm 4 lần, mạng Slow 4G. "Trước" là lúc chưa bật Lazyload (sau
-              khi nén ảnh), "sau" là hai lần đo liên tiếp sau khi bật Lazyload
-              (15,8 và 15,7 giây). Không so trực tiếp với mốc LCP 24,0 giây của
-              Lighthouse ban đầu vì hai phương pháp khác nhau. Phần tử LCP hiện
-              là ảnh bìa video, không còn là slide carousel.
-            </p>
+        </header>
+
+        <section id="tinh-trang">
+          <h2>Tình trạng hiện tại</h2>
+          <div class="tablebox">
+            <table style="min-width: 760px">
+              <thead>
+                <tr>
+                  <th>Chỉ số</th>
+                  <th class="n">Trước</th>
+                  <th class="n">Hiện tại</th>
+                  <th>Trạng thái</th>
+                  <th>Ghi chú</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Link nội bộ hỏng</th>
+                  <td class="n">17</td>
+                  <td class="n">0</td>
+                  <td><span class="st ok">Đã xử lý</span></td>
+                  <td>
+                    17 link chuyển hướng 301, audit lần 7 và lần mới nhất không
+                    còn lỗi
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Ảnh thiếu alt</th>
+                  <td class="n">551</td>
+                  <td class="n">0</td>
+                  <td><span class="st ok">Đã xử lý</span></td>
+                  <td>Logo và 3 biểu tượng trong header, footer</td>
+                </tr>
+                <tr>
+                  <th scope="row">Dung lượng trang chủ khi mở</th>
+                  <td class="n">~15,0 MB</td>
+                  <td class="n">5,77 MB</td>
+                  <td><span class="st ok">Giảm 62%</span></td>
+                  <td>9 ảnh PNG, JPG chuyển sang WebP 85%</td>
+                </tr>
+                <tr>
+                  <th scope="row">LCP trang chủ trên mobile (mô phỏng)</th>
+                  <td class="n">19,1 giây</td>
+                  <td class="n">15,7 giây</td>
+                  <td><span class="st crit">Vẫn rất chậm</span></td>
+                  <td>Ngưỡng tốt của Google là 2,5 giây</td>
+                </tr>
+                <tr>
+                  <th scope="row">CLS trang chủ</th>
+                  <td class="n">0,00</td>
+                  <td class="n">0,14</td>
+                  <td><span class="st warn">Mới xấu đi</span></td>
+                  <td>Sau khi bật tải lười cho carousel. Ngưỡng tốt là 0,1</td>
+                </tr>
+                <tr>
+                  <th scope="row">Danh mục trong sitemap</th>
+                  <td class="n">0</td>
+                  <td class="n">18</td>
+                  <td><span class="st ok">Google đã đọc</span></td>
+                  <td>Search Console: 8 sitemap con đều Success</td>
+                </tr>
+                <tr>
+                  <th scope="row">Công cụ đo truy cập</th>
+                  <td class="n">Chưa có</td>
+                  <td class="n">GA4 từ 23/11</td>
+                  <td><span class="st warn">Mới có 2 ngày</span></td>
+                  <td>
+                    GA4 và Search Console đã nối với OpenSEO. Chưa đặt sự kiện
+                    chuyển đổi cho khách liên hệ
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Trang thiếu meta description</th>
+                  <td class="n">45</td>
+                  <td class="n">0</td>
+                  <td><span class="st ok">Đã xử lý</span></td>
+                  <td>
+                    Đã viết mô tả cho 8 trang danh mục, Video Library đã noindex
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Trang thiếu thẻ H1</th>
+                  <td class="n">25</td>
+                  <td class="n">0</td>
+                  <td><span class="st ok">Đã xử lý</span></td>
+                  <td>Thêm H1 cho trang giới thiệu, dự án và các danh mục</td>
+                </tr>
+                <tr>
+                  <th scope="row">Trang có nhiều thẻ H1</th>
+                  <td class="n">13</td>
+                  <td class="n">0</td>
+                  <td><span class="st ok">Đã xử lý</span></td>
+                  <td>Các H1 thừa trong nội dung đổi thành H2</td>
+                </tr>
+                <tr>
+                  <th scope="row">Heading nhảy cấp (H1 → H3, H5…)</th>
+                  <td class="n">365</td>
+                  <td class="n">27</td>
+                  <td><span class="st ok">Đã giảm</span></td>
+                  <td>
+                    Số 365 là audit sáng 25/11. Sau audit mới nhất đã sửa thêm 9
+                    bài, còn khoảng 18 trang danh mục sản phẩm (chưa audit lại)
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Trang phản hồi máy chủ chậm</th>
+                  <td class="n">45</td>
+                  <td class="n">1</td>
+                  <td><span class="st ok">Đã giảm</span></td>
+                  <td>
+                    Còn 1 trang (1,96 giây). Audit sáng 25/11 chạy ngay sau khi
+                    cache bị xóa nên báo nhiều hơn thực tế
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Meta description trùng</th>
+                  <td class="n">6</td>
+                  <td class="n">6</td>
+                  <td><span class="st warn">Chờ quyết định</span></td>
+                  <td>Các cặp trang nội dung trùng, cần người làm nội dung</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="viec-can-lam">
-        <h2>Việc còn lại</h2>
-        <p class="sub">
-          Các việc chưa làm hoặc mới phát sinh, chia theo mức ưu tiên. Thứ tự
-          trong từng nhóm là thứ tự nên làm. Mức tác động lên thứ hạng chưa thể
-          định lượng, nên các việc được xếp theo mức độ chắc chắn của lỗi và độ
-          rộng ảnh hưởng.
-        </p>
-        <div id="tasks"></div>
-      </section>
-
-      <section id="do-luong">
-        <h2>Đo lường truy cập</h2>
-        <p class="sub">
-          Google Analytics 4 (qua plugin Site Kit) và Search Console đã được nối
-          với OpenSEO, nên đọc được lượng truy cập trực tiếp. GA4 mới bắt đầu
-          ghi dữ liệu từ 23/11, hiện chỉ có 2 ngày, chưa đủ để so sánh trước và
-          sau các việc đã làm.
-        </p>
-        <div class="tablebox">
-          <table style="min-width: 560px">
-            <thead>
-              <tr>
-                <th>Hạng mục</th>
-                <th>Tình trạng</th>
-                <th>Ghi chú</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Cài đặt GA4</th>
-                <td><span class="st ok">Đã nối</span></td>
-                <td>
-                  Cài bằng plugin Site Kit, một luồng web cho mocchat.vn tạo
-                  ngày 23/11, múi giờ Việt Nam, đo lường nâng cao bật. Kiểm tra
-                  cấu hình không báo lỗi. Người dùng đã đăng nhập bị loại khỏi
-                  số đo, nên khi thử phải thoát đăng nhập
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Lượt truy cập 23–24/11</th>
-                <td class="n">121 phiên</td>
-                <td>
-                  Chưa phân loại 46, trực tiếp 20, mạng xã hội tự nhiên 19,
-                  mạng xã hội trả phí 19, tìm kiếm tự nhiên 15, trợ lý AI 1,
-                  giới thiệu 1
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Tìm kiếm tự nhiên (Google)</th>
-                <td class="n">15 phiên</td>
-                <td>13 người dùng, 73% phiên có tương tác. Chưa có kỳ trước để so sánh</td>
-              </tr>
-              <tr>
-                <th scope="row">Nguồn "chưa phân loại"</th>
-                <td><span class="st warn">Cần xem lại</span></td>
-                <td>
-                  Chiếm 38% số phiên và chỉ 28% có tương tác. Có thể do dữ liệu
-                  mới và cách gắn tham số quảng cáo, chưa xác định nguyên nhân
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Sự kiện chuyển đổi</th>
-                <td><span class="st warn">Chưa phù hợp</span></td>
-                <td>
-                  Sự kiện chuyển đổi duy nhất là <code>purchase</code> (mua
-                  hàng), trong khi website không bán hàng. Site Kit đã bật
-                  "theo dõi lượt chuyển đổi từ plugin" nhưng chưa có sự kiện
-                  khách liên hệ nào được đánh dấu chuyển đổi. Lượt bấm gọi điện
-                  và Zalo chưa rõ có được ghi nhận không
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="src">
-          Nguồn: GA4 đọc qua OpenSEO ngày 25/11/2026 (khoảng 23–24/11, ngày
-          25/11 chưa đủ). Search Console đã nối với OpenSEO, dữ liệu 28 ngày
-          (26/10 đến 22/11) đã dùng để kiểm tra các trang trùng.
-        </p>
-      </section>
-
-      <section id="bang-chung">
-        <h2>Bằng chứng</h2>
-
-        <h3>
-          Kết quả site audit: lần 4 (trước), lần 7 (21/11) và lần mới nhất
-          (25/11, 08:35)
-        </h3>
-        <div class="tablebox">
-          <table style="min-width: 760px">
-            <thead>
-              <tr>
-                <th>Loại lỗi</th>
-                <th class="n">Lần 4 (trước)</th>
-                <th class="n">Lần 7 (21/11)</th>
-                <th class="n">Mới nhất (25/11)</th>
-                <th>Ghi chú</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Link nội bộ hỏng</th>
-                <td class="n">17</td>
-                <td class="n">0</td>
-                <td class="n">0</td>
-                <td>Đã chuyển hướng 301</td>
-              </tr>
-              <tr>
-                <th scope="row">Ảnh thiếu alt</th>
-                <td class="n">551</td>
-                <td class="n">0</td>
-                <td class="n">0</td>
-                <td>Đã thêm alt cho logo và 3 biểu tượng</td>
-              </tr>
-              <tr>
-                <th scope="row">Thiếu meta description</th>
-                <td class="n">45</td>
-                <td class="n">54</td>
-                <td class="n">0</td>
-                <td>
-                  Đã viết mô tả cho 8 trang danh mục, Video Library noindex. Các
-                  phân trang noindex bị loại khỏi quét
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Thiếu thẻ H1</th>
-                <td class="n">24</td>
-                <td class="n">25</td>
-                <td class="n">0</td>
-                <td>Đã thêm H1 ở 5 trang thật; phần còn lại là phân trang đã loại</td>
-              </tr>
-              <tr>
-                <th scope="row">Nhiều thẻ H1</th>
-                <td class="n">13</td>
-                <td class="n">13</td>
-                <td class="n">0</td>
-                <td>H1 thừa đổi thành H2</td>
-              </tr>
-              <tr>
-                <th scope="row">Heading nhảy cấp</th>
-                <td class="n">—</td>
-                <td class="n">—</td>
-                <td class="n">27</td>
-                <td>
-                  Audit 04:00 cùng ngày: 365. Nguyên nhân chính là tiêu đề
-                  widget chân trang (H5) và "Sản Phẩm Khác" (H4). Còn lại: 18
-                  trang danh mục sản phẩm (tên sản phẩm là H3 do theme tạo) và
-                  9 bài đã sửa sau audit
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Title và meta quá dài, quá ngắn</th>
-                <td class="n">—</td>
-                <td class="n">—</td>
-                <td class="n">75 / 29 / 1 / 1</td>
-                <td>
-                  Title dài / meta dài / title ngắn / meta ngắn. Mức thông tin,
-                  chưa sửa (xem việc còn lại)
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Meta description trùng</th>
-                <td class="n">6</td>
-                <td class="n">6</td>
-                <td class="n">6</td>
-                <td>
-                  Chưa sửa, chờ người làm nội dung quyết định (xem việc còn lại)
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Nội dung trùng</th>
-                <td class="n">2</td>
-                <td class="n">2</td>
-                <td class="n">0</td>
-                <td>
-                  Cặp <code>/tu-van-noi-that/</code> và
-                  <code>/tu-van-noi-that/vat-lieu/</code> không còn báo sau khi
-                  thêm mô tả và áp dụng template mới. Các cặp trùng thật (Hoa
-                  Sữa, T Villa) vẫn tồn tại
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Phản hồi máy chủ chậm</th>
-                <td class="n">174</td>
-                <td class="n">221</td>
-                <td class="n">1</td>
-                <td>
-                  Mức thông tin. Audit sáng 25/11 (04:00) báo 45 trang; các
-                  URL đó đo lại bằng curl đều có cache và trả về trong
-                  0,13–0,28 giây. Audit 08:35 chạy sau khi cache dựng lại chỉ
-                  còn 1 trang (<code>/go-oc-cho-co-bi-moi-mot-khong/</code>,
-                  1,96 giây), phù hợp với giả thuyết crawler gặp trang vừa bị
-                  xóa cache
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Trang noindex</th>
-                <td class="n">135</td>
-                <td class="n">129</td>
-                <td class="n">1</td>
-                <td>
-                  Giảm vì các phân trang noindex đã bị loại khỏi quét, không
-                  phải vì đã gỡ noindex
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Trang quá sâu trong cấu trúc</th>
-                <td class="n">1</td>
-                <td class="n">29</td>
-                <td class="n">0</td>
-                <td>Không còn báo, phần lớn là phân trang đã loại</td>
-              </tr>
-              <tr>
-                <th scope="row">Số trang quét</th>
-                <td class="n">696</td>
-                <td class="n">700</td>
-                <td class="n">474</td>
-                <td>
-                  Lần 7 dừng ở giới hạn 700 trang. Lần mới nhất đã loại trừ
-                  <code>/*/page/</code>, <code>/cart/</code>,
-                  <code>/my-account/</code>, <code>/*?per_page=</code>,
-                  <code>/*?add-to-cart=</code>, <code>/*?ucterms=</code>, nên
-                  không so sánh trực tiếp với hai lần trước
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="src">
-          Các lần quét 7 và mới nhất không có kết quả Lighthouse: công cụ báo số
-          dư dịch vụ dữ liệu bên ngoài đã hết. Vì vậy LCP và CLS ở trên lấy từ
-          Chrome DevTools, không phải từ OpenSEO. Việc loại trừ đường dẫn chỉ làm
-          báo cáo gọn hơn, các trang phân trang vẫn tồn tại và vẫn noindex.
-        </p>
-
-        <div class="two">
-          <div>
-            <h3>Lượt tìm mỗi tháng của các từ khóa lớn nhất</h3>
-            <div
-              class="bars"
-              role="img"
-              aria-label="nội thất gỗ óc chó 2.400, sofa gỗ óc chó 1.900, giường gỗ óc chó 1.000, bàn ăn gỗ óc chó 590, nội thất biệt thự gỗ óc chó 320, bàn làm việc gỗ óc chó 210"
-            >
-              <div class="bar">
-                <span>nội thất gỗ óc chó</span
-                ><span class="track"
-                  ><span
-                    class="fill"
-                    style="display: block; width: 100%"
-                  ></span></span
-                ><span class="val">2.400</span>
-              </div>
-              <div class="bar">
-                <span>sofa gỗ óc chó</span
-                ><span class="track"
-                  ><span
-                    class="fill"
-                    style="display: block; width: 79%"
-                  ></span></span
-                ><span class="val">1.900</span>
-              </div>
-              <div class="bar">
-                <span>giường gỗ óc chó</span
-                ><span class="track"
-                  ><span
-                    class="fill"
-                    style="display: block; width: 42%"
-                  ></span></span
-                ><span class="val">1.000</span>
-              </div>
-              <div class="bar">
-                <span>bàn ăn gỗ óc chó</span
-                ><span class="track"
-                  ><span
-                    class="fill"
-                    style="display: block; width: 25%"
-                  ></span></span
-                ><span class="val">590</span>
-              </div>
-              <div class="bar">
-                <span>nội thất biệt thự gỗ óc chó</span
-                ><span class="track"
-                  ><span
-                    class="fill"
-                    style="display: block; width: 13%"
-                  ></span></span
-                ><span class="val">320</span>
-              </div>
-              <div class="bar">
-                <span>bàn làm việc gỗ óc chó</span
-                ><span class="track"
-                  ><span
-                    class="fill"
-                    style="display: block; width: 9%"
-                  ></span></span
-                ><span class="val">210</span>
-              </div>
-            </div>
-            <p class="src">
-              Độ khó bằng 0 ở vài từ khóa thường là dữ liệu thiếu chứ không có
-              nghĩa là dễ. Cần xem trực tiếp kết quả tìm kiếm trước khi đầu tư.
-              Từ khóa chính của trang chủ đã đặt là "nội thất gỗ óc chó".
-            </p>
+        <section id="da-lam">
+          <h2>Đã thực hiện</h2>
+          <p class="sub">
+            Các việc đã làm và kết quả đo được. Các số "trước" lấy từ báo cáo
+            ban đầu (audit lần 4, Lighthouse lần 1, kiểm tra bằng curl). Các số
+            "sau" lấy từ audit lần 7 (21/11) cho đợt đầu, và audit mới nhất
+            (25/11) cho đợt thứ hai, cùng kiểm tra bằng curl, Search Console và
+            Chrome DevTools.
+          </p>
+          <div class="tablebox">
+            <table style="min-width: 760px">
+              <thead>
+                <tr>
+                  <th>Việc</th>
+                  <th>Đã làm</th>
+                  <th>Kết quả</th>
+                  <th>Trạng thái</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Sửa title, mô tả, từ khóa chính trang chủ</th>
+                  <td>
+                    Title cũ "…Gỗ Tự Thiên…" (sai chính tả, thiếu "óc chó") đổi
+                    thành "Thiết Kế Và Thi Công Nội Thất Gỗ Óc Chó Cao Cấp | Mộc
+                    Chất" (58 ký tự). Mô tả mới 136 ký tự có "gỗ óc chó". Đặt từ
+                    khóa chính "nội thất gỗ óc chó".<small
+                      >Không ghi "Hà Nội" trong title vì website bán toàn
+                      quốc.</small
+                    >
+                  </td>
+                  <td>
+                    Điểm SEO của trang trong Rank Math: 22 lên 84 trên 100.
+                    Title, og:title và mô tả trên trang công khai đã đổi, không
+                    còn "Tự Thiên".
+                  </td>
+                  <td><span class="st ok">Xong</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Giảm mật độ từ khóa trang chủ</th>
+                  <td>
+                    Đổi chữ ở 2 tiêu đề phụ (bỏ "nội thất" ở chỗ lặp), giảm 2
+                    lưới dự án từ 9 xuống 6 mục.
+                  </td>
+                  <td>
+                    Mật độ cụm "nội thất gỗ óc chó": 2,86% (27 lần) xuống 2,43%
+                    (21 lần). Rank Math không còn báo mật độ cao.
+                  </td>
+                  <td><span class="st ok">Xong</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Chuyển hướng 301 cho 17 link hỏng</th>
+                  <td>
+                    2 quy tắc Regex trong Rank Math: 11 URL bàn ăn cũ
+                    (<code>…/ban-an-go-oc-cho/…-ma-baoc-NN/</code>) sang
+                    <code>…/ban-ghe-an-go-oc-cho/baoc-NN/</code>, và 6 đường dẫn
+                    cũ
+                    <code>/tu-van-noi-that/vat-lieu/go-oc-cho/SLUG/</code> sang
+                    <code>/SLUG/</code>.
+                  </td>
+                  <td>
+                    Link nội bộ hỏng 17 xuống 0 (audit lần 7). Đã thử bằng curl:
+                    9 URL cũ trả 301 về đúng trang đích.
+                  </td>
+                  <td><span class="st ok">Xong</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Đưa danh mục sản phẩm vào sitemap</th>
+                  <td>
+                    Bật sitemap cho danh mục sản phẩm trong Rank Math (18 URL).
+                    Rank Math cũng tự thêm Video Library (10 URL), giữ lại. Tạo
+                    quy tắc cache cho sitemap ở Cloudflare.
+                  </td>
+                  <td>
+                    Search Console: cả 8 sitemap con Success, danh mục 18 URL và
+                    Video Library 10 URL. Thời gian phản hồi sitemap từ 3,0 đến
+                    5,8 giây xuống 0,1 giây.
+                  </td>
+                  <td><span class="st ok">Xong</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Thêm alt cho 4 ảnh trong template</th>
+                  <td>
+                    Alt cho logo "Logo Mộc Chất" và 3 biểu tượng (nhà máy, địa
+                    chỉ showroom, điện thoại hotline) trong Media.
+                  </td>
+                  <td>
+                    Ảnh thiếu alt: 551 xuống 0 (audit lần 7). Đã thấy alt trong
+                    HTML công khai của cả 4 ảnh.
+                  </td>
+                  <td><span class="st ok">Xong</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Nén ảnh trang chủ</th>
+                  <td>
+                    Chuyển 9 ảnh (3 PNG và 6 JPG 2560 px) sang WebP chất lượng
+                    85% và thay trong carousel, ảnh bìa video. Bật Lazyload cho
+                    carousel. Thêm slide đầu vào danh sách ảnh ưu tiên của
+                    FlyingPress (preload).
+                  </td>
+                  <td>
+                    Dung lượng khi mở trang: khoảng 15,0 MB xuống 5,77 MB. Ảnh
+                    PNG nặng: 3 xuống 0. LCP mô phỏng 19,1 xuống 15,7 giây.
+                    Nhưng CLS tăng từ 0,00 lên 0,14.
+                  </td>
+                  <td><span class="st warn">Một phần</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Chuyển các redirect 301 lên Cloudflare</th>
+                  <td>
+                    187 chuyển hướng bài viết cũ (bulk redirect), cộng 3 quy
+                    tắc: đường dẫn
+                    <code>/tu-van-noi-that/vat-lieu/go-oc-cho/*</code>,
+                    <code>…/ban-an-go-oc-cho/…-ma-baoc-*</code> và
+                    <code>/…/page/1/</code> về trang gốc. Thêm quy tắc bỏ tham
+                    số <code>?add-to-cart=</code>.
+                  </td>
+                  <td>
+                    Thời gian phản hồi của URL 301: khoảng 1,7–2,9 giây (Rank
+                    Math, PHP) xuống 0,09–0,15 giây (Cloudflare). Đo bằng curl.
+                  </td>
+                  <td><span class="st ok">Xong</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    Bỏ trang giỏ hàng và Video Library khỏi sitemap
+                  </th>
+                  <td>
+                    Loại <code>/cart/</code>, <code>/checkout/</code>,
+                    <code>/my-account/</code> khỏi sitemap (website không bán
+                    hàng). Đặt Video Library ở chế độ noindex và tắt khỏi
+                    sitemap (trang rất mỏng, khoảng 48 từ, Search Console không
+                    ghi nhận lượt hiển thị).
+                  </td>
+                  <td>
+                    Sitemap còn 7 sitemap con, không còn video-library. Trang
+                    bài và trang lưu trữ Video Library trả thẻ robots
+                    <code>noindex</code>.
+                  </td>
+                  <td><span class="st ok">Xong</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Sửa thẻ H1 (nhiều H1 và thiếu H1)</th>
+                  <td>
+                    13 trang: các H1 thừa trong nội dung đổi thành H2 (6 bài dự
+                    án, 4 sản phẩm, 3 bài viết). 5 trang thiếu H1: thêm H1 cho
+                    trang giới thiệu và trang dự án (Elementor), áp dụng
+                    template lưu trữ có H1 cho 3 danh mục tư vấn và hoạt động.
+                  </td>
+                  <td>
+                    Audit mới nhất: thiếu H1 25 xuống 0, nhiều H1 13 xuống 0.
+                    Kiểm tra bằng curl: mỗi trang có đúng 1 H1.
+                  </td>
+                  <td><span class="st ok">Xong</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    Viết meta description cho 8 trang danh mục
+                  </th>
+                  <td>
+                    4 danh mục sản phẩm theo phòng (phòng bếp, phòng ngủ, phòng
+                    khách sofa, phòng khách kệ TV, đã sửa tên viết hoa và lỗi
+                    chính tả) và 4 danh mục bài viết (Tư vấn nội thất, Vật liệu
+                    nội thất, Gỗ óc chó, Hoạt động của Mộc Chất).
+                  </td>
+                  <td>
+                    Audit mới nhất: thiếu meta description 54 xuống 0. Đã thấy
+                    mô tả trong HTML công khai của 7/8 trang. Trang Gỗ óc chó
+                    cần xóa cache để hiện.
+                  </td>
+                  <td><span class="st ok">Xong</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    Sửa lỗi chuyển hướng Rank Math khi URL có tham số
+                  </th>
+                  <td>
+                    Đổi biểu thức của quy tắc gỗ óc chó trong Rank Math để slug
+                    không chứa dấu hỏi chấm (<code>[^/?]+</code>).
+                  </td>
+                  <td>
+                    Kiểm tra bằng curl (25/11):
+                    <code>…/go-oc-cho/?z=abc</code> và
+                    <code>?ver=2026</code> trả 200 thay vì chuyển hướng 301 sang
+                    trang 404. Các URL cũ có tham số vẫn chuyển hướng đúng về
+                    URL mới và giữ tham số, nhưng vẫn chậm khoảng 2,7 đến 3,2
+                    giây vì do Rank Math (PHP) xử lý, chưa nằm ở Cloudflare.
+                  </td>
+                  <td><span class="st ok">Xong</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Sửa title và meta của 3 trang</th>
+                  <td>
+                    Trang Quy trình: meta "Trang chủ" thay bằng mô tả 145 ký tự
+                    theo đúng nội dung trang. Trang Liên Hệ: title 7 ký tự đổi
+                    thành "Liên Hệ Nội Thất Gỗ Óc Chó | Mộc Chất". Trang lưu trữ
+                    Dự Án: meta "Dự Án Archive - Mộc Chất" thay bằng mô tả 138
+                    ký tự.
+                  </td>
+                  <td>
+                    Kiểm tra bằng curl: cả 3 trang hiện đúng nội dung mới. Trong
+                    audit mới nhất, title quá ngắn còn 1 và meta quá ngắn còn 1
+                    (cùng là trang <code>/san-pham/</code>, đã noindex, không
+                    sửa).
+                  </td>
+                  <td><span class="st ok">Xong</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Sửa heading nhảy cấp trên toàn site</th>
+                  <td>
+                    Tiêu đề 3 widget chân trang đổi từ H5 sang H2 (snippet
+                    WPCode). Tiêu đề "Sản Phẩm Khác" và "Thông Tin Quý Khách"
+                    đổi từ H4 sang H2, tiêu đề "12+ Năm kinh nghiệm…" ở trang
+                    chủ đổi từ H3 sang H2 (Elementor). 9 bài (4 sản phẩm, 4 dự
+                    án, 1 bài thi công) đổi H3 đầu bài thành H2. Chỉ đổi thẻ,
+                    không đổi chữ.
+                  </td>
+                  <td>
+                    Audit mới nhất: 365 xuống 27 trang. 9 bài sửa sau audit, đã
+                    đọc lại từng trang và không còn nhảy cấp. Kiểu chữ đo lại:
+                    tiêu đề trang chủ giữ nguyên 18px; tiêu đề trong bài lớn hơn
+                    2px (22px lên 24px).
+                  </td>
+                  <td><span class="st ok">Xong</span></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-          <div>
-            <h3>Hạ tầng máy chủ (từ Site Health của WordPress)</h3>
-            <div class="tablebox">
-              <table style="min-width: 360px">
-                <thead>
-                  <tr>
-                    <th>Mục</th>
-                    <th>Giá trị</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">PHP</th>
-                    <td>8.0.27 (đã hết hỗ trợ bảo mật)</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Cơ sở dữ liệu</th>
-                    <td>MariaDB 10.3.34 (đã hết hỗ trợ)</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Máy chủ</th>
-                    <td>Apache 2, php-fpm</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Object cache bền vững</th>
-                    <td>Không thấy</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Trang có cache</th>
-                    <td>0,13 giây</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Trang chưa cache</th>
-                    <td>3 đến 6 giây</td>
-                  </tr>
-                </tbody>
-              </table>
+          <div class="two">
+            <div>
+              <h3>Dung lượng 3 ảnh nặng nhất trang chủ: trước và sau</h3>
+              <div
+                class="bars"
+                role="img"
+                aria-label="anh-2: 3,50 MB xuống 0,34 MB. A-HAI: 3,31 MB xuống 0,32 MB. Thiet-ke-chua-co-ten: 3,28 MB xuống 0,37 MB"
+              >
+                <div class="bar">
+                  <span>anh-2.png</span
+                  ><span class="track"
+                    ><span
+                      class="fill"
+                      style="display: block; width: 100%"
+                    ></span></span
+                  ><span class="val">3,50 MB</span>
+                </div>
+                <div class="bar">
+                  <span>anh-2.webp</span
+                  ><span class="track"
+                    ><span
+                      class="fill after"
+                      style="display: block; width: 9.7%"
+                    ></span></span
+                  ><span class="val">0,34 MB</span>
+                </div>
+                <div class="bar">
+                  <span>A-HAI.png</span
+                  ><span class="track"
+                    ><span
+                      class="fill"
+                      style="display: block; width: 94.6%"
+                    ></span></span
+                  ><span class="val">3,31 MB</span>
+                </div>
+                <div class="bar">
+                  <span>A-HAI.webp</span
+                  ><span class="track"
+                    ><span
+                      class="fill after"
+                      style="display: block; width: 9.1%"
+                    ></span></span
+                  ><span class="val">0,32 MB</span>
+                </div>
+                <div class="bar">
+                  <span>Thiet-ke-chua-co-ten.png</span
+                  ><span class="track"
+                    ><span
+                      class="fill"
+                      style="display: block; width: 93.7%"
+                    ></span></span
+                  ><span class="val">3,28 MB</span>
+                </div>
+                <div class="bar">
+                  <span>Thiet-ke-chua-co-ten.webp</span
+                  ><span class="track"
+                    ><span
+                      class="fill after"
+                      style="display: block; width: 10.6%"
+                    ></span></span
+                  ><span class="val">0,37 MB</span>
+                </div>
+              </div>
+              <p class="src">
+                Số "trước" lấy từ báo cáo ban đầu, số "sau" lấy từ dung lượng
+                tệp WebP trong thư viện Media. Cả 9 ảnh đã nén gồm 6 ảnh JPG
+                trong carousel (giảm 27% đến 46%).
+              </p>
             </div>
-            <p class="src">
-              Thời gian đo bằng curl. Đây là nguyên nhân gốc khiến sitemap và
-              các trang chưa cache chậm, chưa tìm ra plugin cụ thể nào là nặng
-              nhất.
-            </p>
+            <div>
+              <h3>Tốc độ trang chủ trên điện thoại (Chrome DevTools)</h3>
+              <div class="tablebox">
+                <table style="min-width: 360px">
+                  <thead>
+                    <tr>
+                      <th>Chỉ số</th>
+                      <th class="n">Trước</th>
+                      <th class="n">Sau</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">LCP</th>
+                      <td class="n">19,1 s</td>
+                      <td class="n">15,7 s</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">CLS</th>
+                      <td class="n">0,00</td>
+                      <td class="n">0,14</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Thời gian máy chủ (TTFB)</th>
+                      <td class="n">0,57 s</td>
+                      <td class="n">0,58–0,66 s</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Tải khi mở trang</th>
+                      <td class="n">~15,0 MB</td>
+                      <td class="n">5,77 MB</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="src">
+                Đo trong cửa sổ không đăng nhập, mô phỏng điện thoại 412 px, CPU
+                chậm 4 lần, mạng Slow 4G. "Trước" là lúc chưa bật Lazyload (sau
+                khi nén ảnh), "sau" là hai lần đo liên tiếp sau khi bật Lazyload
+                (15,8 và 15,7 giây). Không so trực tiếp với mốc LCP 24,0 giây
+                của Lighthouse ban đầu vì hai phương pháp khác nhau. Phần tử LCP
+                hiện là ảnh bìa video, không còn là slide carousel.
+              </p>
+            </div>
           </div>
-        </div>
+        </section>
 
-        <h3>Đối thủ: noithatvietadong.vn</h3>
-        <div class="tablebox">
-          <table>
-            <thead>
-              <tr>
-                <th>Từ khóa</th>
-                <th class="n">Lượt tìm</th>
-                <th class="n">Vị trí của đối thủ</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">gỗ óc chó</th>
-                <td class="n">3.600</td>
-                <td class="n">2</td>
-              </tr>
-              <tr>
-                <th scope="row">màu gỗ óc chó</th>
-                <td class="n">1.900</td>
-                <td class="n">2–3</td>
-              </tr>
-              <tr>
-                <th scope="row">bàn ăn gỗ óc chó</th>
-                <td class="n">590</td>
-                <td class="n">3</td>
-              </tr>
-              <tr>
-                <th scope="row">tủ bếp gỗ óc chó, sofa óc chó</th>
-                <td class="n">480 mỗi từ</td>
-                <td class="n">3</td>
-              </tr>
-              <tr>
-                <th scope="row">tủ rượu</th>
-                <td class="n">4.400</td>
-                <td class="n">21</td>
-              </tr>
-              <tr>
-                <th scope="row">tủ rượu phòng khách</th>
-                <td class="n">1.600</td>
-                <td class="n">19</td>
-              </tr>
-              <tr>
-                <th scope="row">nội thất gỗ óc chó</th>
-                <td class="n">2.400</td>
-                <td class="n">24</td>
-              </tr>
-              <tr>
-                <th scope="row">sofa gỗ óc chó</th>
-                <td class="n">1.900</td>
-                <td class="n">18</td>
-              </tr>
-              <tr>
-                <th scope="row">giường gỗ óc chó</th>
-                <td class="n">1.000</td>
-                <td class="n">27</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="src">
-          Đối thủ có 98 từ khóa xếp hạng (bảng là phần có lượt tìm cao nhất
-          trong 50 từ khóa tool trả về). Backlink: 1.858 liên kết từ 287 tên
-          miền, phần lớn từ báo điện tử, nhiều khả năng là bài PR đặt trả phí
-          (nhận định từ số lượng và thời điểm, chưa kiểm tra nội dung).
-        </p>
-      </section>
+        <section id="viec-can-lam">
+          <h2>Việc còn lại</h2>
+          <p class="sub">
+            Các việc chưa làm hoặc mới phát sinh, chia theo mức ưu tiên. Thứ tự
+            trong từng nhóm là thứ tự nên làm. Mức tác động lên thứ hạng chưa
+            thể định lượng, nên các việc được xếp theo mức độ chắc chắn của lỗi
+            và độ rộng ảnh hưởng.
+          </p>
+          <div id="tasks"></div>
+        </section>
 
-      <section id="gioi-han">
-        <h2>Nguồn và giới hạn</h2>
-        <div class="note">
-          <strong>Chưa có trong báo cáo này</strong>
-          <ul>
-            <li>
-              Thứ hạng thật và backlink của chính mocchat.vn, nên chưa so được
-              khoảng cách với đối thủ.
-            </li>
-            <li>
-              Xu hướng lượng truy cập: GA4 mới ghi từ 23/11 nên chưa có. Dữ liệu hiệu suất tìm kiếm 28 ngày của Search Console
-              mới được dùng để kiểm tra các trang trùng, chưa đưa vào báo cáo
-              này như một phần riêng.
-            </li>
-            <li>
-              Điểm Lighthouse mới của các trang: lần quét 7 không chạy được vì
-              dịch vụ dữ liệu hết số dư.
-            </li>
-            <li>
-              Chưa kiểm tra tác động của các thay đổi lên thứ hạng và lượt hiển
-              thị. Cần vài tuần sau khi Google lập chỉ mục lại.
-            </li>
-            <li>
-              CLS 0,14 chưa có nguyên nhân được kiểm chứng. Giả thuyết đã ghi ở
-              việc số 1.
-            </li>
-            <li>
-              Nguyên nhân phản hồi chậm (45 xuống 1) là suy luận từ việc số
-              trang giảm khi cache đã dựng lại, chưa đo trực tiếp trên máy chủ.
-              Số heading nhảy cấp sau khi sửa 9 bài (còn khoảng 18) chưa được
-              audit lại.
-            </li>
-          </ul>
-        </div>
-        <div class="src">
-          Nguồn dữ liệu:
-          <ul>
-            <li>
-              <b>OpenSEO:</b> site audit lần 4 (trước, 696 trang), lần 7
-              (21/11, 700 trang) và lần mới nhất (25/11 lúc 08:35, 474 trang), Lighthouse lần 1, nghiên cứu từ khóa, kết quả tìm kiếm
-              của 3 từ khóa, từ khóa xếp hạng và backlink của đối thủ.
-            </li>
-            <li>
-              <b>Chrome DevTools:</b> dung lượng trang, LCP, CLS (mô phỏng điện
-              thoại, hai lần đo sau khi bật Lazyload).
-            </li>
-            <li>
-              <b>Google Analytics 4:</b> cấu hình luồng dữ liệu và số phiên theo nguồn
-              ngày 23–24/11, đọc qua OpenSEO.
-            </li>
-            <li>
-              <b>Google Search Console:</b> trạng thái đọc sitemap ngày 21/11
-              (do chủ website cung cấp) và dữ liệu hiệu suất 28 ngày (26/10 đến
-              22/11) qua OpenSEO, dùng để kiểm tra các trang trùng.
-            </li>
-            <li>
-              <b>Kiểm tra trực tiếp bằng curl và quản trị WordPress:</b> title,
-              mô tả, chuyển hướng 301, alt, sitemap, tiêu đề phản hồi, Site
-              Health, điểm SEO Rank Math.
-            </li>
-            <li>
-              <b>SEOquake:</b> báo cáo kiểm tra trang chủ ngày 21/11/2026 (chỉ
-              một trang, dùng cho số liệu ban đầu).
-            </li>
-          </ul>
-        </div>
-      </section>
-    </div>
+        <section id="do-luong">
+          <h2>Đo lường truy cập</h2>
+          <p class="sub">
+            Google Analytics 4 (qua plugin Site Kit) và Search Console đã được
+            nối với OpenSEO, nên đọc được lượng truy cập trực tiếp. GA4 mới bắt
+            đầu ghi dữ liệu từ 23/11, hiện chỉ có 2 ngày, chưa đủ để so sánh
+            trước và sau các việc đã làm.
+          </p>
+          <div class="tablebox">
+            <table style="min-width: 560px">
+              <thead>
+                <tr>
+                  <th>Hạng mục</th>
+                  <th>Tình trạng</th>
+                  <th>Ghi chú</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Cài đặt GA4</th>
+                  <td><span class="st ok">Đã nối</span></td>
+                  <td>
+                    Cài bằng plugin Site Kit, một luồng web cho mocchat.vn tạo
+                    ngày 23/11, múi giờ Việt Nam, đo lường nâng cao bật. Kiểm
+                    tra cấu hình không báo lỗi. Người dùng đã đăng nhập bị loại
+                    khỏi số đo, nên khi thử phải thoát đăng nhập
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Lượt truy cập 23–24/11</th>
+                  <td class="n">121 phiên</td>
+                  <td>
+                    Chưa phân loại 46, trực tiếp 20, mạng xã hội tự nhiên 19,
+                    mạng xã hội trả phí 19, tìm kiếm tự nhiên 15, trợ lý AI 1,
+                    giới thiệu 1
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Tìm kiếm tự nhiên (Google)</th>
+                  <td class="n">15 phiên</td>
+                  <td>
+                    13 người dùng, 73% phiên có tương tác. Chưa có kỳ trước để
+                    so sánh
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Nguồn "chưa phân loại"</th>
+                  <td><span class="st warn">Cần xem lại</span></td>
+                  <td>
+                    Chiếm 38% số phiên và chỉ 28% có tương tác. Có thể do dữ
+                    liệu mới và cách gắn tham số quảng cáo, chưa xác định nguyên
+                    nhân
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Sự kiện chuyển đổi</th>
+                  <td><span class="st warn">Chưa phù hợp</span></td>
+                  <td>
+                    Sự kiện chuyển đổi duy nhất là <code>purchase</code> (mua
+                    hàng), trong khi website không bán hàng. Site Kit đã bật
+                    "theo dõi lượt chuyển đổi từ plugin" nhưng chưa có sự kiện
+                    khách liên hệ nào được đánh dấu chuyển đổi. Lượt bấm gọi
+                    điện và Zalo chưa rõ có được ghi nhận không
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="src">
+            Nguồn: GA4 đọc qua OpenSEO ngày 25/11/2026 (khoảng 23–24/11, ngày
+            25/11 chưa đủ). Search Console đã nối với OpenSEO, dữ liệu 28 ngày
+            (26/10 đến 22/11) đã dùng để kiểm tra các trang trùng.
+          </p>
+        </section>
+
+        <section id="bang-chung">
+          <h2>Bằng chứng</h2>
+
+          <h3>
+            Kết quả site audit: lần 4 (trước), lần 7 (21/11) và lần mới nhất
+            (25/11, 08:35)
+          </h3>
+          <div class="tablebox">
+            <table style="min-width: 760px">
+              <thead>
+                <tr>
+                  <th>Loại lỗi</th>
+                  <th class="n">Lần 4 (trước)</th>
+                  <th class="n">Lần 7 (21/11)</th>
+                  <th class="n">Mới nhất (25/11)</th>
+                  <th>Ghi chú</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Link nội bộ hỏng</th>
+                  <td class="n">17</td>
+                  <td class="n">0</td>
+                  <td class="n">0</td>
+                  <td>Đã chuyển hướng 301</td>
+                </tr>
+                <tr>
+                  <th scope="row">Ảnh thiếu alt</th>
+                  <td class="n">551</td>
+                  <td class="n">0</td>
+                  <td class="n">0</td>
+                  <td>Đã thêm alt cho logo và 3 biểu tượng</td>
+                </tr>
+                <tr>
+                  <th scope="row">Thiếu meta description</th>
+                  <td class="n">45</td>
+                  <td class="n">54</td>
+                  <td class="n">0</td>
+                  <td>
+                    Đã viết mô tả cho 8 trang danh mục, Video Library noindex.
+                    Các phân trang noindex bị loại khỏi quét
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Thiếu thẻ H1</th>
+                  <td class="n">24</td>
+                  <td class="n">25</td>
+                  <td class="n">0</td>
+                  <td>
+                    Đã thêm H1 ở 5 trang thật; phần còn lại là phân trang đã
+                    loại
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Nhiều thẻ H1</th>
+                  <td class="n">13</td>
+                  <td class="n">13</td>
+                  <td class="n">0</td>
+                  <td>H1 thừa đổi thành H2</td>
+                </tr>
+                <tr>
+                  <th scope="row">Heading nhảy cấp</th>
+                  <td class="n">—</td>
+                  <td class="n">—</td>
+                  <td class="n">27</td>
+                  <td>
+                    Audit 04:00 cùng ngày: 365. Nguyên nhân chính là tiêu đề
+                    widget chân trang (H5) và "Sản Phẩm Khác" (H4). Còn lại: 18
+                    trang danh mục sản phẩm (tên sản phẩm là H3 do theme tạo) và
+                    9 bài đã sửa sau audit
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Title và meta quá dài, quá ngắn</th>
+                  <td class="n">—</td>
+                  <td class="n">—</td>
+                  <td class="n">75 / 29 / 1 / 1</td>
+                  <td>
+                    Title dài / meta dài / title ngắn / meta ngắn. Mức thông
+                    tin, chưa sửa (xem việc còn lại)
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Meta description trùng</th>
+                  <td class="n">6</td>
+                  <td class="n">6</td>
+                  <td class="n">6</td>
+                  <td>
+                    Chưa sửa, chờ người làm nội dung quyết định (xem việc còn
+                    lại)
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Nội dung trùng</th>
+                  <td class="n">2</td>
+                  <td class="n">2</td>
+                  <td class="n">0</td>
+                  <td>
+                    Cặp <code>/tu-van-noi-that/</code> và
+                    <code>/tu-van-noi-that/vat-lieu/</code> không còn báo sau
+                    khi thêm mô tả và áp dụng template mới. Các cặp trùng thật
+                    (Hoa Sữa, T Villa) vẫn tồn tại
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Phản hồi máy chủ chậm</th>
+                  <td class="n">174</td>
+                  <td class="n">221</td>
+                  <td class="n">1</td>
+                  <td>
+                    Mức thông tin. Audit sáng 25/11 (04:00) báo 45 trang; các
+                    URL đó đo lại bằng curl đều có cache và trả về trong
+                    0,13–0,28 giây. Audit 08:35 chạy sau khi cache dựng lại chỉ
+                    còn 1 trang (<code>/go-oc-cho-co-bi-moi-mot-khong/</code>,
+                    1,96 giây), phù hợp với giả thuyết crawler gặp trang vừa bị
+                    xóa cache
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Trang noindex</th>
+                  <td class="n">135</td>
+                  <td class="n">129</td>
+                  <td class="n">1</td>
+                  <td>
+                    Giảm vì các phân trang noindex đã bị loại khỏi quét, không
+                    phải vì đã gỡ noindex
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Trang quá sâu trong cấu trúc</th>
+                  <td class="n">1</td>
+                  <td class="n">29</td>
+                  <td class="n">0</td>
+                  <td>Không còn báo, phần lớn là phân trang đã loại</td>
+                </tr>
+                <tr>
+                  <th scope="row">Số trang quét</th>
+                  <td class="n">696</td>
+                  <td class="n">700</td>
+                  <td class="n">474</td>
+                  <td>
+                    Lần 7 dừng ở giới hạn 700 trang. Lần mới nhất đã loại trừ
+                    <code>/*/page/</code>, <code>/cart/</code>,
+                    <code>/my-account/</code>, <code>/*?per_page=</code>,
+                    <code>/*?add-to-cart=</code>, <code>/*?ucterms=</code>, nên
+                    không so sánh trực tiếp với hai lần trước
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="src">
+            Các lần quét 7 và mới nhất không có kết quả Lighthouse: công cụ báo
+            số dư dịch vụ dữ liệu bên ngoài đã hết. Vì vậy LCP và CLS ở trên lấy
+            từ Chrome DevTools, không phải từ OpenSEO. Việc loại trừ đường dẫn
+            chỉ làm báo cáo gọn hơn, các trang phân trang vẫn tồn tại và vẫn
+            noindex.
+          </p>
+
+          <div class="two">
+            <div>
+              <h3>Lượt tìm mỗi tháng của các từ khóa lớn nhất</h3>
+              <div
+                class="bars"
+                role="img"
+                aria-label="nội thất gỗ óc chó 2.400, sofa gỗ óc chó 1.900, giường gỗ óc chó 1.000, bàn ăn gỗ óc chó 590, nội thất biệt thự gỗ óc chó 320, bàn làm việc gỗ óc chó 210"
+              >
+                <div class="bar">
+                  <span>nội thất gỗ óc chó</span
+                  ><span class="track"
+                    ><span
+                      class="fill"
+                      style="display: block; width: 100%"
+                    ></span></span
+                  ><span class="val">2.400</span>
+                </div>
+                <div class="bar">
+                  <span>sofa gỗ óc chó</span
+                  ><span class="track"
+                    ><span
+                      class="fill"
+                      style="display: block; width: 79%"
+                    ></span></span
+                  ><span class="val">1.900</span>
+                </div>
+                <div class="bar">
+                  <span>giường gỗ óc chó</span
+                  ><span class="track"
+                    ><span
+                      class="fill"
+                      style="display: block; width: 42%"
+                    ></span></span
+                  ><span class="val">1.000</span>
+                </div>
+                <div class="bar">
+                  <span>bàn ăn gỗ óc chó</span
+                  ><span class="track"
+                    ><span
+                      class="fill"
+                      style="display: block; width: 25%"
+                    ></span></span
+                  ><span class="val">590</span>
+                </div>
+                <div class="bar">
+                  <span>nội thất biệt thự gỗ óc chó</span
+                  ><span class="track"
+                    ><span
+                      class="fill"
+                      style="display: block; width: 13%"
+                    ></span></span
+                  ><span class="val">320</span>
+                </div>
+                <div class="bar">
+                  <span>bàn làm việc gỗ óc chó</span
+                  ><span class="track"
+                    ><span
+                      class="fill"
+                      style="display: block; width: 9%"
+                    ></span></span
+                  ><span class="val">210</span>
+                </div>
+              </div>
+              <p class="src">
+                Độ khó bằng 0 ở vài từ khóa thường là dữ liệu thiếu chứ không có
+                nghĩa là dễ. Cần xem trực tiếp kết quả tìm kiếm trước khi đầu
+                tư. Từ khóa chính của trang chủ đã đặt là "nội thất gỗ óc chó".
+              </p>
+            </div>
+            <div>
+              <h3>Hạ tầng máy chủ (từ Site Health của WordPress)</h3>
+              <div class="tablebox">
+                <table style="min-width: 360px">
+                  <thead>
+                    <tr>
+                      <th>Mục</th>
+                      <th>Giá trị</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">PHP</th>
+                      <td>8.0.27 (đã hết hỗ trợ bảo mật)</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Cơ sở dữ liệu</th>
+                      <td>MariaDB 10.3.34 (đã hết hỗ trợ)</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Máy chủ</th>
+                      <td>Apache 2, php-fpm</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Object cache bền vững</th>
+                      <td>Không thấy</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Trang có cache</th>
+                      <td>0,13 giây</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Trang chưa cache</th>
+                      <td>3 đến 6 giây</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="src">
+                Thời gian đo bằng curl. Đây là nguyên nhân gốc khiến sitemap và
+                các trang chưa cache chậm, chưa tìm ra plugin cụ thể nào là nặng
+                nhất.
+              </p>
+            </div>
+          </div>
+
+          <h3>Đối thủ: noithatvietadong.vn</h3>
+          <div class="tablebox">
+            <table>
+              <thead>
+                <tr>
+                  <th>Từ khóa</th>
+                  <th class="n">Lượt tìm</th>
+                  <th class="n">Vị trí của đối thủ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">gỗ óc chó</th>
+                  <td class="n">3.600</td>
+                  <td class="n">2</td>
+                </tr>
+                <tr>
+                  <th scope="row">màu gỗ óc chó</th>
+                  <td class="n">1.900</td>
+                  <td class="n">2–3</td>
+                </tr>
+                <tr>
+                  <th scope="row">bàn ăn gỗ óc chó</th>
+                  <td class="n">590</td>
+                  <td class="n">3</td>
+                </tr>
+                <tr>
+                  <th scope="row">tủ bếp gỗ óc chó, sofa óc chó</th>
+                  <td class="n">480 mỗi từ</td>
+                  <td class="n">3</td>
+                </tr>
+                <tr>
+                  <th scope="row">tủ rượu</th>
+                  <td class="n">4.400</td>
+                  <td class="n">21</td>
+                </tr>
+                <tr>
+                  <th scope="row">tủ rượu phòng khách</th>
+                  <td class="n">1.600</td>
+                  <td class="n">19</td>
+                </tr>
+                <tr>
+                  <th scope="row">nội thất gỗ óc chó</th>
+                  <td class="n">2.400</td>
+                  <td class="n">24</td>
+                </tr>
+                <tr>
+                  <th scope="row">sofa gỗ óc chó</th>
+                  <td class="n">1.900</td>
+                  <td class="n">18</td>
+                </tr>
+                <tr>
+                  <th scope="row">giường gỗ óc chó</th>
+                  <td class="n">1.000</td>
+                  <td class="n">27</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="src">
+            Đối thủ có 98 từ khóa xếp hạng (bảng là phần có lượt tìm cao nhất
+            trong 50 từ khóa tool trả về). Backlink: 1.858 liên kết từ 287 tên
+            miền, phần lớn từ báo điện tử, nhiều khả năng là bài PR đặt trả phí
+            (nhận định từ số lượng và thời điểm, chưa kiểm tra nội dung).
+          </p>
+        </section>
+
+        <section id="gioi-han">
+          <h2>Nguồn và giới hạn</h2>
+          <div class="note">
+            <strong>Chưa có trong báo cáo này</strong>
+            <ul>
+              <li>
+                Thứ hạng thật và backlink của chính mocchat.vn, nên chưa so được
+                khoảng cách với đối thủ.
+              </li>
+              <li>
+                Xu hướng lượng truy cập: GA4 mới ghi từ 23/11 nên chưa có. Dữ
+                liệu hiệu suất tìm kiếm 28 ngày của Search Console mới được dùng
+                để kiểm tra các trang trùng, chưa đưa vào báo cáo này như một
+                phần riêng.
+              </li>
+              <li>
+                Điểm Lighthouse mới của các trang: lần quét 7 không chạy được vì
+                dịch vụ dữ liệu hết số dư.
+              </li>
+              <li>
+                Chưa kiểm tra tác động của các thay đổi lên thứ hạng và lượt
+                hiển thị. Cần vài tuần sau khi Google lập chỉ mục lại.
+              </li>
+              <li>
+                CLS 0,14 chưa có nguyên nhân được kiểm chứng. Giả thuyết đã ghi
+                ở việc số 1.
+              </li>
+              <li>
+                Nguyên nhân phản hồi chậm (45 xuống 1) là suy luận từ việc số
+                trang giảm khi cache đã dựng lại, chưa đo trực tiếp trên máy
+                chủ. Số heading nhảy cấp sau khi sửa 9 bài (còn khoảng 18) chưa
+                được audit lại.
+              </li>
+            </ul>
+          </div>
+          <div class="src">
+            Nguồn dữ liệu:
+            <ul>
+              <li>
+                <b>OpenSEO:</b> site audit lần 4 (trước, 696 trang), lần 7
+                (21/11, 700 trang) và lần mới nhất (25/11 lúc 08:35, 474 trang),
+                Lighthouse lần 1, nghiên cứu từ khóa, kết quả tìm kiếm của 3 từ
+                khóa, từ khóa xếp hạng và backlink của đối thủ.
+              </li>
+              <li>
+                <b>Chrome DevTools:</b> dung lượng trang, LCP, CLS (mô phỏng
+                điện thoại, hai lần đo sau khi bật Lazyload).
+              </li>
+              <li>
+                <b>Google Analytics 4:</b> cấu hình luồng dữ liệu và số phiên
+                theo nguồn ngày 23–24/11, đọc qua OpenSEO.
+              </li>
+              <li>
+                <b>Google Search Console:</b> trạng thái đọc sitemap ngày 21/11
+                (do chủ website cung cấp) và dữ liệu hiệu suất 28 ngày (26/10
+                đến 22/11) qua OpenSEO, dùng để kiểm tra các trang trùng.
+              </li>
+              <li>
+                <b>Kiểm tra trực tiếp bằng curl và quản trị WordPress:</b>
+                title, mô tả, chuyển hướng 301, alt, sitemap, tiêu đề phản hồi,
+                Site Health, điểm SEO Rank Math.
+              </li>
+              <li>
+                <b>SEOquake:</b> báo cáo kiểm tra trang chủ ngày 21/11/2026 (chỉ
+                một trang, dùng cho số liệu ban đầu).
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
     </main>
 
     <script src="js/report.js"></script>

@@ -77,7 +77,10 @@ body.has-sidenav {
   color: var(--muted-foreground);
   text-decoration: none;
   border-left: 2px solid transparent;
-  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  transition:
+    color 0.15s,
+    border-color 0.15s,
+    background 0.15s;
   border-radius: 0 var(--radius) var(--radius) 0;
   line-height: 1.4;
 }
@@ -97,7 +100,8 @@ body.has-sidenav {
 /* ---- Main content area ---- */
 .page-main {
   min-width: 0;
-  padding: 40px max(40px, env(safe-area-inset-right, 0px)) 80px max(40px, env(safe-area-inset-left, 0px));
+  padding: 40px max(40px, env(safe-area-inset-right, 0px)) 80px
+    max(40px, env(safe-area-inset-left, 0px));
 }
 
 /* ---- Sections: scroll offset accounts for sticky top bar on mobile ---- */
@@ -169,6 +173,7 @@ section[id] {
   }
 
   .page-main {
-    padding: 32px max(16px, env(safe-area-inset-right, 0px)) 72px max(16px, env(safe-area-inset-left, 0px));
+    padding: 32px max(16px, env(safe-area-inset-right, 0px)) 72px
+      max(16px, env(safe-area-inset-left, 0px));
   }
 }

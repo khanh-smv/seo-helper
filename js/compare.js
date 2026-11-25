@@ -19,77 +19,23 @@
   var ROWS = [
     { g: "Audit kỹ thuật" },
     ["Link 404 và link hỏng nội bộ", "y", "y", "y", "y", "y", "p", "n"],
-    [
-      "Redirect 301/302, redirect chain",
-      "y",
-      "y",
-      "y",
-      "y",
-      "y",
-      "n",
-      "n",
-    ],
-    [
-      "Title, meta, H1 thiếu, trùng, dài",
-      "y",
-      "y",
-      "y",
-      "y",
-      "y",
-      "n",
-      "n",
-    ],
+    ["Redirect 301/302, redirect chain", "y", "y", "y", "y", "y", "n", "n"],
+    ["Title, meta, H1 thiếu, trùng, dài", "y", "y", "y", "y", "y", "n", "n"],
     ["Ảnh thiếu alt, ảnh quá nặng", "p", "y", "y", "y", "y", "p", "n"],
-    [
-      "Link ra ngoài, link hỏng ra ngoài",
-      "n",
-      "y",
-      "y",
-      "y",
-      "y",
-      "n",
-      "n",
-    ],
+    ["Link ra ngoài, link hỏng ra ngoài", "n", "y", "y", "y", "y", "n", "n"],
     ["Canonical, noindex, phân trang", "p", "y", "y", "y", "y", "p", "n"],
     ["Sitemap, robots.txt", "p", "y", "y", "y", "y", "p", "n"],
     ["SSL, www và non-www", "n", "p", "p", "y", "p", "n", "n"],
     { g: "Tốc độ và Google" },
-    [
-      "Tốc độ tải trang, Core Web Vitals",
-      "p",
-      "y",
-      "y",
-      "y",
-      "p",
-      "y",
-      "u",
-    ],
-    [
-      "Tình trạng index, Search Console",
-      "p",
-      "y",
-      "y",
-      "y",
-      "y",
-      "y",
-      "n",
-    ],
+    ["Tốc độ tải trang, Core Web Vitals", "p", "y", "y", "y", "p", "y", "u"],
+    ["Tình trạng index, Search Console", "p", "y", "y", "y", "y", "y", "n"],
     { g: "Nghiên cứu và theo dõi" },
     ["Nghiên cứu từ khóa, SERP", "y", "n", "p", "y", "y", "p", "n"],
     ["Phân tích đối thủ, backlink", "y", "n", "y", "y", "y", "p", "n"],
     ["Theo dõi thứ hạng", "y", "n", "y", "y", "y", "p", "n"],
     ["Hiển thị trong câu trả lời AI", "y", "n", "n", "y", "y", "n", "n"],
     { g: "Phân tích truy cập" },
-    [
-      "Lượng truy cập, nguồn, trang đích",
-      "p",
-      "n",
-      "n",
-      "u",
-      "u",
-      "p",
-      "y",
-    ],
+    ["Lượng truy cập, nguồn, trang đích", "p", "n", "n", "u", "u", "p", "y"],
     ["Phễu chuyển đổi, mục tiêu", "n", "n", "n", "n", "n", "n", "y"],
     ["Phát lại phiên truy cập", "n", "n", "n", "n", "n", "n", "y"],
     { g: "Tích hợp" },
@@ -128,7 +74,7 @@
 
   var t = document.getElementById("cap");
   var cols =
-    "<colgroup><col class=\"c0\">" +
+    '<colgroup><col class="c0">' +
     TOOLS.map(function () {
       return "<col>";
     }).join("") +
@@ -161,9 +107,7 @@
       r
         .slice(1)
         .map(function (s, i) {
-          return (
-            "<td" + (i === 0 ? ' class="os"' : "") + ">" + mk(s) + "</td>"
-          );
+          return "<td" + (i === 0 ? ' class="os"' : "") + ">" + mk(s) + "</td>";
         })
         .join("") +
       "</tr>"
@@ -181,13 +125,7 @@
         return r[i + 1] === "y";
       }).length;
       return (
-        "<td" +
-        (i === 0 ? ' class="os"' : "") +
-        ">" +
-        n +
-        "/" +
-        total +
-        "</td>"
+        "<td" + (i === 0 ? ' class="os"' : "") + ">" + n + "/" + total + "</td>"
       );
     }).join("") +
     "</tr>";
@@ -223,21 +161,13 @@
       { s: "y", t: "Có" },
       { s: "y", t: "Có" },
     ],
-    [
-      "Phễu chuyển đổi và mục tiêu",
-      { s: "y", t: "Có" },
-      { s: "y", t: "Có" },
-    ],
+    ["Phễu chuyển đổi và mục tiêu", { s: "y", t: "Có" }, { s: "y", t: "Có" }],
     [
       "Giữ chân người dùng và hành trình",
       { s: "y", t: "Có" },
       { s: "y", t: "Có" },
     ],
-    [
-      "Phát lại phiên truy cập",
-      { s: "n", t: "Không có" },
-      { s: "y", t: "Có" },
-    ],
+    ["Phát lại phiên truy cập", { s: "n", t: "Không có" }, { s: "y", t: "Có" }],
     [
       "Liên kết với Search Console, Google Ads, BigQuery",
       { s: "y", t: "Liên kết sẵn" },

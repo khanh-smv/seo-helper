@@ -37,12 +37,13 @@
           <h1>Báo cáo SEO Sao Việt Home</h1>
           <p class="lede">
             Đây là lần audit đầu tiên của saoviethome.vn, chưa có lần sửa nào.
-            Audit quét 1.000 trang và dừng ở giới hạn, trong đó 42% là URL
-            tham số <code>?shop_view=</code> và <code>?per_row=</code> nên số
-            lỗi trông lớn hơn thực tế. Lỗi nặng nhất là 330 liên kết trỏ tới 18
-            URL đã chết, trang chủ không có H1, và chưa có công cụ đo truy cập
-            nào hoạt động (container Tag Manager không có thẻ GA4, chỉ có thẻ
-            Universal Analytics đã ngừng từ năm 2023). Báo cáo này chỉ dựa trên audit và
+            Lần quét đầu dừng ở giới hạn 1.000 trang vì 42% là URL tham số
+            <code>?shop_view=</code> và <code>?per_row=</code>. Sau khi loại các
+            URL này, audit quét hết 595 trang và số lỗi giảm mạnh. Lỗi nặng nhất
+            còn lại là 230 liên kết trỏ tới 25 URL đã chết, 189 trang thiếu H1
+            (gồm trang chủ), và chưa có công cụ đo truy cập nào hoạt động
+            (container Tag Manager không có thẻ GA4, chỉ có thẻ Universal
+            Analytics đã ngừng từ năm 2023). Báo cáo này chỉ dựa trên audit và
             kiểm tra trực tiếp, chưa có số liệu Search Console hay GA4.
           </p>
           <div class="meta">
@@ -50,10 +51,12 @@
             <span><b>Thị trường:</b> Việt Nam, tiếng Việt</span>
             <span><b>Dữ liệu:</b> 25/11/2026</span>
             <span
-              ><b>Audit:</b> 25/11 lúc 09:10, 1.000 trang (dừng ở giới hạn),
-              đã loại <code>/cart/</code>, <code>/my-account/</code>,
+              ><b>Audit:</b> lần 1 (09:10, 1.000 trang, dừng ở giới hạn) và lần
+              2 (09:50, 595 trang, quét hết). Cả hai đã loại
+              <code>/cart/</code>, <code>/my-account/</code>,
               <code>/*/page/</code>, <code>?add-to-cart=</code>,
-              <code>?per_page=</code>, <code>?ucterms=</code></span
+              <code>?per_page=</code>, <code>?ucterms=</code>; lần 2 loại thêm
+              <code>?per_row=</code> và <code>?shop_view=list</code></span
             >
           </div>
         </header>
@@ -61,37 +64,52 @@
         <section id="tinh-trang">
           <h2>Tình trạng hiện tại</h2>
           <p class="sub">
-            Cột "trang thật" là số trang không có tham số trong URL, tức là số
-            lỗi sau khi bỏ các URL <code>?shop_view=</code> và
-            <code>?per_row=</code>.
+            Cột "Lần 2" là số liệu chính (595 trang, đã loại URL tham số
+            <code>?shop_view=</code> và <code>?per_row=</code>). Cột "Lần 1" là
+            lần quét đầu có các URL này, giữ lại để thấy chúng làm tăng số lỗi
+            bao nhiêu.
           </p>
           <div class="tablebox">
             <table style="min-width: 760px">
               <thead>
                 <tr>
                   <th>Chỉ số</th>
-                  <th class="n">Tất cả</th>
-                  <th class="n">Trang thật</th>
+                  <th class="n">Lần 1 (1.000 trang)</th>
+                  <th class="n">Lần 2 (595 trang)</th>
                   <th>Trạng thái</th>
                   <th>Ghi chú</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
+                  <th scope="row">Số trang quét</th>
+                  <td class="n">1.000</td>
+                  <td class="n">595</td>
+                  <td><span class="st ok">Quét hết</span></td>
+                  <td>
+                    Lần 1 dừng ở giới hạn, còn trang chưa quét. Lần 2 không còn
+                    bị dừng
+                  </td>
+                </tr>
+                <tr>
                   <th scope="row">Liên kết nội bộ hỏng</th>
                   <td class="n">330</td>
-                  <td class="n">218</td>
+                  <td class="n">230</td>
                   <td><span class="st crit">Nặng</span></td>
                   <td>
-                    Chỉ trỏ tới 18 URL 404 (bài cũ năm 2023, danh mục đã xóa)
+                    Trỏ tới 25 URL 404 (bài cũ năm 2023, danh mục đã xóa), từ
+                    170 trang
                   </td>
                 </tr>
                 <tr>
                   <th scope="row">Trang trả lỗi 4xx</th>
                   <td class="n">21</td>
-                  <td class="n">18</td>
+                  <td class="n">29</td>
                   <td><span class="st crit">Cần xử lý</span></td>
-                  <td>18 URL đã chết và 3 URL <code>?p=…</code> dạng sản phẩm</td>
+                  <td>
+                    25 URL đã chết và 4 URL <code>?p=…</code> dạng sản phẩm.
+                    Tăng vì lần 2 tìm thêm được các URL đã chết
+                  </td>
                 </tr>
                 <tr>
                   <th scope="row">Trang thiếu thẻ H1</th>
@@ -122,10 +140,7 @@
                   <td class="n">906</td>
                   <td class="n">482</td>
                   <td><span class="st warn">Cần xử lý</span></td>
-                  <td>
-                    Mỗi trang thiếu đúng 3 ảnh (2.718 ảnh), là ảnh trong
-                    template
-                  </td>
+                  <td>Mỗi trang thiếu đúng 3 ảnh, là ảnh trong template</td>
                 </tr>
                 <tr>
                   <th scope="row">Title trùng / meta description trùng</th>
@@ -138,36 +153,40 @@
                   </td>
                 </tr>
                 <tr>
+                  <th scope="row">Chuỗi chuyển hướng</th>
+                  <td class="n">—</td>
+                  <td class="n">2</td>
+                  <td><span class="st warn">Mới thấy</span></td>
+                  <td>Hai bài dự án chuyển hướng qua 2 bước</td>
+                </tr>
+                <tr>
                   <th scope="row">Title dài hơn 60 ký tự</th>
                   <td class="n">607</td>
-                  <td class="n">—</td>
+                  <td class="n">366</td>
                   <td><span class="st warn">Mức thông tin</span></td>
                   <td>Do hậu tố title dài khoảng 50 ký tự</td>
                 </tr>
                 <tr>
                   <th scope="row">Trang phản hồi chậm</th>
                   <td class="n">426</td>
-                  <td class="n">2</td>
-                  <td><span class="st warn">Chủ yếu URL tham số</span></td>
+                  <td class="n">1</td>
+                  <td><span class="st ok">Đã hết</span></td>
                   <td>
-                    424 trong 426 là <code>?shop_view=</code>, không được cache,
-                    mất 4,6 giây (trang cache mất 0,33 giây)
+                    Lần 1: 424 là URL <code>?shop_view=</code> chưa cache. Lần 2
+                    còn 1 bài tin tức (3,2 giây)
                   </td>
                 </tr>
                 <tr>
-                  <th scope="row">Số trang quét</th>
-                  <td class="n">1.000</td>
-                  <td class="n">569</td>
-                  <td><span class="st warn">Chạm giới hạn</span></td>
-                  <td>
-                    431 URL có tham số (424 là <code>?shop_view=</code>), audit
-                    dừng sớm, còn trang chưa quét
-                  </td>
+                  <th scope="row">Heading nhảy cấp</th>
+                  <td class="n">213</td>
+                  <td class="n">109</td>
+                  <td><span class="st warn">Mức thông tin</span></td>
+                  <td>Chưa tìm nguyên nhân</td>
                 </tr>
                 <tr>
                   <th scope="row">Công cụ đo truy cập</th>
                   <td class="n">Không có</td>
-                  <td class="n">—</td>
+                  <td class="n">Không có</td>
                   <td><span class="st crit">Thiếu</span></td>
                   <td>
                     Không có GA4, Search Console, Site Kit. Tag Manager chỉ còn
@@ -182,10 +201,10 @@
         <section id="viec-can-lam">
           <h2>Việc cần làm</h2>
           <p class="sub">
-            Các việc chia theo mức ưu tiên. Thứ tự trong từng nhóm là thứ tự
-            nên làm. Mức tác động lên thứ hạng chưa thể định lượng (chưa có
-            Search Console), nên các việc được xếp theo mức độ chắc chắn của lỗi
-            và độ rộng ảnh hưởng.
+            Các việc chia theo mức ưu tiên. Thứ tự trong từng nhóm là thứ tự nên
+            làm. Mức tác động lên thứ hạng chưa thể định lượng (chưa có Search
+            Console), nên các việc được xếp theo mức độ chắc chắn của lỗi và độ
+            rộng ảnh hưởng.
           </p>
           <div id="tasks"></div>
         </section>
@@ -220,8 +239,9 @@
                   <td><span class="st warn">Có, đã cũ</span></td>
                   <td>
                     Container <code>GTM-T5ZGHG9</code> chỉ chứa thẻ Universal
-                    Analytics (<code>UA-167860943-1</code>), loại Google đã ngừng
-                    ghi dữ liệu từ 1/7/2023. Còn có thẻ chuyển đổi Google Ads
+                    Analytics (<code>UA-167860943-1</code>), loại Google đã
+                    ngừng ghi dữ liệu từ 1/7/2023. Còn có thẻ chuyển đổi Google
+                    Ads
                   </td>
                 </tr>
                 <tr>
@@ -282,7 +302,9 @@
                   <td>4 thẻ H1 (tên sản phẩm và 3 tiêu đề phần nội dung)</td>
                 </tr>
                 <tr>
-                  <th scope="row"><code>/product-tag/ban-an-go-oc-cho/</code></th>
+                  <th scope="row">
+                    <code>/product-tag/ban-an-go-oc-cho/</code>
+                  </th>
                   <td>
                     Cho phép lập chỉ mục, không có meta description, không có H1
                   </td>
@@ -292,7 +314,9 @@
                   <td>Không có meta description, không có H1</td>
                 </tr>
                 <tr>
-                  <th scope="row"><code>/shop/</code> và <code>/shop/?shop_view=list</code></th>
+                  <th scope="row">
+                    <code>/shop/</code> và <code>/shop/?shop_view=list</code>
+                  </th>
                   <td>
                     Trang gốc được cache, 0,33 giây. Trang tham số không được
                     cache, 4,6 giây
@@ -317,26 +341,114 @@
               <thead>
                 <tr>
                   <th>Loại lỗi</th>
-                  <th class="n">Số trang</th>
+                  <th class="n">Lần 1</th>
+                  <th class="n">Lần 2</th>
                   <th>Mức</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><th scope="row">Liên kết nội bộ hỏng</th><td class="n">330</td><td>Nghiêm trọng</td></tr>
-                <tr><th scope="row">Ảnh thiếu alt</th><td class="n">906</td><td>Cảnh báo</td></tr>
-                <tr><th scope="row">Thiếu H1</th><td class="n">491</td><td>Cảnh báo</td></tr>
-                <tr><th scope="row">Thiếu meta description</th><td class="n">429</td><td>Cảnh báo</td></tr>
-                <tr><th scope="row">Nhiều H1</th><td class="n">124</td><td>Cảnh báo</td></tr>
-                <tr><th scope="row">Trang lỗi 4xx</th><td class="n">21</td><td>Cảnh báo</td></tr>
-                <tr><th scope="row">Meta description trùng</th><td class="n">18</td><td>Cảnh báo</td></tr>
-                <tr><th scope="row">Title trùng</th><td class="n">8</td><td>Cảnh báo</td></tr>
-                <tr><th scope="row">Title quá dài</th><td class="n">607</td><td>Thông tin</td></tr>
-                <tr><th scope="row">Phản hồi chậm</th><td class="n">426</td><td>Thông tin</td></tr>
-                <tr><th scope="row">Đã canonical về URL khác</th><td class="n">424</td><td>Thông tin (cùng nhóm <code>?shop_view=</code>)</td></tr>
-                <tr><th scope="row">Trang sâu trong cấu trúc</th><td class="n">290</td><td>Thông tin</td></tr>
-                <tr><th scope="row">Heading nhảy cấp</th><td class="n">213</td><td>Thông tin</td></tr>
-                <tr><th scope="row">Meta description quá dài / quá ngắn</th><td class="n">167 / 11</td><td>Thông tin</td></tr>
-                <tr><th scope="row">Trang noindex</th><td class="n">1</td><td>Thông tin</td></tr>
+                <tr>
+                  <th scope="row">Liên kết nội bộ hỏng</th>
+                  <td class="n">330</td>
+                  <td class="n">230</td>
+                  <td>Nghiêm trọng</td>
+                </tr>
+                <tr>
+                  <th scope="row">Ảnh thiếu alt</th>
+                  <td class="n">906</td>
+                  <td class="n">482</td>
+                  <td>Cảnh báo</td>
+                </tr>
+                <tr>
+                  <th scope="row">Thiếu H1</th>
+                  <td class="n">491</td>
+                  <td class="n">189</td>
+                  <td>Cảnh báo</td>
+                </tr>
+                <tr>
+                  <th scope="row">Thiếu meta description</th>
+                  <td class="n">429</td>
+                  <td class="n">82</td>
+                  <td>Cảnh báo</td>
+                </tr>
+                <tr>
+                  <th scope="row">Nhiều H1</th>
+                  <td class="n">124</td>
+                  <td class="n">58</td>
+                  <td>Cảnh báo</td>
+                </tr>
+                <tr>
+                  <th scope="row">Trang lỗi 4xx</th>
+                  <td class="n">21</td>
+                  <td class="n">29</td>
+                  <td>Cảnh báo</td>
+                </tr>
+                <tr>
+                  <th scope="row">Meta description trùng</th>
+                  <td class="n">18</td>
+                  <td class="n">18</td>
+                  <td>Cảnh báo</td>
+                </tr>
+                <tr>
+                  <th scope="row">Title trùng</th>
+                  <td class="n">8</td>
+                  <td class="n">8</td>
+                  <td>Cảnh báo</td>
+                </tr>
+                <tr>
+                  <th scope="row">Chuỗi chuyển hướng</th>
+                  <td class="n">—</td>
+                  <td class="n">2</td>
+                  <td>Cảnh báo</td>
+                </tr>
+                <tr>
+                  <th scope="row">Title quá dài</th>
+                  <td class="n">607</td>
+                  <td class="n">366</td>
+                  <td>Thông tin</td>
+                </tr>
+                <tr>
+                  <th scope="row">Meta description quá dài</th>
+                  <td class="n">167</td>
+                  <td class="n">153</td>
+                  <td>Thông tin</td>
+                </tr>
+                <tr>
+                  <th scope="row">Meta description quá ngắn</th>
+                  <td class="n">11</td>
+                  <td class="n">4</td>
+                  <td>Thông tin</td>
+                </tr>
+                <tr>
+                  <th scope="row">Heading nhảy cấp</th>
+                  <td class="n">213</td>
+                  <td class="n">109</td>
+                  <td>Thông tin</td>
+                </tr>
+                <tr>
+                  <th scope="row">Phản hồi chậm</th>
+                  <td class="n">426</td>
+                  <td class="n">1</td>
+                  <td>Thông tin</td>
+                </tr>
+                <tr>
+                  <th scope="row">Đã canonical về URL khác</th>
+                  <td class="n">424</td>
+                  <td class="n">—</td>
+                  <td>Thông tin (nhóm <code>?shop_view=</code>, đã loại)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Trang sâu trong cấu trúc</th>
+                  <td class="n">290</td>
+                  <td class="n">2</td>
+                  <td>Thông tin</td>
+                </tr>
+                <tr>
+                  <th scope="row">Trang noindex</th>
+                  <td class="n">1</td>
+                  <td class="n">1</td>
+                  <td>Thông tin</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -356,18 +468,18 @@
                 Điểm Lighthouse, LCP, CLS: lần audit này không chạy Lighthouse.
               </li>
               <li>
-                Thứ hạng và backlink của saoviethome.vn, và đối thủ. Dự án
-                trong OpenSEO chưa có thông tin về mục tiêu hay đối thủ.
+                Thứ hạng và backlink của saoviethome.vn, và đối thủ. Dự án trong
+                OpenSEO chưa có thông tin về mục tiêu hay đối thủ.
               </li>
               <li>
-                Audit dừng ở giới hạn 1.000 trang, nên phần số lỗi chưa gồm
-                các trang chưa quét. Số lỗi sẽ khác sau khi loại các URL tham
-                số.
+                Lần 1 dừng ở giới hạn 1.000 trang nên chưa quét hết. Lần 2 quét
+                hết 595 trang. Lần 2 loại trừ <code>?shop_view=list</code> và
+                <code>?per_row=</code>, nên các URL <code>?shop_view=grid</code>
+                (nếu có) không được loại, chưa kiểm tra.
               </li>
               <li>
-                "Trang thật" là các trang không có dấu hỏi chấm trong URL, tính
-                từ danh sách lỗi của audit. Số trang quét thật (569) là 1.000
-                trừ 431 URL có tham số.
+                Số lỗi 4xx tăng từ 21 lên 29 vì lần 2 tìm thêm được các URL đã
+                chết, không phải vì có thêm lỗi mới trên website.
               </li>
               <li>
                 Các nguyên nhân dự đoán (khối dùng chung chứa link hỏng, H1 thừa
@@ -380,8 +492,9 @@
             Nguồn dữ liệu:
             <ul>
               <li>
-                <b>OpenSEO:</b> site audit ngày 25/11/2026 (1.000 trang, không
-                chạy Lighthouse), danh sách lỗi theo từng loại.
+                <b>OpenSEO:</b> hai lần site audit ngày 25/11/2026 (lần 1: 1.000
+                trang, lần 2: 595 trang, không chạy Lighthouse), danh sách lỗi
+                theo từng loại.
               </li>
               <li>
                 <b>Kiểm tra trực tiếp bằng curl:</b> HTML trang chủ và 5 trang
