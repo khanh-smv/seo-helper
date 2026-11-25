@@ -41,12 +41,13 @@
     },
     {
       g: "now",
-      t: "Chọn và cài công cụ đo truy cập",
-      why: "Website chưa dùng Google Analytics hay Rybbit. Search Console đã xác minh và đã đọc sitemap, nhưng chưa có dữ liệu lượng truy cập, nguồn và chuyển đổi để đo tác động của các việc đã làm.",
-      how: 'Chọn một công cụ ở mục "Đo lường truy cập" và cài mã (qua WPCode Header &amp; Footer hoặc Elementor Pro Custom Code).',
-      verify: "Công cụ đo ghi nhận lượt truy cập sau vài ngày.",
+      t: "Đặt sự kiện chuyển đổi trong GA4 và xem lại nguồn \"chưa phân loại\"",
+      why: "GA4 đã chạy từ 23/11 nhưng sự kiện chuyển đổi duy nhất là <code>purchase</code> trong khi website không bán hàng, nên chưa đo được khách liên hệ, là mục tiêu thật của website. Ngoài ra 38% phiên (46/121) bị xếp vào nguồn \"chưa phân loại\" và chỉ 28% có tương tác, làm số liệu nguồn truy cập khó tin cậy.",
+      how: "Trong GA4, đánh dấu làm sự kiện chuyển đổi: gửi form liên hệ, bấm gọi điện, bấm Zalo (Site Kit đã bật \"theo dõi lượt chuyển đổi từ plugin\" cho các plugin form được hỗ trợ; chưa kiểm tra form Elementor của website có được nhận ra không, còn bấm gọi và Zalo thường cần thêm sự kiện riêng). Bỏ <code>purchase</code> khỏi sự kiện chuyển đổi. Kiểm tra các liên kết quảng cáo mạng xã hội có gắn tham số UTM chưa.",
+      verify:
+        "Thoát đăng nhập (Site Kit loại người dùng đã đăng nhập), gửi thử một form liên hệ và bấm nút gọi, thấy sự kiện xuất hiện trong GA4 (Realtime). Tỷ lệ \"chưa phân loại\" giảm trong các ngày sau.",
       who: "Quản trị, lập trình web",
-      src: "Xác nhận từ chủ website; curl",
+      src: "GA4 qua OpenSEO (23–24/11)",
     },
 
     {

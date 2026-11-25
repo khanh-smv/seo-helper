@@ -2,12 +2,6 @@
    compare.css — Styles riêng cho seo-tools-compare.html
    ============================================================ */
 
-body {
-  padding-block: 40px 64px;
-  padding-left: max(16px, env(safe-area-inset-left, 0px));
-  padding-right: max(16px, env(safe-area-inset-right, 0px));
-}
-
 h1 {
   font-size: clamp(1.9rem, 4.2vw, 2.6rem);
   font-weight: 800;

@@ -2,48 +2,10 @@
    report.css — Styles riêng cho mocchat-seo-report.html
    ============================================================ */
 
-body {
-  padding-block: 40px 72px;
-  padding-left: max(16px, env(safe-area-inset-left, 0px));
-  padding-right: max(16px, env(safe-area-inset-right, 0px));
-}
-
 h1 {
   font-size: clamp(2rem, 4.4vw, 2.75rem);
   font-weight: 800;
   letter-spacing: -0.025em;
-}
-
-section {
-  scroll-margin-top: 16px;
-}
-
-/* --- Jump nav --- */
-.jump {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 20px;
-}
-
-.jump a {
-  display: inline-flex;
-  align-items: center;
-  height: 34px;
-  padding: 0 14px;
-  text-decoration: none;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--foreground);
-  border: 1px solid var(--border);
-  background: var(--background);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  transition: background-color 0.15s;
-}
-
-.jump a:hover {
-  background: var(--accent);
 }
 
 /* --- Priority badges --- */

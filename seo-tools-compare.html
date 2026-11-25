@@ -14,33 +14,24 @@
     />
     <link rel="stylesheet" href="css/shared.css" />
     <link rel="stylesheet" href="css/compare.css" />
+    <link rel="stylesheet" href="css/sidenav.css" />
   </head>
-  <body>
+  <body class="has-sidenav">
+    <nav class="sidenav" aria-label="Điều hướng">
+      <div class="sidenav-back"><a href="index.html">← Quay lại</a></div>
+      <div class="sidenav-label">Nội dung</div>
+      <ul>
+        <li><a href="#kha-nang">Khả năng</a></li>
+        <li><a href="#phan-tich">Phân tích truy cập</a></li>
+        <li><a href="#chi-phi">Chi phí</a></li>
+        <li><a href="#de-xuat">Đề xuất</a></li>
+        <li><a href="#gioi-han">Giới hạn</a></li>
+      </ul>
+    </nav>
+    <main class="page-main">
     <div class="wrap">
       <header>
-        <div
-          style="
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 24px;
-          "
-        >
-          <a
-            class="btn"
-            href="index.html"
-            style="
-              background: none;
-              color: var(--foreground);
-              padding: 0;
-              border: none;
-              box-shadow: none;
-              height: auto;
-              margin: 0;
-              text-decoration: none;
-            "
-            >← Quay lại</a
-          >
+        <div style="margin-bottom: 24px">
           <div class="eyebrow">
             Audit website, nghiên cứu SEO và phân tích truy cập
           </div>
@@ -54,7 +45,7 @@
         </p>
       </header>
 
-      <section>
+      <section id="kha-nang">
         <h2>Khả năng theo từng hạng mục</h2>
         <p class="sub">
           Các hạng mục lấy từ checklist trong tài liệu cũ, bổ sung nghiên cứu,
@@ -68,7 +59,7 @@
         <p class="src" id="capnote"></p>
       </section>
 
-      <section>
+      <section id="phan-tich">
         <h2>Phân tích truy cập: Google Analytics và Rybbit</h2>
         <p class="sub">
           Hai công cụ cùng nhóm đo lượng truy cập của chính website, khác nhau
@@ -78,7 +69,7 @@
         <div class="tablebox"><table class="vs" id="vs"></table></div>
       </section>
 
-      <section>
+      <section id="chi-phi">
         <h2>Chi phí</h2>
         <p class="sub">
           Giá niêm yết cho một người dùng, đối chiếu ngày 20/11/2026 từ các
@@ -266,7 +257,7 @@
         </p>
       </section>
 
-      <section>
+      <section id="de-xuat">
         <h2>Đề xuất lựa chọn</h2>
         <div class="pick">
           <div class="main">
@@ -336,7 +327,7 @@
         </div>
       </section>
 
-      <section>
+      <section id="gioi-han">
         <div class="caveats">
           <strong>Giới hạn của so sánh này</strong>
           <ul>
@@ -432,7 +423,9 @@
         </div>
       </section>
     </div>
+    </main>
 
     <script src="js/compare.js"></script>
+    <script src="js/nav.js"></script>
   </body>
 </html>

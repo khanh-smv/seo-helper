@@ -1,0 +1,174 @@
+/* ============================================================
+   sidenav.css — Sticky sidebar nav, dùng chung cho báo cáo và so sánh
+   ============================================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---- Page grid layout ---- */
+body.has-sidenav {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  grid-template-rows: auto;
+  min-height: 100vh;
+  padding: 0 !important;
+  margin: 0;
+}
+
+/* ---- Sidebar ---- */
+.sidenav {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 32px 0 32px 20px;
+  border-right: 1px solid var(--border);
+  background: var(--background);
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.sidenav-back {
+  padding-bottom: 24px;
+  padding-right: 16px;
+}
+
+.sidenav-back a {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.15s;
+}
+
+.sidenav-back a:hover {
+  color: var(--foreground);
+}
+
+.sidenav-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--muted-foreground);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0 16px 8px 0;
+}
+
+.sidenav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidenav ul li a {
+  display: block;
+  padding: 7px 16px 7px 12px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  line-height: 1.4;
+}
+
+.sidenav ul li a:hover {
+  color: var(--foreground);
+  background: var(--accent);
+}
+
+.sidenav ul li a.active {
+  color: var(--foreground);
+  font-weight: 600;
+  border-left-color: var(--foreground);
+  background: color-mix(in srgb, var(--accent) 70%, transparent);
+}
+
+/* ---- Main content area ---- */
+.page-main {
+  min-width: 0;
+  padding: 40px max(40px, env(safe-area-inset-right, 0px)) 80px max(40px, env(safe-area-inset-left, 0px));
+}
+
+/* ---- Sections: scroll offset accounts for sticky top bar on mobile ---- */
+section[id] {
+  scroll-margin-top: 32px;
+}
+
+/* ---- Mobile: sidebar becomes sticky top bar ---- */
+@media (max-width: 900px) {
+  body.has-sidenav {
+    display: block;
+  }
+
+  .sidenav {
+    position: sticky;
+    top: 0;
+    height: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-direction: row;
+    align-items: stretch;
+    padding: 0;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+    z-index: 100;
+    scrollbar-width: none;
+  }
+
+  .sidenav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sidenav-back {
+    display: flex;
+    align-items: center;
+    padding: 0 4px 0 16px;
+    border-right: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .sidenav-label {
+    display: none;
+  }
+
+  .sidenav ul {
+    flex-direction: row;
+  }
+
+  .sidenav ul li a {
+    white-space: nowrap;
+    padding: 14px 14px;
+    border-left: none;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .sidenav ul li a.active {
+    border-left-color: transparent;
+    border-bottom-color: var(--foreground);
+    background: none;
+  }
+
+  section[id] {
+    scroll-margin-top: 56px;
+  }
+
+  .page-main {
+    padding: 32px max(16px, env(safe-area-inset-right, 0px)) 72px max(16px, env(safe-area-inset-left, 0px));
+  }
+}

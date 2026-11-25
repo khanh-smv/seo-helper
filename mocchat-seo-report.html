@@ -14,32 +14,25 @@
     />
     <link rel="stylesheet" href="css/shared.css" />
     <link rel="stylesheet" href="css/report.css" />
+    <link rel="stylesheet" href="css/sidenav.css" />
   </head>
-  <body>
+  <body class="has-sidenav">
+    <nav class="sidenav" aria-label="Điều hướng">
+      <div class="sidenav-back"><a href="index.html">← Quay lại</a></div>
+      <div class="sidenav-label">Nội dung</div>
+      <ul>
+        <li><a href="#tinh-trang">Tình trạng</a></li>
+        <li><a href="#da-lam">Đã thực hiện</a></li>
+        <li><a href="#viec-can-lam">Việc còn lại</a></li>
+        <li><a href="#do-luong">Đo lường truy cập</a></li>
+        <li><a href="#bang-chung">Bằng chứng</a></li>
+        <li><a href="#gioi-han">Nguồn và giới hạn</a></li>
+      </ul>
+    </nav>
+    <main class="page-main">
     <div class="wrap">
       <header>
-        <div
-          style="
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 24px;
-          "
-        >
-          <a
-            class="btn"
-            href="index.html"
-            style="
-              background: none;
-              color: var(--foreground);
-              padding: 0;
-              border: none;
-              box-shadow: none;
-              height: auto;
-              margin: 0;
-            "
-            >← Quay lại</a
-          >
+        <div style="margin-bottom: 24px">
           <div class="eyebrow">Cập nhật 25/11/2026 · Sau hai đợt sửa</div>
         </div>
         <h1>Báo cáo SEO Mộc Chất</h1>
@@ -50,7 +43,7 @@
           và ảnh thiếu alt (từ 551 xuống 0). Các trang chuyển hướng 301 đã chạy
           ở Cloudflare nên nhanh hơn nhiều. Lỗi heading nhảy cấp giảm từ 365 xuống 27 trang và trang phản hồi chậm từ 45 xuống 1. Còn lại: trang chủ trên điện thoại
           vẫn chậm (LCP khoảng 15,7 giây khi mô phỏng), CLS tăng lên 0,14 sau
-          khi bật tải lười cho carousel, chưa có công cụ đo truy cập, 6 meta
+          khi bật tải lười cho carousel, GA4 mới chạy từ 23/11 nên chưa đủ dữ liệu để so sánh, 6 meta
           description trùng và các trang nội dung trùng chờ người làm nội dung
           quyết định.
         </p>
@@ -64,14 +57,6 @@
             đã loại trừ phân trang và URL tham số)</span
           >
         </div>
-        <nav class="jump" aria-label="Đi tới">
-          <a href="#tinh-trang">Tình trạng</a>
-          <a href="#da-lam">Đã thực hiện</a>
-          <a href="#viec-can-lam">Việc còn lại</a>
-          <a href="#do-luong">Đo lường truy cập</a>
-          <a href="#bang-chung">Bằng chứng</a>
-          <a href="#gioi-han">Nguồn và giới hạn</a>
-        </nav>
       </header>
 
       <section id="tinh-trang">
@@ -133,9 +118,9 @@
               <tr>
                 <th scope="row">Công cụ đo truy cập</th>
                 <td class="n">Chưa có</td>
-                <td class="n">Chưa có</td>
-                <td><span class="st warn">Thiếu</span></td>
-                <td>Chưa dùng Google Analytics hay Rybbit</td>
+                <td class="n">GA4 từ 23/11</td>
+                <td><span class="st warn">Mới có 2 ngày</span></td>
+                <td>GA4 và Search Console đã nối với OpenSEO. Chưa đặt sự kiện chuyển đổi cho khách liên hệ</td>
               </tr>
               <tr>
                 <th scope="row">Trang thiếu meta description</th>
@@ -516,62 +501,73 @@
       </section>
 
       <section id="do-luong">
-        <h2>Đo lường truy cập: chọn một công cụ</h2>
+        <h2>Đo lường truy cập</h2>
         <p class="sub">
-          Website chưa dùng Google Analytics hay Rybbit, nên hiện chưa có dữ
-          liệu lượng truy cập, nguồn truy cập và chuyển đổi. Cần cài một trong
-          hai (việc số 3). Google Search Console đã được xác minh và đã đọc
-          sitemap (xác nhận ngày 21/11), cung cấp dữ liệu lượt hiển thị và lượt
-          nhấp trên Google.
+          Google Analytics 4 (qua plugin Site Kit) và Search Console đã được nối
+          với OpenSEO, nên đọc được lượng truy cập trực tiếp. GA4 mới bắt đầu
+          ghi dữ liệu từ 23/11, hiện chỉ có 2 ngày, chưa đủ để so sánh trước và
+          sau các việc đã làm.
         </p>
         <div class="tablebox">
           <table style="min-width: 560px">
             <thead>
               <tr>
-                <th>Tiêu chí</th>
-                <th>Google Analytics (GA4)</th>
-                <th>Rybbit</th>
+                <th>Hạng mục</th>
+                <th>Tình trạng</th>
+                <th>Ghi chú</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th scope="row">Chi phí</th>
-                <td>Miễn phí (bản tiêu chuẩn)</td>
-                <td>Tự lưu trữ miễn phí; Cloud từ $19/tháng</td>
-              </tr>
-              <tr>
-                <th scope="row">Dữ liệu lưu ở đâu</th>
-                <td>Máy chủ của Google</td>
-                <td>Máy chủ riêng nếu tự lưu trữ, hoặc cloud của hãng</td>
-              </tr>
-              <tr>
-                <th scope="row">Cookie</th>
-                <td>Dùng cookie, thường cần banner đồng ý</td>
-                <td>Không dùng cookie theo mô tả của hãng</td>
-              </tr>
-              <tr>
-                <th scope="row">Đọc được trong OpenSEO</th>
-                <td>Có tool đọc dữ liệu GA4</td>
-                <td>Chưa ghi nhận tích hợp</td>
-              </tr>
-              <tr>
-                <th scope="row">Phù hợp khi</th>
+                <th scope="row">Cài đặt GA4</th>
+                <td><span class="st ok">Đã nối</span></td>
                 <td>
-                  Cần dữ liệu liên kết với Search Console và đọc trực tiếp trong
-                  OpenSEO
+                  Cài bằng plugin Site Kit, một luồng web cho mocchat.vn tạo
+                  ngày 23/11, múi giờ Việt Nam, đo lường nâng cao bật. Kiểm tra
+                  cấu hình không báo lỗi. Người dùng đã đăng nhập bị loại khỏi
+                  số đo, nên khi thử phải thoát đăng nhập
                 </td>
+              </tr>
+              <tr>
+                <th scope="row">Lượt truy cập 23–24/11</th>
+                <td class="n">121 phiên</td>
                 <td>
-                  Ưu tiên quyền riêng tư và dữ liệu do mình kiểm soát, chấp nhận
-                  tự vận hành máy chủ
+                  Chưa phân loại 46, trực tiếp 20, mạng xã hội tự nhiên 19,
+                  mạng xã hội trả phí 19, tìm kiếm tự nhiên 15, trợ lý AI 1,
+                  giới thiệu 1
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Tìm kiếm tự nhiên (Google)</th>
+                <td class="n">15 phiên</td>
+                <td>13 người dùng, 73% phiên có tương tác. Chưa có kỳ trước để so sánh</td>
+              </tr>
+              <tr>
+                <th scope="row">Nguồn "chưa phân loại"</th>
+                <td><span class="st warn">Cần xem lại</span></td>
+                <td>
+                  Chiếm 38% số phiên và chỉ 28% có tương tác. Có thể do dữ liệu
+                  mới và cách gắn tham số quảng cáo, chưa xác định nguyên nhân
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Sự kiện chuyển đổi</th>
+                <td><span class="st warn">Chưa phù hợp</span></td>
+                <td>
+                  Sự kiện chuyển đổi duy nhất là <code>purchase</code> (mua
+                  hàng), trong khi website không bán hàng. Site Kit đã bật
+                  "theo dõi lượt chuyển đổi từ plugin" nhưng chưa có sự kiện
+                  khách liên hệ nào được đánh dấu chuyển đổi. Lượt bấm gọi điện
+                  và Zalo chưa rõ có được ghi nhận không
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
         <p class="src">
-          Thông tin về GA4 dựa trên tài liệu công khai của Google, chưa được đối
-          chiếu lại trong lần lập báo cáo này. Mức miễn phí của Rybbit Cloud
-          được các nguồn ghi khác nhau (3.000 hoặc 10.000 sự kiện mỗi tháng).
+          Nguồn: GA4 đọc qua OpenSEO ngày 25/11/2026 (khoảng 23–24/11, ngày
+          25/11 chưa đủ). Search Console đã nối với OpenSEO, dữ liệu 28 ngày
+          (26/10 đến 22/11) đã dùng để kiểm tra các trang trùng.
         </p>
       </section>
 
@@ -921,8 +917,9 @@
               khoảng cách với đối thủ.
             </li>
             <li>
-              Dữ liệu lượng truy cập (chưa cài công cụ đo). Dữ liệu hiệu suất
-              tìm kiếm từ Search Console chưa được đưa vào báo cáo.
+              Xu hướng lượng truy cập: GA4 mới ghi từ 23/11 nên chưa có. Dữ liệu hiệu suất tìm kiếm 28 ngày của Search Console
+              mới được dùng để kiểm tra các trang trùng, chưa đưa vào báo cáo
+              này như một phần riêng.
             </li>
             <li>
               Điểm Lighthouse mới của các trang: lần quét 7 không chạy được vì
@@ -957,6 +954,10 @@
               thoại, hai lần đo sau khi bật Lazyload).
             </li>
             <li>
+              <b>Google Analytics 4:</b> cấu hình luồng dữ liệu và số phiên theo nguồn
+              ngày 23–24/11, đọc qua OpenSEO.
+            </li>
+            <li>
               <b>Google Search Console:</b> trạng thái đọc sitemap ngày 21/11
               (do chủ website cung cấp) và dữ liệu hiệu suất 28 ngày (26/10 đến
               22/11) qua OpenSEO, dùng để kiểm tra các trang trùng.
@@ -974,7 +975,9 @@
         </div>
       </section>
     </div>
+    </main>
 
     <script src="js/report.js"></script>
+    <script src="js/nav.js"></script>
   </body>
 </html>
