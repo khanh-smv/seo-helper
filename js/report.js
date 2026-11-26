@@ -115,8 +115,8 @@
     {
       g: "later",
       t: "Rút gọn title và meta description quá dài",
-      why: 'Audit 25/11 báo 75 title dài hơn 60 ký tự (phần lớn là trang sản phẩm có hậu tố " | Mộc Chất", vượt 1 đến 10 ký tự) và 29 meta description dài hơn 160 ký tự. Google có thể cắt bớt khi hiển thị. Mức thông tin.',
-      how: "Rank Math → Tiêu đề &amp; mô tả: sửa mẫu title của sản phẩm để bỏ hậu tố tên site, rồi rút gọn riêng từng bài dài nhất. Cần lập danh sách đề xuất để duyệt trước khi sửa.",
+      why: 'Audit 25/11 báo 75 title dài hơn 60 ký tự và 29 meta description dài hơn 160 ký tự. Google có thể cắt bớt khi hiển thị. Mức thông tin. Title: khoảng 45 trang sản phẩm (đa số vượt dưới 10 ký tự), khoảng 13 trang dự án, còn lại là trang danh mục và bài viết. Hậu tố " | Mộc Chất" của sản phẩm đến từ mẫu title chung trong Rank Math (<code>%title% | %sitename%</code>), không gõ tay từng bài. Meta description dài chủ yếu là trang sản phẩm (kệ tivi, sofa, bàn trà), lấy từ phần tóm tắt, dài nhất 259 ký tự. Chưa sửa: để người làm nội dung quyết.',
+      how: "Title sản phẩm có hai cách: (1) đổi mẫu thành <code>%title%</code> trong Rank Math → Tiêu đề &amp; Meta → Sản phẩm, sửa 1 chỗ, khoảng 40 title xuống dưới 60 ký tự nhưng mọi trang sản phẩm mất tên thương hiệu trong title; (2) giữ hậu tố và rút gọn từng bài (bỏ các chữ như Đẹp, Cao Cấp, Hiện Đại), khoảng 45 bài phải lưu riêng. Title bài viết, dự án, danh mục và meta description phải sửa tay từng bài.",
       verify: "Số title và meta quá dài trong audit sau giảm.",
       who: "SEO, người làm nội dung",
       src: "OpenSEO (audit 25/11)",
