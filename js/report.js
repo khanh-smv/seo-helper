@@ -19,25 +19,14 @@
   var TASKS = [
     {
       g: "now",
-      t: "Sửa CLS 0,14 của trang chủ",
-      tag: ["crit", "Mới phát sinh"],
-      why: "CLS tăng từ 0,00 lên 0,14 (ngưỡng tốt là 0,1) trong cả hai lần đo sau khi bật Lazyload cho carousel đầu trang. Bố cục dịch chuyển khoảng giây 12 đến 13, ở khối tiêu đề động bên dưới carousel. Giả thuyết: ảnh slide đầu cao 974 px, các slide sau cao 1024 px, nên chiều cao carousel đổi khi chuyển slide. Chưa kiểm chứng.",
-      how: "Đặt tỉ lệ cố định 2560:1024 cho các slide bằng CSS <code>aspect-ratio</code> và cắt ảnh <code>upscalemedia…</code> từ 2560×974 về 2560×1024. Nếu CLS không giảm thì tắt Lazyload của carousel.",
+      t: "Hạ LCP trang chủ trên điện thoại xuống dưới 2,5 giây",
+      tag: ["warn", "Đã giảm, chưa đạt"],
+      why: "Lighthouse 26/11: LCP mobile 4,8 giây (các lần đo cùng cấu hình dao động 3,8 đến 7,2 giây), desktop 1,2 giây. Phần tử LCP là ảnh slide đầu (2560 px, khoảng 280 KB), tải lâu vì cùng lúc đó khoảng 12 ảnh dự án và sản phẩm ngay dưới carousel cũng được tải, và trong danh sách request ảnh LCP chỉ có ưu tiên thấp do thẻ preload của FlyingPress thiếu <code>fetchpriority=high</code> (Lighthouse cảnh báo; chưa kiểm chứng đây là nguyên nhân chính). Dung lượng trang tăng sau khi tắt Lazyload (mobile 5,7 MB) và Lighthouse vẫn ước tính tiết kiệm được khoảng 3,6 MB ảnh. Ba ảnh bìa video còn lại nặng 736 đến 832 KB (chưa đổi kích thước, nằm sâu dưới trang). Thử đổi ảnh carousel sang 1920×768 làm LCP xấu hơn (mobile 9,9 đến 11,8 giây) nên đã hoàn lại; chưa rõ nguyên nhân.",
+      how: "Làm từng cách rồi đo lại mobile 3 lần: (1) nén lại file WebP của 8 slide carousel nhưng giữ nguyên kích thước 2560 px; (2) thử tắt <b>Preload critical images</b> trong FlyingPress → Images để ảnh LCP tải theo thẻ img có <code>fetchpriority=high</code> (logo và icon sẽ mất preload, cần đo); (3) đổi ba ảnh bìa video còn lại sang Custom 800×533 như ảnh đầu tiên. Không đổi kích thước carousel sang 1920×768 khi chưa biết nguyên nhân.",
       verify:
-        "Đo lại bằng Chrome DevTools (mô phỏng điện thoại, cửa sổ không đăng nhập): CLS từ 0,1 trở xuống.",
-      who: "Lập trình web",
-      src: "Chrome DevTools (2 lần đo ngày 21/11)",
-    },
-    {
-      g: "now",
-      t: "Hạ LCP trang chủ: ảnh bìa video và các ảnh còn nặng",
-      tag: ["warn", "Làm tiếp việc nén ảnh"],
-      why: "LCP mô phỏng giảm từ 19,1 xuống 15,7 giây, vẫn rất chậm. Phần tử LCP hiện là ảnh bìa video <code>anh-2.webp</code> (350 KB). Nó là ảnh nền CSS nên trình duyệt phát hiện muộn, tải ưu tiên thấp và tranh băng thông với khoảng 5 MB ảnh khác. Còn khoảng 13 ảnh JPG 550–812 KB trong lưới dự án, và Chrome đánh giá còn 2,2 đến 3,3 MB ảnh có thể tối ưu thêm.",
-      how: "Tạo bản nhỏ cho ảnh bìa video (khoảng 800 px) và preload ảnh này. Chuyển các ảnh JPG nặng trong lưới dự án sang WebP. Resize ảnh carousel từ 2560 px về 1920 px.",
-      verify:
-        "Đo lại LCP bằng cùng phương pháp. Mốc tốt của Google là 2,5 giây.",
-      who: "Lập trình web, plugin ảnh hoặc cache",
-      src: "Chrome DevTools, FlyingPress",
+        "Lighthouse mobile 3 lần liên tiếp: LCP trung bình dưới 2,5 giây (hoặc giảm rõ so với 4,8 giây) và CLS vẫn dưới 0,1.",
+      who: "Lập trình web, quản trị website",
+      src: "Lighthouse (trình duyệt, 25–26/11), FlyingPress",
     },
     {
       g: "now",
@@ -61,13 +50,14 @@
       src: "curl, OpenSEO (audit 25/11)",
     },
     {
-      g: "month",
+      g: "later",
       t: "Cho phép phóng to trên điện thoại",
-      why: "Thẻ viewport đang đặt <code>maximum-scale=1.0, user-scalable=no</code>, chặn người dùng phóng to chữ và ảnh. Ảnh nội thất cần phóng to để xem chi tiết.",
-      how: "Đổi thành <code>width=device-width, initial-scale=1</code>. Theme Woodmart in thẻ này, chưa xác nhận có tùy chọn trong Theme Settings, nếu không có thì cần sửa bằng theme con.",
-      verify: "Lighthouse không còn báo lỗi viewport trong mục truy cập.",
-      who: "Lập trình web",
-      src: "SEOquake, Lighthouse, curl",
+      tag: ["warn", "Chưa làm được"],
+      why: "Thẻ viewport đang đặt <code>maximum-scale=1.0, user-scalable=no</code>, chặn người dùng phóng to chữ và ảnh. Ảnh nội thất cần phóng to để xem chi tiết. Đã thử ngày 26/11: theme có tùy chọn <b>Theme settings → General → Other → Viewport tag</b> (đang là Not scalable), nhưng lưu bị lỗi vì PHP của host giới hạn <code>max_input_vars = 1000</code> trong khi form cài đặt gửi 1.027 trường, nên trang chuyển sang <code>options.php</code> và giá trị không đổi. Chủ website quyết định bỏ qua việc này lúc này.",
+      how: "Nâng <code>max_input_vars</code> lên khoảng 3000 (thêm vào <code>.user.ini</code> hoặc chỉnh trong bảng điều khiển host), rồi đổi Viewport tag sang Scalable và lưu. Cách khác: snippet PHP thay thẻ viewport (chưa biết theme in thẻ bằng hook nào).",
+      verify: "Thẻ viewport trên trang thật không còn <code>user-scalable=no</code>; Lighthouse không còn báo lỗi viewport trong mục truy cập.",
+      who: "Quản trị host, lập trình web",
+      src: "Theme settings, Site Health, Lighthouse, curl",
     },
     {
       g: "month",
