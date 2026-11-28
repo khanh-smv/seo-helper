@@ -22,6 +22,7 @@
       <div class="sidenav-label">Nội dung</div>
       <ul>
         <li><a href="#tinh-trang">Tình trạng</a></li>
+        <li><a href="#da-lam">Đã thực hiện</a></li>
         <li><a href="#viec-can-lam">Việc cần làm</a></li>
         <li><a href="#do-luong">Đo lường truy cập</a></li>
         <li><a href="#bang-chung">Bằng chứng</a></li>
@@ -32,31 +33,30 @@
       <div class="wrap">
         <header>
           <div style="margin-bottom: 24px">
-            <div class="eyebrow">Audit đầu tiên · 25/11/2026</div>
+            <div class="eyebrow">Cập nhật 28/11/2026 · Sau các đợt sửa</div>
           </div>
           <h1>Báo cáo SEO Sao Việt Home</h1>
           <p class="lede">
-            Đây là lần audit đầu tiên của saoviethome.vn, chưa có lần sửa nào.
-            Lần quét đầu dừng ở giới hạn 1.000 trang vì 42% là URL tham số
-            <code>?shop_view=</code> và <code>?per_row=</code>. Sau khi loại các
-            URL này, audit quét hết 595 trang và số lỗi giảm mạnh. Lỗi nặng nhất
-            còn lại là 230 liên kết trỏ tới 25 URL đã chết, 189 trang thiếu H1
-            (gồm trang chủ), và chưa có công cụ đo truy cập nào hoạt động
-            (container Tag Manager không có thẻ GA4, chỉ có thẻ Universal
-            Analytics đã ngừng từ năm 2023). Báo cáo này chỉ dựa trên audit và
-            kiểm tra trực tiếp, chưa có số liệu Search Console hay GA4.
+            Từ audit đầu tiên (25/11) đến audit 28/11 đã sửa nhiều lỗi nặng:
+            liên kết nội bộ hỏng giảm từ 230 xuống 93, trang lỗi 4xx từ 29
+            xuống 9, trang có nhiều H1 từ 58 xuống 0, chuỗi chuyển hướng từ 2
+            xuống 0. Đã cài Site Kit và nối GA4, Search Console với OpenSEO. Còn
+            lại: 9 URL cũ chờ người làm nội dung chọn trang đích, số trang thiếu
+            H1 (84) cần xóa cache FlyingPress rồi audit lại vì phần lớn đã có H1
+            trong HTML mới, và việc dọn Tag Manager.
           </p>
           <div class="meta">
             <span><b>Website:</b> saoviethome.vn</span>
             <span><b>Thị trường:</b> Việt Nam, tiếng Việt</span>
-            <span><b>Dữ liệu:</b> 25/11/2026</span>
+            <span><b>Dữ liệu:</b> 25–28/11/2026</span>
             <span
-              ><b>Audit:</b> lần 1 (09:10, 1.000 trang, dừng ở giới hạn) và lần
-              2 (09:50, 595 trang, quét hết). Cả hai đã loại
-              <code>/cart/</code>, <code>/my-account/</code>,
-              <code>/*/page/</code>, <code>?add-to-cart=</code>,
-              <code>?per_page=</code>, <code>?ucterms=</code>; lần 2 loại thêm
-              <code>?per_row=</code> và <code>?shop_view=list</code></span
+              ><b>Audit:</b> 25/11 09:50 (595 trang) và 28/11 04:58 (586 trang),
+              cả hai quét hết. Lần 25/11 loại <code>/cart/</code>,
+              <code>/my-account/</code>, <code>/*/page/</code>,
+              <code>?add-to-cart=</code>, <code>?per_page=</code>,
+              <code>?ucterms=</code>, <code>?per_row=</code> và
+              <code>?shop_view=list</code>; cấu hình lần 28/11 chưa đối chiếu
+              lại</span
             >
           </div>
         </header>
@@ -64,18 +64,19 @@
         <section id="tinh-trang">
           <h2>Tình trạng hiện tại</h2>
           <p class="sub">
-            Cột "Lần 2" là số liệu chính (595 trang, đã loại URL tham số
-            <code>?shop_view=</code> và <code>?per_row=</code>). Cột "Lần 1" là
-            lần quét đầu có các URL này, giữ lại để thấy chúng làm tăng số lỗi
-            bao nhiêu.
+            So sánh audit đầu tiên có số liệu chính (25/11, 595 trang) với audit
+            mới nhất (28/11, 586 trang), sau các đợt sửa ghi ở mục "Đã thực
+            hiện". Số liệu lần quét đầu 1.000 trang (có URL tham số
+            <code>?shop_view=</code> và <code>?per_row=</code>) không còn dùng
+            ở đây.
           </p>
           <div class="tablebox">
             <table style="min-width: 760px">
               <thead>
                 <tr>
                   <th>Chỉ số</th>
-                  <th class="n">Lần 1 (1.000 trang)</th>
-                  <th class="n">Lần 2 (595 trang)</th>
+                  <th class="n">25/11 (595 trang)</th>
+                  <th class="n">28/11 (586 trang)</th>
                   <th>Trạng thái</th>
                   <th>Ghi chú</th>
                 </tr>
@@ -83,62 +84,50 @@
               <tbody>
                 <tr>
                   <th scope="row">Số trang quét</th>
-                  <td class="n">1.000</td>
                   <td class="n">595</td>
+                  <td class="n">586</td>
                   <td><span class="st ok">Quét hết</span></td>
-                  <td>
-                    Lần 1 dừng ở giới hạn, còn trang chưa quét. Lần 2 không còn
-                    bị dừng
-                  </td>
+                  <td>Chênh 9 trang, chưa rõ nguyên nhân (cấu hình loại trừ của lần mới chưa đối chiếu)</td>
                 </tr>
                 <tr>
                   <th scope="row">Liên kết nội bộ hỏng</th>
-                  <td class="n">330</td>
                   <td class="n">230</td>
-                  <td><span class="st crit">Nặng</span></td>
-                  <td>
-                    Trỏ tới 25 URL 404 (bài cũ năm 2023, danh mục đã xóa), từ
-                    170 trang
-                  </td>
+                  <td class="n">93</td>
+                  <td><span class="st warn">Đã giảm</span></td>
+                  <td>Còn trỏ tới 9 URL 404 chờ người làm nội dung chọn trang đích (mới kiểm tra mẫu)</td>
                 </tr>
                 <tr>
                   <th scope="row">Trang trả lỗi 4xx</th>
-                  <td class="n">21</td>
                   <td class="n">29</td>
-                  <td><span class="st crit">Cần xử lý</span></td>
-                  <td>
-                    25 URL đã chết và 4 URL <code>?p=…</code> dạng sản phẩm.
-                    Tăng vì lần 2 tìm thêm được các URL đã chết
-                  </td>
+                  <td class="n">9</td>
+                  <td><span class="st warn">Đã giảm</span></td>
+                  <td>9 URL còn lại chính là 9 URL chờ xác nhận đích chuyển hướng</td>
                 </tr>
                 <tr>
                   <th scope="row">Trang thiếu thẻ H1</th>
-                  <td class="n">491</td>
                   <td class="n">189</td>
-                  <td><span class="st crit">Nặng</span></td>
-                  <td>
-                    Trang chủ, 68 tag sản phẩm, 58 trang tin tức, 44 trang dự án
-                    và 18 trang khác
-                  </td>
+                  <td class="n">84</td>
+                  <td><span class="st warn">Cần xóa cache</span></td>
+                  <td>68 tag sản phẩm, 13 trang (11 danh mục con, Shop, Liên hệ) và 3 trang chưa xử lý. HTML mới đã có H1 (đã kiểm tra mẫu), nhưng FlyingPress còn trả bản cũ</td>
                 </tr>
                 <tr>
                   <th scope="row">Trang có nhiều thẻ H1</th>
-                  <td class="n">124</td>
                   <td class="n">58</td>
-                  <td><span class="st warn">Cần xử lý</span></td>
-                  <td>Chủ yếu trang sản phẩm có 2 đến 4 H1</td>
+                  <td class="n">0</td>
+                  <td><span class="st ok">Đã hết</span></td>
+                  <td>Do đoạn mã WPCode hạ H1 thừa xuống H2</td>
                 </tr>
                 <tr>
                   <th scope="row">Trang thiếu meta description</th>
-                  <td class="n">429</td>
+                  <td class="n">82</td>
                   <td class="n">82</td>
                   <td><span class="st warn">Cần xử lý</span></td>
                   <td>68 trong 82 là trang tag sản phẩm</td>
                 </tr>
                 <tr>
                   <th scope="row">Trang có ảnh thiếu alt</th>
-                  <td class="n">906</td>
                   <td class="n">482</td>
+                  <td class="n">485</td>
                   <td><span class="st warn">Cần xử lý</span></td>
                   <td>Mỗi trang thiếu đúng 3 ảnh, là ảnh trong template</td>
                 </tr>
@@ -147,51 +136,98 @@
                   <td class="n">8 / 18</td>
                   <td class="n">8 / 18</td>
                   <td><span class="st warn">Cần xử lý</span></td>
-                  <td>
-                    Cặp danh mục dự án, sản phẩm sfb-15, nhóm kệ tivi, sofa,
-                    giường
-                  </td>
+                  <td>Chờ người làm nội dung quyết định</td>
                 </tr>
                 <tr>
                   <th scope="row">Chuỗi chuyển hướng</th>
-                  <td class="n">—</td>
                   <td class="n">2</td>
-                  <td><span class="st warn">Mới thấy</span></td>
-                  <td>Hai bài dự án chuyển hướng qua 2 bước</td>
+                  <td class="n">0</td>
+                  <td><span class="st ok">Đã hết</span></td>
+                  <td>Chuyển hướng Cloudflare ra thẳng trang cuối</td>
                 </tr>
                 <tr>
                   <th scope="row">Title dài hơn 60 ký tự</th>
-                  <td class="n">607</td>
                   <td class="n">366</td>
+                  <td class="n">368</td>
                   <td><span class="st warn">Mức thông tin</span></td>
                   <td>Do hậu tố title dài khoảng 50 ký tự</td>
                 </tr>
                 <tr>
                   <th scope="row">Trang phản hồi chậm</th>
-                  <td class="n">426</td>
                   <td class="n">1</td>
-                  <td><span class="st ok">Đã hết</span></td>
-                  <td>
-                    Lần 1: 424 là URL <code>?shop_view=</code> chưa cache. Lần 2
-                    còn 1 bài tin tức (3,2 giây)
-                  </td>
+                  <td class="n">1</td>
+                  <td><span class="st ok">Mức thông tin</span></td>
+                  <td>Một bài tin tức</td>
                 </tr>
                 <tr>
                   <th scope="row">Heading nhảy cấp</th>
-                  <td class="n">213</td>
                   <td class="n">109</td>
+                  <td class="n">88</td>
                   <td><span class="st warn">Mức thông tin</span></td>
-                  <td>Chưa tìm nguyên nhân</td>
+                  <td>Giảm sau khi hạ H1 thừa; chưa tìm nguyên nhân phần còn lại</td>
                 </tr>
                 <tr>
                   <th scope="row">Công cụ đo truy cập</th>
                   <td class="n">Không có</td>
-                  <td class="n">Không có</td>
-                  <td><span class="st crit">Thiếu</span></td>
-                  <td>
-                    Không có GA4, Search Console, Site Kit. Tag Manager chỉ còn
-                    thẻ Universal Analytics đã ngừng
-                  </td>
+                  <td class="n">Có</td>
+                  <td><span class="st ok">Đã có</span></td>
+                  <td>GA4 và Search Console đã nối. Tag Manager vẫn còn thẻ Universal Analytics cũ</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="da-lam">
+          <h2>Đã thực hiện</h2>
+          <p class="sub">
+            Các việc đã làm từ audit đầu tiên, và kết quả đo được ở audit
+            28/11.
+          </p>
+          <div class="tablebox">
+            <table style="min-width: 760px">
+              <thead>
+                <tr>
+                  <th>Việc</th>
+                  <th class="n">Ngày</th>
+                  <th>Kết quả</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Cài Site Kit, nối GA4 và Search Console</th>
+                  <td class="n">28/11</td>
+                  <td>Xem mục Đo lường truy cập</td>
+                </tr>
+                <tr>
+                  <th scope="row">Chuyển hướng 301 bằng Cloudflare Bulk Redirects</th>
+                  <td class="n">28/11</td>
+                  <td>19 URL cũ chuyển tới trang đích (15 URL khớp slug, 2 chuỗi chuyển hướng, danh mục <code>tu-tho</code> và <code>phong-khach/tu-tho-ban-tho</code>). Liên kết hỏng 230 → 93, trang 4xx 29 → 9, chuỗi chuyển hướng 2 → 0</td>
+                </tr>
+                <tr>
+                  <th scope="row">Gỡ link xem trước <code>?p=…&amp;preview=true</code> khỏi mô tả sản phẩm</th>
+                  <td class="n">28/11</td>
+                  <td>25 sản phẩm (GBA, GNG). Bốn URL <code>?p=</code> không còn xuất hiện</td>
+                </tr>
+                <tr>
+                  <th scope="row">Tạo lại sơ đồ trang danh mục sản phẩm</th>
+                  <td class="n">28/11</td>
+                  <td>Sơ đồ còn liệt kê slug cũ <code>tu-tho</code>; tắt rồi bật lại mục &quot;Danh mục sản phẩm&quot; trong Rank Math mới cập nhật được (xóa transient và cập nhật danh mục không đủ)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Trang chủ: title, meta description, H1</th>
+                  <td class="n">28/11</td>
+                  <td>Title &quot;Thi Công Nội Thất Gỗ Óc Chó Cao Cấp | Sao Việt Home&quot; (51 ký tự), meta 151 ký tự, 1 H1. H1 hiện là &quot;Một thành viên của Sao Mộc Vương Group (SMV Group)&quot;, chưa chứa từ khóa</td>
+                </tr>
+                <tr>
+                  <th scope="row">Đoạn mã WPCode &quot;Đổi H1 trong nội dung thành H2&quot; (snippet 13503)</th>
+                  <td class="n">28/11</td>
+                  <td>Hạ H1 thừa trong nội dung sản phẩm, bài viết, dự án và mô tả danh mục xuống H2. Số trang nhiều H1 58 → 0. Giữ đoạn mã này; tắt thì H1 thừa quay lại</td>
+                </tr>
+                <tr>
+                  <th scope="row">Thêm H1 vào mẫu giao diện</th>
+                  <td class="n">28/11</td>
+                  <td>Mẫu bài viết (Post Title, 28px), mẫu danh mục (Archive Title), bố cục sản phẩm (cho <code>/shop/</code>, danh mục và tag sản phẩm), trang Giới thiệu và Liên hệ (đổi thẻ tiêu đề có sẵn sang H1, giao diện không đổi). Mẫu bài viết và danh mục thêm tiêu đề hiển thị mới</td>
                 </tr>
               </tbody>
             </table>
@@ -212,8 +248,9 @@
         <section id="do-luong">
           <h2>Đo lường truy cập</h2>
           <p class="sub">
-            Website chưa đo được lượng truy cập và hiệu suất tìm kiếm. Mộc Chất
-            đã nối GA4 và Search Console qua Site Kit, có thể làm theo cách đó.
+            Ngày 28/11 đã cài Site Kit và nối GA4, Search Console với OpenSEO,
+            giống cách đã làm cho Mộc Chất. Còn lại việc dọn Tag Manager và đặt
+            sự kiện chuyển đổi.
           </p>
           <div class="tablebox">
             <table style="min-width: 560px">
@@ -227,58 +264,43 @@
               <tbody>
                 <tr>
                   <th scope="row">Google Analytics 4</th>
-                  <td><span class="st crit">Chưa có</span></td>
-                  <td>
-                    Không thấy mã GA4 (<code>gtag</code>, <code>G-…</code>)
-                    trong HTML trang chủ, cũng không có trong container Tag
-                    Manager
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">Tag Manager</th>
-                  <td><span class="st warn">Có, đã cũ</span></td>
-                  <td>
-                    Container <code>GTM-T5ZGHG9</code> chỉ chứa thẻ Universal
-                    Analytics (<code>UA-167860943-1</code>), loại Google đã
-                    ngừng ghi dữ liệu từ 1/7/2023. Còn có thẻ chuyển đổi Google
-                    Ads
-                  </td>
+                  <td><span class="st ok">Đã có</span></td>
+                  <td>Mã đo <code>G-JDQTZ90KX9</code> do Site Kit chèn (một thẻ <code>gtag.js</code> trên trang chủ, không trùng với Tag Manager). Property tạo ngày 28/11 nên chưa có lịch sử. Sự kiện chuyển đổi duy nhất là <code>purchase</code> do Site Kit tạo sẵn, trong khi website không bán hàng</td>
                 </tr>
                 <tr>
                   <th scope="row">Search Console</th>
-                  <td><span class="st warn">Chưa nối với OpenSEO</span></td>
-                  <td>
-                    HTML trang chủ có thẻ xác minh Google, nên có thể đã được
-                    xác minh. Chưa có dữ liệu hiệu suất trong báo cáo
-                  </td>
+                  <td><span class="st ok">Đã nối</span></td>
+                  <td>OpenSEO đọc được dữ liệu. Từ 29/10 đến 25/11: truy vấn "thi công nội thất" có 2.478 lượt hiển thị, 20 lượt nhấp, vị trí 4,5. Thẻ xác minh do Rank Math in ra</td>
                 </tr>
                 <tr>
                   <th scope="row">Site Kit</th>
-                  <td><span class="st warn">Chưa cài</span></td>
-                  <td>Không thấy dấu hiệu của plugin trong HTML</td>
+                  <td><span class="st ok">Đã cài</span></td>
+                  <td>Chỉ cấp GA4 và Search Console. Không bật tùy chọn Tag Manager của Site Kit, vì GTM đã có sẵn trong WPCode</td>
+                </tr>
+                <tr>
+                  <th scope="row">Tag Manager</th>
+                  <td><span class="st warn">Còn thẻ cũ</span></td>
+                  <td>Container <code>GTM-T5ZGHG9</code> (chèn qua WPCode) vẫn có thẻ Universal Analytics đã ngừng và thẻ Google Ads. Chưa gỡ được vì chưa có tài khoản Tag Manager</td>
                 </tr>
                 <tr>
                   <th scope="row">Facebook Pixel</th>
-                  <td><span class="st ok">Có</span></td>
-                  <td>
-                    Có mã Pixel trên trang, nên có thể website đang chạy quảng
-                    cáo Facebook
-                  </td>
+                  <td><span class="st warn">Có thể trùng</span></td>
+                  <td>Mã Pixel được chèn trực tiếp qua WPCode; báo cáo trước ghi container Tag Manager cũng có Pixel, nên có thể đang đếm đôi. Chưa kiểm tra</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <p class="src">
-            Nguồn: HTML trang chủ và nội dung container Tag Manager, đọc ngày
-            25/11/2026. "Chưa nối" và "chưa cài" là kết luận từ việc không thấy
-            dấu hiệu, chưa kiểm tra trong trang quản trị của website.
+            Nguồn: OpenSEO (đo lường GA4, Search Console), HTML trang chủ khi
+            chưa đăng nhập, danh sách plugin và WPCode trong trang quản trị,
+            ngày 28/11/2026.
           </p>
         </section>
 
         <section id="bang-chung">
           <h2>Bằng chứng</h2>
 
-          <h3>Mẫu trang đã kiểm tra trực tiếp bằng curl</h3>
+          <h3>Mẫu trang đã kiểm tra trực tiếp</h3>
           <div class="tablebox">
             <table style="min-width: 760px">
               <thead>
@@ -290,46 +312,31 @@
               <tbody>
                 <tr>
                   <th scope="row">Trang chủ</th>
-                  <td>
-                    Không có H1. Meta description tự lấy từ nội dung, hai câu
-                    dính liền. Có 3 biểu tượng SVG không có alt. Viewport chặn
-                    phóng to. Không có HSTS. <code>www</code> chuyển hướng 301
-                    đúng
-                  </td>
+                  <td>Ngày 28/11 đã có title mới (51 ký tự), meta description mới (151 ký tự) và 1 H1. Còn lại: viewport chặn phóng to, 3 biểu tượng SVG không có alt, không có HSTS.</td>
                 </tr>
                 <tr>
                   <th scope="row"><code>/sofa-go-oc-cho-ma-sfb-24/</code></th>
-                  <td>4 thẻ H1 (tên sản phẩm và 3 tiêu đề phần nội dung)</td>
+                  <td>Trước: 4 thẻ H1. Sau đoạn mã WPCode: 1 H1 (tên sản phẩm).</td>
                 </tr>
                 <tr>
-                  <th scope="row">
-                    <code>/product-tag/ban-an-go-oc-cho/</code>
-                  </th>
-                  <td>
-                    Cho phép lập chỉ mục, không có meta description, không có H1
-                  </td>
+                  <th scope="row"><code>/product-tag/saoviethome/</code></th>
+                  <td>HTML mới có H1 (tên thẻ, hiện kèm tiền tố "Thẻ:"); bản cache FlyingPress cũ chưa có. Cho phép lập chỉ mục, vẫn chưa có meta description.</td>
                 </tr>
                 <tr>
-                  <th scope="row"><code>/tin-tuc/</code></th>
-                  <td>Không có meta description, không có H1</td>
+                  <th scope="row"><code>/tin-tuc/</code> và bài tin tức</th>
+                  <td>Sau khi thêm Post Title và Archive Title vào mẫu: có 1 H1. Danh mục tin tức vẫn chưa có meta description.</td>
                 </tr>
                 <tr>
-                  <th scope="row">
-                    <code>/shop/</code> và <code>/shop/?shop_view=list</code>
-                  </th>
-                  <td>
-                    Trang gốc được cache, 0,33 giây. Trang tham số không được
-                    cache, 4,6 giây
-                  </td>
+                  <th scope="row"><code>/shop/</code></th>
+                  <td>HTML mới có H1 "Shop"; bản cache cũ chưa có. Trang không có link ở menu hay trang chủ, chỉ có nút "Back to products" trên trang sản phẩm.</td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>/phong-khach-go-oc-cho/tu-tho/</code></th>
+                  <td>Danh mục đã đổi slug thành <code>ban-tho</code>, sơ đồ trang Rank Math còn liệt kê slug cũ (404). Đã chuyển hướng 301 và tạo lại sơ đồ trang.</td>
                 </tr>
                 <tr>
                   <th scope="row">Sơ đồ trang và robots.txt</th>
-                  <td>
-                    Có <code>sitemap_index.xml</code> với 7 sơ đồ con (bài viết,
-                    trang, sản phẩm, danh mục, thẻ bài, danh mục sản phẩm, thẻ
-                    sản phẩm). robots.txt chỉ chặn <code>/wp-admin/</code> và
-                    các thư mục log, không chặn tham số
-                  </td>
+                  <td>Có <code>sitemap_index.xml</code> với 7 sơ đồ con. robots.txt chỉ chặn <code>/wp-admin/</code> và các thư mục log, không chặn tham số.</td>
                 </tr>
               </tbody>
             </table>
@@ -341,46 +348,46 @@
               <thead>
                 <tr>
                   <th>Loại lỗi</th>
-                  <th class="n">Lần 1</th>
-                  <th class="n">Lần 2</th>
+                  <th class="n">25/11 (595 trang)</th>
+                  <th class="n">28/11 (586 trang)</th>
                   <th>Mức</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <th scope="row">Liên kết nội bộ hỏng</th>
-                  <td class="n">330</td>
                   <td class="n">230</td>
+                  <td class="n">93</td>
                   <td>Nghiêm trọng</td>
                 </tr>
                 <tr>
                   <th scope="row">Ảnh thiếu alt</th>
-                  <td class="n">906</td>
                   <td class="n">482</td>
+                  <td class="n">485</td>
                   <td>Cảnh báo</td>
                 </tr>
                 <tr>
                   <th scope="row">Thiếu H1</th>
-                  <td class="n">491</td>
                   <td class="n">189</td>
-                  <td>Cảnh báo</td>
+                  <td class="n">84</td>
+                  <td>Cảnh báo (phần lớn do cache cũ)</td>
                 </tr>
                 <tr>
                   <th scope="row">Thiếu meta description</th>
-                  <td class="n">429</td>
+                  <td class="n">82</td>
                   <td class="n">82</td>
                   <td>Cảnh báo</td>
                 </tr>
                 <tr>
                   <th scope="row">Nhiều H1</th>
-                  <td class="n">124</td>
                   <td class="n">58</td>
+                  <td class="n">0</td>
                   <td>Cảnh báo</td>
                 </tr>
                 <tr>
                   <th scope="row">Trang lỗi 4xx</th>
-                  <td class="n">21</td>
                   <td class="n">29</td>
+                  <td class="n">9</td>
                   <td>Cảnh báo</td>
                 </tr>
                 <tr>
@@ -397,50 +404,50 @@
                 </tr>
                 <tr>
                   <th scope="row">Chuỗi chuyển hướng</th>
-                  <td class="n">—</td>
                   <td class="n">2</td>
+                  <td class="n">0</td>
                   <td>Cảnh báo</td>
                 </tr>
                 <tr>
                   <th scope="row">Title quá dài</th>
-                  <td class="n">607</td>
                   <td class="n">366</td>
+                  <td class="n">368</td>
                   <td>Thông tin</td>
                 </tr>
                 <tr>
                   <th scope="row">Meta description quá dài</th>
-                  <td class="n">167</td>
+                  <td class="n">153</td>
                   <td class="n">153</td>
                   <td>Thông tin</td>
                 </tr>
                 <tr>
                   <th scope="row">Meta description quá ngắn</th>
-                  <td class="n">11</td>
+                  <td class="n">4</td>
                   <td class="n">4</td>
                   <td>Thông tin</td>
                 </tr>
                 <tr>
                   <th scope="row">Heading nhảy cấp</th>
-                  <td class="n">213</td>
                   <td class="n">109</td>
+                  <td class="n">88</td>
                   <td>Thông tin</td>
                 </tr>
                 <tr>
                   <th scope="row">Phản hồi chậm</th>
-                  <td class="n">426</td>
+                  <td class="n">1</td>
                   <td class="n">1</td>
                   <td>Thông tin</td>
                 </tr>
                 <tr>
                   <th scope="row">Đã canonical về URL khác</th>
-                  <td class="n">424</td>
                   <td class="n">—</td>
-                  <td>Thông tin (nhóm <code>?shop_view=</code>, đã loại)</td>
+                  <td class="n">1</td>
+                  <td>Thông tin</td>
                 </tr>
                 <tr>
                   <th scope="row">Trang sâu trong cấu trúc</th>
-                  <td class="n">290</td>
                   <td class="n">2</td>
+                  <td class="n">5</td>
                   <td>Thông tin</td>
                 </tr>
                 <tr>
@@ -460,35 +467,36 @@
             <strong>Chưa có trong báo cáo này</strong>
             <ul>
               <li>
-                Dữ liệu lượng truy cập và hiệu suất tìm kiếm (chưa có GA4 và
-                Search Console), nên chưa biết trang nào có lượt hiển thị hay
-                khách liên hệ.
+                Số liệu GA4: property mới tạo ngày 28/11 nên chưa có lịch sử.
+                Search Console đã nối nhưng báo cáo chưa phân tích theo trang
+                hay truy vấn.
               </li>
               <li>
-                Điểm Lighthouse, LCP, CLS: lần audit này không chạy Lighthouse.
+                Điểm Lighthouse, LCP, CLS: các lần audit không chạy Lighthouse.
               </li>
               <li>
                 Thứ hạng và backlink của saoviethome.vn, và đối thủ. Dự án trong
                 OpenSEO chưa có thông tin về mục tiêu hay đối thủ.
               </li>
               <li>
-                Lần 1 dừng ở giới hạn 1.000 trang nên chưa quét hết. Lần 2 quét
-                hết 595 trang. Lần 2 loại trừ <code>?shop_view=list</code> và
-                <code>?per_row=</code>. Trong lần 1, các URL
-                <code>?shop_view=grid</code> đều có kèm <code>?per_row=</code>
-                đứng trước, nên cũng được loại. Lần 2 không còn URL nào chứa
-                <code>shop_view</code>. Chưa biết có URL chỉ có
-                <code>?shop_view=grid</code> (không kèm <code>per_row</code>)
-                hay không.
+                <b>Số trang thiếu H1 (84) chưa phản ánh đúng.</b> Ngày 28/11 đã
+                kiểm tra bản HTML mới của <code>/lien-he/</code>,
+                <code>/shop/</code>, một danh mục con và một tag sản phẩm: đều đã
+                có H1, nhưng bản FlyingPress đang trả (HIT) vẫn là bản cũ không
+                có H1. Chưa kiểm tra riêng từng trang trong 84 trang. Ba trang
+                chưa xử lý: <code>/author/saoviethome/</code>,
+                <code>/tag/trang-chu/</code>, <code>/uncategorized/</code>.
               </li>
               <li>
-                Số lỗi 4xx tăng từ 21 lên 29 vì lần 2 tìm thêm được các URL đã
-                chết, không phải vì có thêm lỗi mới trên website.
+                Cấu hình loại trừ của audit 28/11 không được đối chiếu lại với
+                lần 25/11, nên chênh lệch 9 trang (595 → 586) chưa rõ nguyên
+                nhân. Một audit khác cùng ngày (04:42, 479 trang) không dùng
+                trong báo cáo này.
               </li>
               <li>
-                Các nguyên nhân dự đoán (khối dùng chung chứa link hỏng, H1 thừa
-                nằm ở khối dùng chung, heading nhảy cấp giống Mộc Chất) chưa
-                được kiểm chứng trong trang quản trị, chưa mở template nào.
+                Số liên kết hỏng còn 93: chỉ kiểm tra mẫu 12 liên kết của audit
+                trước đó (03:10); các liên kết này đều trỏ tới URL nằm trong
+                nhóm 9 URL chờ xác nhận đích chuyển hướng.
               </li>
             </ul>
           </div>
@@ -496,15 +504,19 @@
             Nguồn dữ liệu:
             <ul>
               <li>
-                <b>OpenSEO:</b> hai lần site audit ngày 25/11/2026 (lần 1: 1.000
-                trang, lần 2: 595 trang, không chạy Lighthouse), danh sách lỗi
-                theo từng loại.
+                <b>OpenSEO:</b> site audit 25/11/2026 (595 trang) và 28/11/2026
+                04:58 (586 trang, không chạy Lighthouse); đo lường GA4 và dữ
+                liệu Search Console (29/10 đến 25/11).
               </li>
               <li>
-                <b>Kiểm tra trực tiếp bằng curl:</b> HTML trang chủ và 5 trang
-                mẫu (H1, meta, canonical, robots, ảnh không có alt), thời gian
-                phản hồi và cache, robots.txt, sơ đồ trang, nội dung container
-                Tag Manager.
+                <b>Kiểm tra trực tiếp:</b> tải HTML các trang trên website (có
+                tham số để bỏ qua cache, và không có tham số để xem bản cache),
+                trang quản trị WordPress (plugin, WPCode, Rank Math, Elementor,
+                danh mục sản phẩm), sơ đồ trang, robots.txt.
+              </li>
+              <li>
+                <b>Cloudflare:</b> không truy cập được; chuyển hướng đã được
+                nhập bởi chủ website và kiểm tra lại bằng cách tải từng URL cũ.
               </li>
             </ul>
           </div>
